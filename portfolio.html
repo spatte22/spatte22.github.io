@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sean Patterson</title>
+    <link href="stylesheetHome.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="images/S.png" />  
+    <meta name="description" content="Sean Patterson's personal portfolio site. Technical writer, web developer, music-lover, language-enthusiast, woodworker, and so much more!" >
+    <meta name="keywords" content="Sean Patterson,technical writer" >
+    <meta name="author" content="Sean Patterson" />
+</head>
+<body>
+<div class="home-body-container">
+
+    <div class="header">
+    <div class="header-items">
+        <div class="header-logo">
+            <a href="index.html">Sean Patterson</a>
+        </div>
+        <div class="header-nav">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="resume.html">Resume</a>
+            </li>
+            <li>
+                <a href="contact.html"> Contact</a>
+            </li>
+        </ul>
+        </div>
+    </div> <!-- closes header-items -->
+    </div> <!-- close header -->
+<div class="orange">
+    <div class="portfolio-note">* Displayed are a few side projects of mine as most of my work is for a comprehensive online help site. <br>* Contact me for other professional examples.</div>
+
+    <ul class="portfolio1">
+        <li id="portLI1.1">
+            <div class="portfolio-text" id="portTXT1.1"><a href="projects/UH_Nuance10.5UpdateInstructions.pdf">Nuance Automatic speech recognition (ASR) update document created for customers. Nuance updated their engine, prompting our customers to point their "system" to the updated servers. The ASR-integrated product is highly customizable, therefore simple instructions were impractical; customer developers should plan sufficiently before making nuanced tuning updates. Some information was generic, as each customer must perform individual testing and tuning for their voice recognition to function properly.</a></div>
+            <div class="portfolio-title" id="portIMG1.1">Nuance Automatic Speech Update Guide</div>
+            
+        </li>
+        <li id="portLI1.2">
+            
+            <div class="portfolio-text" id="portTXT1.2"><a href="projects/SlitherGuide.pdf">A basic user guide for the the mobile game app Slither.io.</a></div>
+            <div class="portfolio-title" id="portIMG1.2">Slither.io User Guide</div>
+        </li>
+        <li id="portLI1.3">
+            <div class="portfolio-text" id="portTXT1.3"><a href="projects/VooblyHow-To.pdf">Setup instructions for playing the Age of Empires PC video game on the Voobly multiplayer platform.</a></div>
+            <div class="portfolio-title" id="portIMG1.3">AoE II: Getting Started with Voobly</div>
+            
+        </li>
+    </ul>
+    <ul class="portfolio1">
+        <li id="portLI2.1">
+            <div class="portfolio-text" id="portTXT2.1">Nuance Automatic speech recognition (ASR) update document created for customers. Nuance updated their engine, prompting our customers to point their "system" to the updated servers. The ASR-integrated product is highly customizable, therefore simple instructions were impractical; customer developers should plan sufficiently before making nuanced tuning updates. Some information was generic, as each customer must perform individual testing and tuning for their voice recognition to function properly.</div>
+            <div class="portfolio-title" id="portIMG2.1">Nuance Automatic Speech Update Guide</div>
+            
+        </li>
+        <li id="portLI2.2">
+            
+            <div class="portfolio-text" id="portTXT2.2">A basic user guide for the the mobile game app Slither.io.</div>
+            <div class="portfolio-title" id="portIMG2.2">Slither.io User Guide</div>
+        </li>
+        <li id="portLI2.3">
+            <div class="portfolio-text" id="portTXT2.3">Setup instructions for playing the Age of Empires PC video game on the Voobly multiplayer platform.</div>
+            <div class="portfolio-title" id="portIMG2.3">AoE II: Getting Started with Voobly</div>
+            
+        </li>
+    </ul>
+   
+</div> <!-- closes orange -->
+</div> <!-- closes home-body-container -->
+
+<script src="jsHome.js" type="text/javascript"></script>
+<script>
+    let td1 = document.getElementById('portLI1.1');
+    let td2 = document.getElementById('portLI1.2');
+    let td3 = document.getElementById('portLI1.3');
+    let td4 = document.getElementById('portLI2.1');
+    let td5 = document.getElementById('portLI2.2');
+    let td6 = document.getElementById('portLI2.3');
+
+    let img1 = document.getElementById('portIMG1.1');
+    let img2 = document.getElementById('portIMG1.2');
+    let img3 = document.getElementById('portIMG1.3');
+    let img4 = document.getElementById('portIMG2.1');
+    let img5 = document.getElementById('portIMG2.2');
+    let img6 = document.getElementById('portIMG2.3');
+
+    let text1 = document.getElementById('portTXT1.1');
+    let text2 = document.getElementById('portTXT1.2');
+    let text3 = document.getElementById('portTXT1.3');
+    let text4 = document.getElementById('portTXT2.1');
+    let text5 = document.getElementById('portTXT2.2');
+    let text6 = document.getElementById('portTXT2.3');
+
+    td1.addEventListener('mouseenter', function() {
+        img1.style.display = 'none';
+        text1.style.display = 'block';
+    });
+    td1.addEventListener('mouseleave', function() {
+        img1.style.display = 'block';
+        text1.style.display = 'none';
+    });
+
+    td2.addEventListener('mouseenter', function() {
+        img2.style.display = 'none';
+        text2.style.display = 'block';
+    });
+    td2.addEventListener('mouseleave', function() {
+        img2.style.display = 'block';
+        text2.style.display = 'none';
+    });
+
+    td3.addEventListener('mouseenter', function() {
+        img3.style.display = 'none';
+        text3.style.display = 'block';
+    });
+    td3.addEventListener('mouseleave', function() {
+        img3.style.display = 'block';
+        text3.style.display = 'none';
+    });
+
+    td4.addEventListener('mouseenter', function() {
+        img4.style.display = 'none';
+        text4.style.display = 'block';
+    });
+    td4.addEventListener('mouseleave', function() {
+        img4.style.display = 'block';
+        text4.style.display = 'none';
+    });
+
+    td5.addEventListener('mouseenter', function() {
+        img5.style.display = 'none';
+        text6.style.display = 'block';
+    });
+    td5.addEventListener('mouseleave', function() {
+        img5.style.display = 'block';
+        text5.style.display = 'none';
+    });
+
+    td6.addEventListener('mouseenter', function() {
+        img6.style.display = 'none';
+        text6.style.display = 'block';
+    });
+    td6.addEventListener('mouseleave', function() {
+        img6.style.display = 'block';
+        text6.style.display = 'none';
+    });
+
+
+
+
+
+    
+</script>
+</body>
+</html>
