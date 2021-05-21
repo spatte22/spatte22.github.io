@@ -219,6 +219,7 @@ html {
 
 .portfolio1 li {
     width: 29vw;
+    min-width: 29vw;
     height: 39vh;
     color: var(--backgroundColor);
     font-size: 16px;
@@ -249,11 +250,11 @@ html {
     display: none;
 }
 
-.portfolio-text a,
-.portfolio-text a:visited,
-.portfolio-text a:hover {
+.portfolio1 a,
+.portfolio1 a:visited,
+.portfolio1 a:hover {
     text-decoration: none;
-    color: var(--white);
+    color: var(--backgroundColor);
 }
 
 
