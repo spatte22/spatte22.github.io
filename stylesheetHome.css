@@ -521,3 +521,126 @@ html {
 
 
 
+
+
+@media (max-width: 300px){
+
+    .header {
+        height: auto;
+        padding: 1em 0 1em 0;
+        margin-bottom: 1em;
+    }
+
+    .header-items {
+        flex-direction: column;
+        justify-content: center;
+        max-width: 1000px;
+        font-size: 20px;
+    }
+
+    .header-nav ul {
+        flex-direction: column;
+    }
+
+    .header-nav li {
+        padding-top: 10px;
+    }
+
+    .information {
+        margin-top: 2em;
+        font-size: 12px;
+    }
+
+    .information-bio {
+        height: 18em;
+    }
+
+    .home-body-container {
+        height: auto;
+    }
+
+    .home-body-center {
+        flex-direction: column;
+        height: auto;
+        padding: 2em 0;
+        padding: 2em 0;
+        height: 100%;
+        margin-top: 12em;
+    }
+
+    .home-body-bottom {
+        padding: 2em 0;
+        visibility: hidden;
+    }
+
+    .home-body-bottom-film {
+        display: none;
+    }
+    
+    .home-body-container {
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .orange {
+        overflow: visible;
+        height: auto;
+        position: absolute;
+    }
+
+    .resume {
+        display: none;
+    }
+
+    .resume-items {
+        display: block;
+        margin-top: 12em;
+    }
+
+    .resume-click {
+        display: none;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 8em;
+    }
+
+    .portfolio-note {
+        margin-top: 25em;
+        margin-bottom: 5em;
+        width: 90vw;
+    }
+
+    .portfolio1 {
+        display: none;
+    }
+
+    .portfolio-table {
+        width: 90vw;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2em;
+    }
+    .portfolio-table td {
+        background-color:rgba(254, 254, 254, 0.7);
+        padding: 2em;
+    }
+
+    .portfolio-button {
+        display: block;
+        margin: 2em 0 1em 0;
+        padding: 1em 2em;
+    }
+    
+
+}
+
+
+
