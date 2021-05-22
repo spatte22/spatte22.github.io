@@ -5,7 +5,7 @@
     --vibrantOrange: #ff4d00;
     --easyOrange: #ff6929;
 	--gray: #BCC6CC;
-	--white: white;
+	--white: #FFF5EE;
 	--black: black;
 	--shadowGray: #4f5254;
 	--buttonColor: #fc5744;
@@ -55,7 +55,7 @@ html {
 .header a,
 .header a:visited {
     text-decoration: none;
-	color: var(--white);
+	color: white;
 }
 
 .header-logo,
@@ -162,12 +162,19 @@ html {
 }
 
 .home-body-bottom {
-    height: auto;
-    width: 98vw;
+    width: 100vw;
     display: flex;
     align-items: center;
-    padding: 6em 0 1em 0;
+    padding: 3px 0 0 0;
     overflow: hidden;
+    background-color: #0c0c0c;
+    height: 150px;
+}
+.home-body-bottom-film {
+    background-image: url('images/reel2.png');
+    background-repeat: repeat-x;
+    height: 15px;
+    width: 100vw;
 }
 
 .slideshowDiv {
@@ -194,6 +201,13 @@ html {
 
 
 /* PORTFOLIO STYLES */
+
+.portfolio-table {
+    display: none;
+}
+.portfolio-button {
+    display: none;
+}
 
 .portfolio-note {
     color: var(--white);
@@ -379,19 +393,26 @@ html {
         height: 150px;
     }
 
+    .portfolio-text {
+        font-size: 10px;
+    }
+
 }
 
 
-@media (max-width: 600px){
+@media (max-width: 650px){
 
     .header {
-        height: 10em;
+        height: auto;
+        padding: 1em 0 1em 0;
+        margin-bottom: 1em;
     }
 
     .header-items {
         flex-direction: column;
         justify-content: center;
         max-width: 1000px;
+        font-size: 20px;
     }
 
     .header-nav ul {
@@ -421,11 +442,15 @@ html {
         padding: 2em 0;
         padding: 2em 0;
         height: 100%;
-        margin-top: 10em;
+        margin-top: 12em;
     }
 
     .home-body-bottom {
         padding: 2em 0;
+        visibility: hidden;
+    }
+
+    .home-body-bottom-film {
         display: none;
     }
     
@@ -448,6 +473,7 @@ html {
 
     .resume-items {
         display: block;
+        margin-top: 12em;
     }
 
     .resume-click {
@@ -463,31 +489,31 @@ html {
     }
 
     .portfolio-note {
-        margin-top: 20em;
-        margin-bottom: 25em;
+        margin-top: 25em;
+        margin-bottom: 5em;
+        width: 90vw;
     }
 
     .portfolio1 {
-        flex-direction: column;
-        justify-content: space-around;
+        display: none;
     }
 
-    .portfolio li {
-        width: 85vw;
-        font-size: 12px;
-        height: 250px;
+    .portfolio-table {
+        width: 90vw;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2em;
+    }
+    .portfolio-table td {
+        background-color:rgba(254, 254, 254, 0.7);
+        padding: 2em;
     }
 
-    .portfolio-text {
-        width: 985vw;
-        font-size: 12px;
-        height: 250px;
-    }
-
-    .portfolio-title {
-        width: 85vw;
-        font-size: 16px;
-        height: 250px;
+    .portfolio-button {
+        display: block;
+        margin: 2em 0 1em 0;
+        padding: 1em 2em;
     }
     
 

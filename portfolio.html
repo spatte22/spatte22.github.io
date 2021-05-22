@@ -37,7 +37,7 @@
     <ul class="portfolio1">
         <li id="portLI1.1"><a href="projects/Nuance10.5UpdateInstructions_redacted.pdf" target="_blank">
             <div class="portfolio-text" id="portTXT1.1">*contains redacted information*<br /><br />Nuance Automatic speech recognition (ASR) update document for customers. Nuance updated their engine, prompting our customers to point their "system" to the updated servers. The ASR-integrated product is highly customizable, therefore simple instructions were impractical; ideally, customer developers would plan sufficiently before making nuanced tuning updates. Audience was a mix of highly-technical and technical-enough personnel.</div>
-            <div class="portfolio-title" id="portIMG1.1">Nuance Automatic Speech Update Guide</div></a>
+            <div class="portfolio-title" id="portIMG1.1">Nuance ASR Update Guide</div></a>
             
         </li>
         <li id="portLI1.2">
@@ -68,10 +68,39 @@
         <li id="portLI2.3">
             <a href="projects/MomentumWebsiteProposal.pdf" target="_blank">
             <div class="portfolio-text" id="portTXT2.3">As a long-time head rock climbing coach, I have extensive experience teaching and tailoring my 2-part beginner curriculum. The purpose of this proposal is to provide a source of truth for beginning rock climbing information. The result would cultivate climbing interest and safety, plus establish our youth programs as a definitive resource for rock climbing information. To encourage and reach a new generation of young climbers, a digital resource would be the ideal solution. Audience was small business leadership and management.</div>
-            <div class="portfolio-title" id="portIMG2.3">Momentum Climbing Gym:<br /><br />Instructional Website Section Proposal</div>
+            <div class="portfolio-title" id="portIMG2.3">Momentum Climbing Gym:<br />Instructional Website Section Proposal</div>
         </a>
         </li>
     </ul>
+
+    <table class="portfolio-table">
+        <tr>
+            <td><h4>Nuance ASR Update Guide</h4><br /><br />*contains redacted information*<br /><br />Nuance Automatic speech recognition (ASR) update document for customers. Nuance updated their engine, prompting our customers to point their "system" to the updated servers. The ASR-integrated product is highly customizable, therefore simple instructions were impractical; ideally, customer developers would plan sufficiently before making nuanced tuning updates. Audience was a mix of highly-technical and technical-enough personnel.
+            <button class="portfolio-button" id="projects/NuanceUpdateInstructionsRedacted.pdf" onclick="displayPortfolio(this.id)">View</button>
+            </td>
+        </tr>
+        <tr>
+            <td><h4>Slither.io User Guide</h4><br /><br />A basic user guide for the the mobile game app Slither.io. Audience was any end user.
+                <button class="portfolio-button" id="projects/SlitherGuide.pdf" onclick="displayPortfolio(this.id)">View</button></td>
+        </tr>
+        <tr>
+            <td><h4>AoE II: Getting Started with Voobly</h4><br /><br />Setup instructions for playing the Age of Empires PC video game on the Voobly multiplayer platform. This is a series of images or slides to display on a website or online forum. I performed personal testing and procedures to create material. Audience was an average young person who plays PC games.
+                <button class="portfolio-button" id="projects/VooblyHow-To.pdf" onclick="displayPortfolio(this.id)">View</button></td>
+        </tr>
+        <tr>
+            <td><h4>Acute Engineering:<br /> New Hire Handbook</h4><br /><br />*contains small formatting discrepancies from original version*<br /><br />My internship with Acute Engineering entailed creating the new hire handbook. As the technical writing team lead, I collaborated with two other writers. We sourced existing material, conducted user interviews, and performed basic procedures for this project. Audience was entry-level engineers.
+                <button class="portfolio-button" id="projects/AcuteEngineeringNewHireHandbook.pdf" onclick="displayPortfolio(this.id)">View</button></td>
+        </tr>
+        <tr>
+            <td><h4>Medicus Wealth Planning:<br /> Client Service Manager Manual</h4><br /><br />*contains small formatting discrepancies from original version - also contains some redacted information*<br /><br />My internship with Medicus revolved around creating this manual. I sourced material from conducting interviews with a CSM and also the executive assistant, plus existing pieces of procedural/instructional information. Audience was non-technical "numbers people".
+                <button class="portfolio-button"id="projects/MedicusCSMManual.pdf" onclick="displayPortfolio(this.id)">View</button></td>
+        </tr>
+        <tr>
+            <td><h4>Momentum Climbing Gym:<br />Instructional Website Section Proposal</h4><br /><br />As a long-time head rock climbing coach, I have extensive experience teaching and tailoring my 2-part beginner curriculum. The purpose of this proposal is to provide a source of truth for beginning rock climbing information. The result would cultivate climbing interest and safety, plus establish our youth programs as a definitive resource for rock climbing information. To encourage and reach a new generation of young climbers, a digital resource would be the ideal solution. Audience was small business leadership and management.
+                <button class="portfolio-button" id="projects/MomentumWebsiteProposal.pdf" onclick="displayPortfolio(this.id)">View</button></td>
+            
+        </tr>
+    </table>
    
 </div> <!-- closes orange -->
 </div> <!-- closes home-body-container -->
@@ -153,6 +182,11 @@
         text6.style.display = 'none';
     });
 
+    function displayPortfolio(clicked_id) {
+        
+        window.open(clicked_id);
+        
+    };
 
 
 
