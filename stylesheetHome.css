@@ -356,11 +356,11 @@ html {
 
 .contact img {
     height: 200px;
+	transition: transform .5s ease-in-out;
 }
 
 .contact img:hover {
     transform: scale(1.1);
-    transition: transform .5s ease-in-out;
     box-shadow: 10px 10px 10px var(--black);
     border-radius: 30px;
     cursor: pointer;
@@ -370,7 +370,7 @@ html {
 
 /* SKINNY SCREENS */
 
-@media (max-width: 1000px){
+@media screen and (max-width: 1000px){
 
     .information-bio {
         height: 16em;
@@ -396,11 +396,33 @@ html {
     .portfolio-text {
         font-size: 10px;
     }
+	
+	.portfolio1 {
+        display: none;
+    }
+
+    .portfolio-table {
+        width: 90vw;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2em;
+    }
+    .portfolio-table td {
+        background-color:rgba(254, 254, 254, 0.7);
+        padding: 2em;
+    }
+
+    .portfolio-button {
+        display: block;
+        margin: 2em 0 1em 0;
+        padding: 1em 2em;
+    }
 
 }
 
 
-@media (max-width: 650px){
+@media screen and (max-width: 650px){
 
     .header {
         height: auto;
@@ -494,28 +516,7 @@ html {
         width: 90vw;
     }
 
-    .portfolio1 {
-        display: none;
-    }
-
-    .portfolio-table {
-        width: 90vw;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 2em;
-    }
-    .portfolio-table td {
-        background-color:rgba(254, 254, 254, 0.7);
-        padding: 2em;
-    }
-
-    .portfolio-button {
-        display: block;
-        margin: 2em 0 1em 0;
-        padding: 1em 2em;
-    }
-    
+	    
 
 }
 
@@ -523,7 +524,7 @@ html {
 
 
 
-@media (max-width: 300px){
+@media screen and (max-width: 300px){
 
     .header {
         height: auto;
@@ -617,28 +618,7 @@ html {
         width: 90vw;
     }
 
-    .portfolio1 {
-        display: none;
-    }
-
-    .portfolio-table {
-        width: 90vw;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 2em;
-    }
-    .portfolio-table td {
-        background-color:rgba(254, 254, 254, 0.7);
-        padding: 2em;
-    }
-
-    .portfolio-button {
-        display: block;
-        margin: 2em 0 1em 0;
-        padding: 1em 2em;
-    }
-    
+       
 
 }
 
