@@ -147,7 +147,10 @@ body {
 @media screen and (max-width: 1000px){
 
     .gsap-wrapper {
-		
+		width: 95vw;
+	}
+	.gsap-wrapper ul {
+		margin: 1em 0 0 .5em;
 	}
 
 }

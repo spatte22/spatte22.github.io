@@ -39,17 +39,21 @@ html {
 }
 
 .header {
-    height: 4em;
+    height: auto;
     background-color: var(--backgroundColor);
     border-top: 1px solid var(--vibrantOrange);
     border-bottom: 1px solid var(--vibrantOrange);
     padding: .25em 2em;
     font-size: 16px;
     z-index: 3;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
+}
+
+hr {
+	display: none;
 }
 
 .header a,
@@ -368,6 +372,17 @@ html {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 /* SKINNY SCREENS */
 
 @media screen and (max-width: 1000px){
@@ -426,23 +441,35 @@ html {
 
     .header {
         height: auto;
-        padding: 1em 0 1em 0;
         margin-bottom: 1em;
+		position: static;
     }
 
     .header-items {
-        flex-direction: column;
         justify-content: center;
         max-width: 1000px;
-        font-size: 20px;
+        font-size: 15px;
+
     }
+	
+	hr {
+		display: inline-block;
+		flex-basis: 100%;
+		height: 0;
+		margin: 0;
+		border: 0;
+	}
+	
+	.header-logo {
+		display: none;
+	}
 
     .header-nav ul {
-        flex-direction: column;
+		flex-wrap: wrap;
     }
 
     .header-nav li {
-        padding-top: 10px;
+        padding: 10px 20px;
     }
 
     .information {
@@ -528,19 +555,17 @@ html {
 
     .header {
         height: auto;
-        padding: 1em 0 1em 0;
         margin-bottom: 1em;
     }
 
     .header-items {
-        flex-direction: column;
         justify-content: center;
         max-width: 1000px;
         font-size: 20px;
     }
 
     .header-nav ul {
-        flex-direction: column;
+		flex-wrap: wrap;
     }
 
     .header-nav li {
