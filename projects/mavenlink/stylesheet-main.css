@@ -1,0 +1,106 @@
+/* Variables */
+
+:root {
+	--lightBlue: #61a9ed;
+	--darkBlue: #0a3a60;
+}
+
+* {
+	font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+/* Main Styles */
+
+.article {
+	width: 100vw;
+	overflow: hidden;
+}
+
+.header {
+	background-color: var(--lightBlue);
+	width: 100vw;
+	height: 4em;
+	font-size: 25px;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding-left: 15vw;
+	margin-bottom: 2em;
+	overflow: hidden;
+}
+
+.article-content {
+	width: 50vw;
+	margin-left: auto;
+	margin-right: auto;
+}
+h1 {
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 1em;
+	border-bottom: 1px solid gray;
+}
+
+.edit-date {
+	color: gray;
+	font-size: 12px;
+}
+
+.available-in {
+	font-size: 10px;
+	float: right;
+}
+
+.main-content {
+	margin-top: 2em;
+	font-size: 16px;
+}
+
+.main-content h2 {
+	font-size: 18px;
+	margin: 2em 0 1em 0;
+}
+
+.main-content p {
+	line-height: 25px;
+	margin-bottom: 1em;
+}
+
+a,
+a:hover {
+	color: var(--lightBlue);
+}
+
+ul {
+	margin-left: 2em;
+}
+
+li {
+	line-height: 25px;
+}
+
+ol {
+	margin: 1em 0 1em 3em;
+}
+
+.interface {
+	font-weight: bold;
+}
+
+.fieldName {
+	color: green;
+}
+
+.fieldValue {
+	color: orange;
+}
+
+.footer {
+	width: 100vw;
+	height: 10em;
+	background-color: var(--darkBlue);
+	margin-top: 5em;
+}

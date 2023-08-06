@@ -206,6 +206,82 @@ hr {
 
 /* PORTFOLIO STYLES */
 
+.portfolio-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 75%;
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5em;
+	line-height: 1.5;
+	font-size: .85em;
+}
+
+.portfolio-item {
+	border-radius: 20px;
+	box-shadow: 0 5px 15px 0px var(--white);
+	background-color: ;
+	opacity: ;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	color: var(--white);
+	padding: 2em;
+	margin-bottom: 5em;
+}
+
+.portfolio-item:hover {
+	box-shadow: 0 5px 25px 5px var(--white);
+}
+
+.portfolio-item a,
+.portfolio-item a:visited {
+	color: var(--white);
+}
+
+.portfolio-item a:hover {
+	color: var(--vibrantOrange);
+}
+
+.portfolio-section-right {
+	width: 60%;
+}
+
+.portfolio-section-left {
+	width: 40%;
+	margin: 0 2em 0 1em;
+}
+
+.portfolio-item-image {
+	text-align: center;
+}
+
+.portfolio-item-image img {
+	border: 1px solid var(--white);
+	max-width: 300px;
+}
+
+.portfolio-item-title {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+.portfolio-item-subtitle {
+	font-weight: bold;
+	font-size: 1em;
+}
+
+.portfolio-item-description p {
+	margin: 1em 0;
+}
+
+
+
+
+
+
 .portfolio-table {
     display: none;
 }
@@ -385,7 +461,8 @@ hr {
 
 /* SKINNY SCREENS */
 
-@media screen and (max-width: 1000px){
+
+@media screen and (max-width: 1050px){
 
     .information-bio {
         height: 16em;
@@ -402,6 +479,14 @@ hr {
     .contact img {
         height: 150px;
     }
+	
+	.portfolio-item {
+		flex-direction: column;
+	}
+	
+	.portfolio-section-right {
+		width: 100%;
+	}
 
     .portfolio1 img,
     .portfolio2 img {
@@ -538,7 +623,7 @@ hr {
     }
 
     .portfolio-note {
-        margin-top: 25em;
+        margin-top: 7em;
         margin-bottom: 5em;
         width: 90vw;
     }
