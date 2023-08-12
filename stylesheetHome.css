@@ -388,11 +388,16 @@ hr {
 .resume-items {
     background-color: var(--white);
     font-size: 14px;
-    display: none;
+    /*display: none;*/
+	width: 85vw;
+	max-width: 1000px;
     color: black;
     padding: 10px;
-    margin: 10px;
-    cursor: default;
+    margin-right: auto;
+	margin-left: auto;
+	margin-top: 2em;
+	margin-bottom: 2em;
+    cursor: pointer;
 }
 
 .resume-items h3 {
@@ -402,7 +407,6 @@ hr {
 
 .resume-items h4 {
     padding: 10px 0;
-
 }
 
 .resume-items p {
@@ -411,14 +415,21 @@ hr {
 
 .resume-items ol {
     list-style-type: square;
+	margin: 0 0 2em 2em;
 }
 
 .resume-items li {
     padding: 5px 0;
 }
 
+.resume-items table {
+	margin-bottom: 2em;
+	width: 75%;
+}
+
 .resume-items td {
     padding: 5px;
+	margin-left: 2em;
 }
 
 
@@ -601,18 +612,14 @@ hr {
         position: absolute;
     }
 
-    .resume {
-        display: none;
-    }
-
     .resume-items {
         display: block;
-        margin-top: 12em;
+		width: 95vw;
     }
-
-    .resume-click {
-        display: none;
-    }
+	
+	.resume-items table {
+		width: 100%;
+	}
 
     .contact {
         display: flex;
@@ -701,17 +708,9 @@ hr {
         position: absolute;
     }
 
-    .resume {
-        display: none;
-    }
-
     .resume-items {
         display: block;
-        margin-top: 12em;
-    }
-
-    .resume-click {
-        display: none;
+		width: 100%;
     }
 
     .contact {
