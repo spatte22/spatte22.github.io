@@ -1,0 +1,55 @@
+/* Variables */
+
+:root {
+    --backgroundColor: #000000; /*black*/
+    --vibrantOrange: #ff4d00;
+    --easyOrange: #ff6929;
+	--gray: #BCC6CC;
+	--white: #FFF5EE;
+	--black: black;
+	--shadowGray: #4f5254;
+	--buttonColor: #fc5744;
+	--gsapGreen: #89ce02;
+	--vooblyBlue: ##0d386d;
+	--vooblyBlueLight: #3183c3;
+}
+
+body {
+	scroll-behavior: smooth;
+}
+
+.voobly-orange {
+	background-image: linear-gradient(50deg, var(--black), var(--black), var(--black), var(--black), var(--black), var(--black), #2b1308, #5e2811, var(--vibrantOrange), var(--vibrantOrange));
+    height: 100vh;
+    width: 100vw;
+	overflow-x: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.voobly-wrapper {
+	width: 90vw;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 5em;
+	color: var(--white);
+	padding: 5vh;
+}
+
+
+
+
+/*  TRYING TO OVERWRITE SWAGGER UI */
+.swagger-ui,
+.information-container {
+	color: var(--white);
+}
+
+.swagger-ui {
+	overflow-y: hidden;
+}
+
+.scheme-container {
+	display: none;
+}

@@ -1,0 +1,77 @@
+<!-- HTML for static distribution bundle build -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Voobly APIs</title>
+	<link rel="stylesheet" type="text/css" href="swaggerui/swagger-ui.css" />
+    <link rel="stylesheet" type="text/css" href="swaggerui/index.css" />
+	<link href="../../stylesheetHome.css" rel="stylesheet" type="text/css" />
+	<link href="voobly-doc-stylesheet.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" type="image/png" href="../../images/S.png" />  
+    <meta name="description" content="API documentation for the Voobly APIs." >
+    <meta name="keywords" content="Sean Patterson,technical writer,voobly api,voobly apis" >
+    <meta name="author" content="Sean Patterson" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  </head>
+
+  <body>
+ <div class="home-body-container">
+
+    <div class="header">
+    <div class="header-items">
+        <div class="header-logo">
+            <a href="index.html">Sean Patterson</a>
+        </div>
+        <div class="header-nav">
+        <ul>
+            <li>
+                <a href="../../index.html">Home</a>
+            </li>
+			<li>
+				<a href="../../portfolio.html">Portfolio</a>
+			</li>
+            <li>
+                <a href="../../resume.html">Resume</a>
+            </li>
+            <li>
+                <a href="../../contact.html"> Contact</a>
+            </li>
+        </ul>
+        </div>
+    </div> <!-- closes header-items -->
+    </div> <!-- close header -->
+<div class="voobly-orange">
+<div class="voobly-wrapper">
+	<!--<p><button type="button" onclick="vooblyUser()" >Click me!</button></p>
+	<div id="vooblyUserInfo" style="color: white;"></div>-->
+  
+    <div id="swagger-ui"></div>
+	
+</div> <!-- closes voobly-wrapper -->
+</div> <!-- closes voobly-orange -->
+</div> <!-- closes home-body-container -->
+	<script src="swaggerui/spec.js" type="text/javascript"> </script>
+    <script src="swaggerui/swagger-ui-bundle.js" charset="UTF-8"> </script>
+    <script src="swaggerui/swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
+    <script src="swaggerui/swagger-initializer.js" charset="UTF-8"> </script>
+	<script>
+		function vooblyUser () {
+			const xhr = new XMLHttpRequest();
+			xhr.open("GET", "https://www.voobly.com/api/finduser/AoL_Iron_maiden?key=mcijagac87p6ch2vq8ocwx465gb8e6dq");
+			xhr.send();
+			xhr.responseType = "";
+			xhr.onload = () => {
+			  if (xhr.readyState == 4 && xhr.status == 200) {
+				console.log(xhr.response);
+				/*document.getElementById('vooblyUserInfo').append(xhr.response);*/
+			  } else {
+				console.log(`Error: ${xhr.status}`);
+			  }
+			};
+		}
+	</script>
+  </body>
+</html>
+<!-- mcijagac87p6ch2vq8ocwx465gb8e6dq -->
