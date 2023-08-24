@@ -53,3 +53,17 @@ body {
 .scheme-container {
 	display: none;
 }
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1050px){
+	.voobly-wrapper {
+		width: 99vw;
+		padding-top: 5vh;
+	}
+}

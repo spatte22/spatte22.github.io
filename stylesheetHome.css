@@ -491,12 +491,26 @@ hr {
         height: 150px;
     }
 	
+	.portfolio-wrapper {
+		width: 95%;
+	}
+	
 	.portfolio-item {
 		flex-direction: column;
 	}
 	
 	.portfolio-section-right {
 		width: 100%;
+	}
+	
+	.portfolio-section-left {
+		width: 80%;
+		margin: 0 2em 0 0;
+	}
+	
+	.portfolio-item-image img {
+		width: 100%;
+		margin-bottom: 2em;
 	}
 
     .portfolio1 img,
@@ -557,7 +571,8 @@ hr {
 	}
 	
 	.header-logo {
-		display: none;
+		display: ;
+		font-size: 1.2em;
 	}
 
     .header-nav ul {
@@ -570,7 +585,8 @@ hr {
 
     .information {
         margin-top: 2em;
-        font-size: 12px;
+        font-size: 15px;
+		width: 90vw;
     }
 
     .information-bio {
@@ -587,12 +603,12 @@ hr {
         padding: 2em 0;
         padding: 2em 0;
         height: 100%;
-        margin-top: 12em;
+		margin-top: 9em;
     }
 
     .home-body-bottom {
         padding: 2em 0;
-        visibility: hidden;
+        visibility: ;
     }
 
     .home-body-bottom-film {
@@ -642,12 +658,57 @@ hr {
 
 
 
+@media screen and (max-width: 500px){
+	.header {
+		font-size: 25px;
+	}
+	
+	.home-body-center {
+		flex-direction: column;
+		margin-top: 7em;
+	}
+	
+	.information {
+		width: 90vw;
+	}
+	
+	.information-bio-background {
+		font-size: 18px;
+		margin-left: 0;
+	}
+	
+	.resume-note {
+		margin-top: 10em;
+	}
+	
+	.portfolio-note {
+		margin-top: 10em;
+	}
+}
 
-@media screen and (max-width: 300px){
+
+
+@media screen and (max-width: 420px){
+	.resume-note {
+		margin-top: 13em;
+	}
+	
+	.portfolio-note {
+		margin-top: 13em;
+	}
+
+}
+
+
+
+
+
+@media screen and (max-width: 350px){
 
     .header {
         height: auto;
         margin-bottom: 1em;
+		font-size: 25px;
     }
 
     .header-items {
@@ -663,7 +724,7 @@ hr {
     .header-nav li {
         padding-top: 10px;
     }
-
+	
     .information {
         margin-top: 2em;
         font-size: 12px;
@@ -688,11 +749,11 @@ hr {
 
     .home-body-bottom {
         padding: 2em 0;
-        visibility: hidden;
+        visibility: ;
     }
 
     .home-body-bottom-film {
-        display: none;
+        display: ;
     }
     
     .home-body-container {
@@ -722,8 +783,7 @@ hr {
     }
 
     .portfolio-note {
-        margin-top: 25em;
-        margin-bottom: 5em;
+        margin: 15em 2em 5em 2em;
         width: 90vw;
     }
 

@@ -159,9 +159,12 @@ body {
 @media screen and (max-width: 650px){
 
     .gsap-wrapper {
-		
+		margin-top: 10em;
 	}
     
+	.gsap-h1 {
+		font-size: 50px;
+	}
 
 }
 
@@ -169,7 +172,7 @@ body {
 
 
 
-@media screen and (max-width: 300px){
+@media screen and (max-width: 440px){
 
     .gsap-wrapper {
 		
