@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" /><title>Billing APIs</title>
+		<link href="../gsap-doc/prism.css" rel="stylesheet" type="text/css" />
+		    <link href="../../stylesheetHome.css" rel="stylesheet" type="text/css" />
+			<link href="billing-stylesheet.css" rel="stylesheet" type="text/css" />
+			<link rel="icon" type="image/png" href="../../images/S.png" /> 
+        <meta name="description" content="These APIs provide a programmatic method for DEVone partners to report customer usage. Certain DEVone products require usage data for customers to be billed, and therefore require usage data to be reported." />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+    <body>
+<div class="home-body-container">
+<div class="header">
+    <div class="header-items">
+        <div class="header-logo" id="one">
+            <a href="index.html">Sean Patterson</a>
+        </div>
+        <div class="header-nav">
+        <ul>
+            <li id="two">
+                <a href="../../index.html">Home</a>
+            </li>
+			<li id="three">
+				<a href="../../portfolio.html">Portfolio</a>
+			</li>
+            <li id="four">
+                <a href="../../resume.html">Resume</a>
+            </li>
+            <li id="five">
+                <a href="../../contact.html"> Contact</a>
+            </li>
+        </ul>
+        </div>
+    </div> <!-- closes header-items -->
+    </div> <!-- close header -->	
+	<div class="billing-orange">
+	<div class="billing-wrapper">
+        <h1>
+            Partner Billing API Quick Start Guide</h1>
+        <p>The CXone Partner Billing API is a RESTful API that provides a programmatic method for DEVone partners to report customer product usage. When a DEVone partner's product is listed in the CXone price book, it is included on the customer's monthly invoice. If a product price is based on usage, NICE requires partners to report customer usage so that the customer can be billed. If NICE does not receive the customer usage data from the partner, it is unable to bill the customer for that usage delaying partner revenue collection.
+		</p>
+        <p>Product pricing models are negotiated between the NICE and partner teams during product development. Product usage must be submitted when the product is billed on a per-usage basis such as per-minute of calls or per-contact interaction. For usage to be reflected in customer invoices, the usage data must be submitted at least monthly. To prevent delays in invoicing, submit daily usage reports.
+		</p>
+        <p>Reach out to your DEVone contact if you are unsure of whether this applies to you.</p>
+        <h2>Requirements</h2>
+        <p>To submit usage data using this API, you must have the following:</p>
+        <ul>
+            <li>A Central B2 business unit (BU) with PartnerAPI enabled by NICE. Contact your DEVone representative if you do not have access to your Central BU or if the BU does not have the required permissions enabled.</li>
+            <li>A user set up on the B2 BU with sufficient permissions to generate an access key. See the <a href="https://help.nice-incontact.com/content/admin/employees/setupemployees.htm">CXone online help</a> for more information on setting up a user on your Central BU.</li>
+            <li>An application able to make REST API calls, like Postman. </li>
+            <li>A partner application registered with CXone. See the <a href="#Using">Use CXone APIs</a> section below for more information.</li>
+        </ul>
+        <h2>Technical Overview</h2>
+        <p>To understand the billing process, there are three primary entities:</p>
+        <table class="fieldDefinitionTable">
+            <tr>
+                <th>Entity</th>
+                <th>Details</th>
+            </tr>
+            <tr>
+                <td>NICE
+                </td>
+                <td>The provider of the overall CXone platform that the customer uses.</td>
+            </tr>
+            <tr>
+                <td>DEVone Partner</td>
+                <td>Provider of a key feature or service to the customer that augments the CXone platform. A partner may have one or more business units allocated for testing purposes, but the billing API can only be accessed from their Central B2 business unit. The usage data itself can pertain to any customer business unit, User Hub or Central. You must submit usage data to the Partner Billing API using the credentials from a Central B2 business unit.
+				</td>
+            </tr>
+            <tr>
+                <td>Customer</td>
+                <td>The user of services from the Partner and NICE. For the purpose of billing, a customer is always identified by their seven-digit BU number. </td>
+            </tr>
+        </table>
+        <p>Partner products are uniquely identified by two values:</p>
+        <table class="fieldDefinitionTable">
+            <tr>
+                <th>Value</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>SKU</td>
+                <td>The product as shown on a customer invoice.</td>
+            </tr>
+            <tr>
+                <td>prodTypeId</td>
+                <td>The ID used by this billing API to identify the partner product. </td>
+            </tr>
+        </table>
+        <p>Not all SKUs have <span class="techNamed">prodTypeId</span>, but all products that require usage reporting must have a <span class="techNamed">prodTypeId</span> associated with them to submit billing data. NICE provide the partner with both the SKU and <span class="techNamed">prodTypeId</span> information. Reach out to your CXone account representative if you are not sure of these two values for any of your products.</p>
+        <h2><a name="Using"></a>Use CXone APIs</h2>
+        <p>NICE authentication adheres to OAuth2.0. You can read more about the authentication architecture in the <a href="https://developer.niceincontact.com/Documentation/CXoneAuthenticationGettingStarted" target="_blank">authentication section</a> of the developer portal. In short, you must obtain a valid access token to exercise the NICE REST APIs. To obtain an access token:</p>
+        <ol>
+            <li><a href="../../Documentation/GetStarted/GetStarted.htm">Register your application</a> with CXone. This grants you a client id and client secret, which are necessary to interact with CXone APIs.<br />For billing applications, the correct application type is <span class="fieldValue">Backend</span> and the application can be <span class="fieldValue">Single-tenant</span> since it only needs to interact with your Central BU.</li>
+            <li>Generate an access key for a user on your Central B2 BU. Follow the steps explained on the <a href="https://help.incontact.com/Content/Admin/AccountSettings/AccountSettings.htm#microcontent1">Central CXone help site</a>.</li>
+            <li>Submit an API request to the CXone <a href="https://developer.niceincontact.com/API/AuthenticationAPI#/Token" target="_blank">/auth/token</a> endpoint. You can do so using Postman and selecting <span class="fieldValue">Oauth2.0</span> as the authentication type. You must also provide the user access key and secret that you generated in the previous steps. </li>
+        </ol>
+        <p>After you have a valid access token, you can make calls to APIs documented on the developer portal with that token.</p>
+        <h2>Billing API Endpoints</h2>
+        <p>This API has three endpoints:
+			<ul><li><span class="techNamed">POST /services/v10.0/partners/billing/product-usage</span></li><li><span class="techNamed">GET /services/v10.0/partners/villing/product-usage/{prodTypeId}</span></li><li><span class="techNamed">GET /services/v10.0/partners/products/{prodTypeId}</span></li></ul>
+			The base URL for billing API calls is <span class="fieldValue">https://api-b2.incontact.com/incontactapi</span>.
+		</p>
+        <h3>POST product-usage</h3>
+        <p>This endpoint submits billing data into the NICE billing database. The API expects a JSON packet with usage data formatted as follows:</p><pre><code class="language-javascript">{
+	"productUsage": [
+		{
+			"serverName": "PartnerName", // String name to identify the partner
+			"businessUnitId": 0, // Customer Business Unit (where the product was used)
+			"prodTypeId": 0, // Partner product that was "used"
+			"prodAmt": 0, // Quantity of usage. The units will be arranged with the NICE team. For instance: # of contacts handled, # of minutes used, etc 
+			"queryDate": "" // Datetime of *usage* in ISO8601 format *not* date of submission.
+		}, // multiple usage reports can be sent in a single API call
+	]
+}</code></pre>
+        <p>Each usage object represents a single customer's usage of a single <span class="techNamed">prodTypeId</span> for a single <span class="techNamed">queryDate</span> for one business unit. Usage data should be submitted for each <span class="techNamed">{businessUnitId, prodTypeId, queryDate}</span> mapping. You can only submit usage data once for each day and only for 31 days in the past.</p>
+        <h3>GET product-usage/{prodTypeId}</h3>
+        <p>This endpoint queries the NICE billing database for submitted usage data relating to a single <span class="techNamed">prodTypeId</span>. You can use this API to verify a submission made with the POST endpoint. Use the <span class="techNamed">startDate</span> and <span class="techNamed">endDate</span> optional parameters to limit results to a desired <span class="techNamed">queryDate</span> range.</p>
+        <p>For example, to request usage data for <span class="techNamed">prodTypeId 8675309</span> between the dates 03/01/2050-03/08/2050, the URL would be <span class="techNamed">https://api-b2.incontact.com/incontactapi/services/v10.0/partners/products/8675309?startDate=2050-03-01&amp;endDate=2050-03-08</span>.</p>
+        <h3>GET products/{prodTypeId}</h3>
+        <p>This endpoint gets a list of customer BUs associated with a given <span class="techNamed">prodTypeId</span>. You can only submit product usage data if the product is associated with the customer BU and active on the NICE billing system.</p>
+        <p>The following example is a cURL request for POST product-usage with the access token removed:</p><pre><code class="language-javascript">curl -X POST \
+'https://api-b2.incontact.com/incontactapi/services/v10.0/partners/billing/product-usage' \
+--header 'Authorization: Bearer {token} \
+--header 'Content-Type: application/json' \
+--data '{
+	"productUsage": [
+		{
+			"serverName": "Jenny",
+			"businessUnitId": 867,
+			"prodTypeId": 5309,
+			"prodAmt": 0,
+			"queryDate": 2050-03-08%17:18:01"
+		}
+	]
+}'</code></pre>
+</div> <!-- closes billing-wrapper -->
+</div> <!-- closes billing-orange -->
+</div> <!-- closes home-body-container -->
+<script src="../gsap-doc/prism.js"></script>
+        <!-- <h2>API Specification</h2>
+        <div id="swagger-ui">
+        </div>
+        <script src="spec.js" type="text/javascript"> </script>
+        <script src="../../Resources/SwaggerUI/swagger-ui-bundle.js" charset="UTF-8"> </script>
+        <script src="../../Resources/SwaggerUI/swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
+        <script src="../../Resources/SwaggerUI/swagger-initializer.js" charset="UTF-8"> </script> -->
+    </body>
+</html>
