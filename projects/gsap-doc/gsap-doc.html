@@ -49,7 +49,7 @@
 	Every animation on this page was created with GSAP!
 	</p>
 	<p>
-	This guide is a "quick start" to get you animating. If you're a seasoned web dev, you might feel comfortable jumping straight into <a href="https://greensock.com/docs/" target="_blank">their docs</a>. If you're inexperienced with JavaScript &ndash; perhaps you're learning web design right now &ndash; this is the guide for you. 
+	This guide is a "quick start" to get you animating. If you're a seasoned web dev, you might be comfortable jumping straight into <a href="https://greensock.com/docs/" target="_blank">the official GreenSock docs</a>. If you're inexperienced with JavaScript &ndash; perhaps you're learning web design right now &ndash; this is the guide for you. 
 	</p>
 		<div class="gsap-dropdown">
 		<div id="gsap-dropdown-heading">Fun Facts About GSAP:<div id="gsap-dropdown-icon">+</div></div>
@@ -66,14 +66,14 @@
 	<div style="width: 100%; text-align: center;">
 	<img src="DesignCourse_GSAP_gif.gif" alt="Example of an easy, clean GSAP animation" style="height: 200px; border: 1px solid white;"/>
 		<div style="font-size: 8px;">
-			Thanks to <a href="https://www.youtube.com/@DesignCourse" target="_blank">DesignCourse</a>for the example
+			Thanks to <a href="https://www.youtube.com/@DesignCourse" target="_blank">DesignCourse</a> for the example
 		</div>
 	</div>
 	
 	<h2>The Basics</h2>
 		<h3>First: a script tag</h3>
-			<p>Since GSAP is a JavaScript library, you first need to bring it into your code. The easiest way is with a <span class="inline-code">&lt;script&gt;</span> tag at the end of your HTML <span class="inline-code">&lt;body&gt;</span>. It helps you quickly get started, plus it loads fast and is widely cached around the internet&mdash;many websites use it. The <a href="https://greensock.com/gsap/" target="_blank">GreenSock homepage</a> has the most current source link.</p>
-			<p>The animation on this page uses:<br /> <span class="inline-code">&lt;script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"&gt;&lt;/script&gt;</span></p>
+			<p>Since GSAP is a JavaScript library, you first need to bring it into your code. The easiest way is with a <span class="inline-code">&lt;script&gt;</span> tag at the end of your HTML <span class="inline-code">&lt;body&gt;</span>. This is a quick way to get started, plus it loads fast and is widely cached around the internet&mdash;many websites use it. The <a href="https://greensock.com/gsap/" target="_blank">GreenSock homepage</a> has the most current source link.</p>
+			<p>The animations on this page uses:<br /> <span class="inline-code">&lt;script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"&gt;&lt;/script&gt;</span></p>
 	
 		<h3>Second: tweens and timelines</h3>
 		<p><b>Tweens:</b></p>
@@ -90,15 +90,16 @@
 			</li>
 			<li><span style="color: #ff4d00;">The Target</span>: The object that you want to animate, like a DOM object or image. In the basic tween example above, ".gsap-logo" is an element in the HTML with a class of <span class="inline-code">.gsap-logo</span>.
 					<p class="gsap-note">
-					Don't forget to reference classes with <span class="inline-code">".[class name]"</span> and ids with <span class="inline-code">"#[id name]"</span> (you must include the "#" for ids).
+					In your tweens, don't forget to reference classes with <span class="inline-code">".[class name]"</span> and ids with <span class="inline-code">"#[id name]"</span> (you must include the "#" for ids).
 					</p>
 			</li>
-			<li><span style="color: #73f8fa;">The Variables</span>: The properties of the element that you want to change or animate. These can correlate with CSS properties. GSAP also offers special properties like <span class="inline-code">duration</span> or <span class="inline-code">onComplete</span>. In the basic tween example above, the target element will move to the right (x-axis) by 800 pixels. It will take two seconds to complete.</li>
+			<li><span style="color: #73f8fa;">The Variables</span>: The properties of the element that you want to change or animate. These can correlate with CSS properties. GSAP also offers special properties like <span class="inline-code">duration</span> or <span class="inline-code">onComplete</span>. In the basic tween example above, the target element will move from its starting position of -1000px (x-axis) to its final position defined in the CSS. It will also take five seconds to complete.</li>
 		</ul>
 		<p><b>Timelines:</b></p>
 		<p>A timeline is a sequence of tweens. It lets you piece together individual tweens in a specific order and easily control their timings. This is a simple way to create a cohesive series of animations. By default, each tween in a timeline starts after its predecessor ends, so they play one after another. You could accomplish the same cohesive animation with a series of individual tweens. However, without a timeline, you might need to add complicated <span class="inline-code">duration</span> and <span class="inline-code">delay</span> variables for each tween to produce your desired result. This could become confusing as you add more and more tweens. Timelines simplify this entire process.</p>
 		<img src="Header_items_gif.gif" alt="GIF of the header elements bouncing into view" style="height: 100px; border: 1px solid white;"/>
 		<p>Another benefit of timelines is that you can control the entire timeline as a singular entity. Each tween within the timeline is an individual animation, but the entire timeline can also be controlled. For example, you could reverse the timeline so that it plays backwards, or in reverse.</p>
+		<p>See the <a href="#TimelineExample">Timeline Animation Example</a> below to learn how the animation in the above GIF was created.</p>
 	
 	<h2>Tween Animation Example</h2>
 	<p>This section explains a tween animation on this page: the GSAP logo sliding into the screen.</p>
@@ -115,7 +116,7 @@
 			<li>The <span class="inline-code">x</span> property starts the tween at -1000 pixels from it's final position. The image moves from left to right along the x-axis to it's final position. The duration is 5 seconds, so it takes 5 seconds for the animation to complete. The <span class="inline-code">ease</span> variable makes the logo look like it's jostling or jerking into position. GSAP uses <a href="https://greensock.com/docs/v3/Eases" target="_blank">this ease variable</a> to make it seem like the animation has actual momentum &ndash; like there is weight behind it. <span class="inline-code">ease</span> is one of the easiest ways to enhance your animations, giving the animation and your site more character.</li>
 		</ul>
 	</p>
-
+	<a name="TimelineExample"></a>
 	<h2>Timeline Animation Example</h2>
 	<p>This section explains a timeline animation on this page: the navigation options jumping into position one-by-one.</p>
 	<img src="Header_items_gif.gif" alt="GIF of the header elements bouncing into view" style="height: 100px; border: 1px solid white;"/>
