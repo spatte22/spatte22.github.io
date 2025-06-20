@@ -1,0 +1,2347 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice Plus</title>
+    <link href="../../stylesheetHome.css" rel="stylesheet" type="text/css" />
+	<link href="voiceplus-stylesheet.css" rel="stylesheet" type="text/css" />
+	<link href="prism.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="../../images/S.png" />  
+    <meta name="description" content="A set of documents explaining a contact center product for phone calls." >
+    <meta name="keywords" content="Sean Patterson,technical writer" >
+    <meta name="author" content="Sean Patterson" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body>
+<div class="home-body-container">
+
+    <div class="header">
+    <div class="header-items">
+        <div class="header-logo" id="one">
+            <a href="index.html">Sean Patterson</a>
+        </div>
+        <div class="header-nav">
+        <ul>
+            <li id="two">
+                <a href="../../index.html">Home</a>
+            </li>
+			<li id="three">
+				<a href="../../portfolio.html">Portfolio</a>
+			</li>
+            <li id="four">
+                <a href="../../resume.html">Resume</a>
+            </li>
+            <li id="five">
+                <a href="../../contact.html"> Contact</a>
+            </li>
+        </ul>
+        </div>
+    </div> <!-- closes header-items -->
+    </div> <!-- close header -->
+<div class="voiceplus-orange">
+<div class="voiceplus-wrapper">
+	<div class="voiceplus-h1">Voice Plus</div>
+	<p>
+	The following tabs show a series of documentation pages for the Voice Plus product. Each tab represents a separate page.
+	</p>
+	<p class="voiceplus-note">
+	Certain content in the tabs below is redacted for privacy reasons, like media or information about certain components.
+	</p>
+	
+	<!-- Tabs -->
+	<div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button active" onclick="showTab(event, 'overview')">Overview</button>
+            <button class="tab-button" onclick="showTab(event, 'setup')">Set Up Voice Plus</button>
+            <button class="tab-button" onclick="showTab(event, 'callflowdesigner')">Call Flow Designer</button>
+            <button class="tab-button" onclick="showTab(event, 'managecallflows')">Manage Call Flows</button>
+			<button class="tab-button" onclick="showTab(event, 'callflowcustomizations')">Call Flow Customizations</button>
+        </div>
+
+        <div class="tab-content">
+            <div id="overview" class="tab-pane active">
+				<h1>Voice Plus</h1>
+<p>
+  Voice Plus is the traditional channel for phone calls, plus all the other features
+  that Eltropy provides. Not only can agents handle a phone call, they can also
+  do things like send text messages, perform a Remote Check Deposit, or co-browse
+  with a contact while on the call. The ability to use Eltropy features while on
+  a call expands your ability to assist contacts and meet their needs.&nbsp;
+</p>
+<p>
+  Voice Plus offers all the standard phone call features, such as:
+</p>
+<ul>
+  <li>Call controls like mute and hold</li>
+  <li>Conference calls</li>
+  <li>Voicemail</li>
+</ul>
+<p>It also offers contact center features:</p>
+<ul>
+  <li>Warm and cold transfers</li>
+  <li>Callbacks</li>
+  <li>Supervisor barge-in</li>
+  <li>Call recording and transcripts</li>
+  <li>After-call work (applying tags and notes)</li>
+</ul>
+<p>
+  Additionally, you have options for reporting. The Live! dashboard lets users
+  view real-time data, and your Reports and Insights modules let you obtain historical
+  data.&nbsp;
+</p>
+<h2 id="">Artificial Intelligence (AI) with Voice Plus</h2>
+<p>You have two options for utilizing AI with voice calls:</p>
+<ul>
+  <li>
+    <strong>Analyze your voice interactions to generate useful insights</strong><br>
+    Along with interactions through other channels,
+    <a href="#" target="_blank" rel="noopener noreferrer">AI Intelligence</a>
+    can analyze your voice calls and produce data about the interaction.
+  </li>
+  <li>
+    <strong>Handle voice calls with a voice AI agent</strong><br>
+    <a href="#" target="_blank" rel="noopener noreferrer">Voice AI agents</a>
+    can handle the bulk of contacts' simpler issues. This opens up bandwidth
+    for human agents to handle more complex issues. If the AI agent is unable
+    to satisfactorily resolve an issue, the contact can transfer to a human agent.
+  </li>
+</ul>
+<h2 id="">Voice Call Flows</h2>
+<p>
+  Voice calls route through your system using a call flow. A call flow is like
+  a phone menu system or IVR. The call flow works with your skill based routing
+  setup to connect incoming callers with the best agent to handle their request.
+  It also lets you add customizations to the phone menu, like offering callbacks
+  for long queue times. You create a call flow in the
+  <a href="#" target="_blank" rel="noopener noreferrer">Call Flow Designer</a>.&nbsp;
+</p>
+<div class="notification-tip">
+  <strong><p>Tip</strong>:</p>
+  <p>Consider what happens when a contact starts a chat through the Conversations
+  Panel. They open the panel, possibly verify their phone number, then select a
+  queue. At this point, your skill based routing (SBR) takes the request and routes
+  it to the most-appropriate agent. The system takes care of the routing according
+  to your SBR setup.</p>
+  <p>
+    For voice calls, a call flow gives you granular control over this routing
+    experience. You can play messages to the caller, offer a menu system, and
+    so forth.
+  </p>
+</div>
+<h2 id="">Contacts Using Private Numbers</h2>
+<p>
+  Mobile devices often have a setting for the owner to hide their personal information
+  from caller ID. This makes the number Private or Unknown. Eltropy accepts calls
+  from these numbers, and will handle them as anonymous contacts. This means that:
+</p>
+<ul class="ak-ul">
+  <li>Agents start the interaction with a limited feature set</li>
+  <li>
+    Agents need to
+    <a href="#" target="_blank" rel="noopener noreferrer">verify the contact</a>
+  </li>
+  <li>
+    The contact won’t be saved in your system unless the agent verifies their
+    number
+  </li>
+</ul>
+<h2 id="">International Phone Calls</h2>
+<p>
+  Eltropy generally supports calls to countries outside the USA. Refer to the
+  <a href="#" target="_blank" rel="noopener noreferrer">International Phone Numbers</a>
+  page for more information.
+</p>
+<p>
+  <a name="ExternalPhoneNumbers"></a>
+</p>
+<h2 id="">External Phone Numbers</h2>
+<p>
+  There are scenarios where you may repeatedly receive calls from an external phone
+  system <u>into</u> your Voice Plus setup, or repeatedly
+  transfer calls to an external system
+  <u>from</u> your Voice Plus setup. For example, a
+  credit card company may frequently send callers over to you to handle issues.
+  Similarly, you may be doing the same; sending callers over to a credit card company.
+  You want to be sure that your Eltropy system handles these scenarios separate
+  from standard calls from contacts:
+</p>
+<ul>
+  <li>
+    <strong>Repeated inbound calls or transfers</strong><br>
+    By default, Eltropy treats these like any other inbound call. This is problematic
+    because even though the actual caller is different each time, Eltropy is
+    receiving the transfer from the
+    <u>same phone number</u>. For example, a
+    credit card company's Billing department may repeatedly send callers to you.
+    Your Eltropy system uses phone numbers as the primary identifier for contacts,
+    so the system thinks that it's repeatedly receiving calls from the same contact,
+    just because they're coming from the same Billing department. This causes
+    two problems:
+    <ul>
+      <li>
+        The actual caller that is being transferred does not have its own
+        contact entry in your Eltropy system.&nbsp;
+      </li>
+      <li>
+        This skews your reporting data since individual phone numbers - ie:
+        the Billing department - seem to be making a large number of calls.
+      </li>
+    </ul>
+    <br>
+    To correct this issue, you can
+    <a href="#" target="_blank" rel="noopener noreferrer">enter these external phone numbers into your Voice Plus settings</a>.
+    Whenever the system receives a call from these external phone numbers, they're
+    treated as anonymous calls. This allows the agent to verify the phone number
+    and enter the contact's details, creating a new contact in your system.
+  </li>
+  <li>
+    <strong>Outbound calls or transfers</strong><br>
+    In scenarios where your agents are sending callers to a specific phone number
+    outside your Voice Plus system, the external system always receives calls from
+    your Voice Plus phone number handling the call. Also, when transferring calls
+    externally, agents can dial a specific number, or they can select an external
+    number. External numbers display as options if you
+    <a href="#" target="_blank" rel="noopener noreferrer">add them in your Voice Plus settings</a>.
+  </li>
+</ul>
+            </div>
+
+            <div id="setup" class="tab-pane">
+<h1>Set Up Voice Plus</h1>
+<h2 id="">Pre-Requisites</h2>
+<ol>
+  <li>
+    Configure the necessary network settings explained on the
+    <a href="#">networking and firewall</a>&nbsp;page.
+    This includes whitelisting the necessary IPs and FQDNs to allow voice traffic.
+  </li>
+  <li>
+    Procure at least one phone number from the Twilio voice provider. Create
+    a ticket with Eltropy Support or contact your Eltropy representative to assist
+    you with this.
+  </li>
+</ol>
+<div class="notification-note">
+  <p><strong>Note</strong>:</p>
+  <P>Before configuring the Twilio number in Eltropy, ensure that necessary features
+  like Audio Management and Workflow Manager are enabled in the Admin Portal with
+  the help of your Eltropy representative.</p>
+</div>
+<h2 id="">Step 1: Configure Your Skill Based Routing</h2>
+<p>
+  A call flow lets you customize what happens when a caller initially calls you,
+  like offering a menu system. In addition to this menu system, the Eltropy system
+  must route the caller to the most-appropriate agent to handle their request.
+  Your skill based routing components allow your system to do so. This includes
+  components like departments, queues, routing profiles, and so on.
+</p>
+<p>
+  If you have an existing SBR setup, you may need to review this setup and incorporate
+  the voice channel.
+</p>
+<p>
+  Review the<a href="#"> Contact Routing page</a>
+  to learn about the different SBR-related components. Your SBR setup is unique
+  for your business structure and use-cases, therefore setting up or editing SBR
+  will be different for every domain.
+</p>
+<p>At a minimum, be sure you have the following set up:</p>
+<ul>
+  <li>
+    <a href="#">Departments</a>
+  </li>
+  <li>
+    <a href="#">Queues</a>
+  </li>
+  <li>
+    <a href="#">Hours of operation</a>
+  </li>
+  <li>
+    <a href="#">Routing profiles + proficiencies</a>
+  </li>
+  <li>
+    <a href="#">Conversation permissions</a>
+  </li>
+</ul>
+<h2 id="">
+  Step 2: Add Countries for International Phone Calls (Optional)
+</h2>
+<p>
+  If you want to be able to call – or receive calls – from phone numbers outside
+  the USA, you must<a href="#"> add your desired countries in your domain settings</a>.
+</p>
+<div class="notification-note">
+  <p><strong>Note</strong>:</p>
+  <p>Even though Puerto Rico uses the +1 country code, you cannot communicate to phone
+  numbers from Puerto Rico by default. An Eltropy representative must enable Puerto
+  Rico for your domain.</p>
+</div>
+<h2 id="">Step 3: Create a Voice Plus Call Flow</h2>
+<p>
+  A call flow lets you control how a call routes through your system, like a phone
+  menu system or IVR. You create a flow in the Call Flow Designer.
+</p>
+<p>
+  <strong>Pre-requisite</strong>: Before you create a call flow, review the<a href="#"> Call flow designer page</a>.
+  Review the call blocks and what they’re able to do. You may also want to plan
+  your call flow or create a sample diagram.
+</p>
+<p>
+  <a href="#">Follow the instructions here to create a new call flow</a>.
+  You may want to work with your Eltropy representative for guidance. Also, you
+  may want to create the flow in a UAT environment. This will allow you to test
+  the flow and your voice settings before going live.
+</p>
+<p>Be sure to test the call flow.</p>
+<div class="notification-example">
+  <p><strong>For example</strong>:</p>
+  <p>A contact calls your support line and selects an option from your IVR menu for
+  loan services. This flow could look like this:</p>
+  <ol>
+    <li>
+      <strong>IVR Prompt plays</strong>: "Press 1 for Loan Services, Press
+      2 for Card Services."
+    </li>
+    <li>
+      <strong>Member Presses 1</strong>: The call is routed to the Loan Services
+      queue.
+      <ol>
+        <li>
+          <strong>Queue Checks</strong> for the following.
+          <ul>
+            <li>
+              <strong>Business Hours</strong>: Check if the Loan Services
+              queue is within business hours.
+            </li>
+            <li>
+              <strong>Online Agents</strong>: Check if there are online
+              agents available.
+            </li>
+            <li>
+              <strong>Queue Length</strong>: Check if the queue length
+              is less than 3.
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <strong>Routing</strong>: If all checks pass, route the call to an agent<strong>.</strong>
+    </li>
+    <li>
+      If the queue is overloaded, offer the contact options to request a callback
+      or leave a voicemail. For this scenario, the AI Agent is not configured
+      in the call flow.
+    </li>
+  </ol>
+</div>
+<h2 id="">Step 4: Configure Your General Voice Settings</h2>
+<p>
+  Once you have the phone number configured and the call flows are created, mapping
+  the call flow is necessary for managing the inbound and outbound calls. Once
+  done, you need to configure phone number for inbound calling in the voice settings.
+</p>
+<p>Follow the steps below to configure voice settings.</p>
+<ol>
+  <li>
+    Navigate to <span class="interface">Conversation settings</span>
+    <img class="inline-icon" src="/guide-media/01JPBC9MJP6PN7MFJCF23GRYM5" alt="ConversationsettingsButton.png">.
+  </li>
+  <li>
+    Click <span class="interface">Voice settings</span>.
+  </li>
+  <li>
+    Click the <span class="interface">General Setting</span> tab.
+  </li>
+  <li>
+    (Optional) If you want to record all voice calls, enable
+    <span class="fieldName">Voice recording.</span>
+  </li>
+  <li>
+    (Optional) If you want to skip the pop up that prompts agents to configure
+    their audio, enable
+    <span class="fieldName">Skip incoming call preview</span>. The preview screen
+    lets an agent ensure their audio are configured. Once the agent has configured
+    their audio devices,
+    <u>they typically won't need to do it for every call</u>.
+  </li>
+  <li>
+    (Optional) If you want to allow agents to make an outbound call to 911:
+    <ol>
+      <li>
+        Enable <span class="fieldName">Emergency Calling</span>.
+      </li>
+      <li>
+        For <span class="fieldName">Emergency call notification to users</span>,
+        add a phone number that will receive a text message from Eltropy
+        when an agent makes a 911 call. This informs the owner of this phone
+        number that the 911 call was made.
+      </li>
+      <li>
+        Enter the text message you want to send in
+        <span class="fieldName">Emergency call text template</span>.
+      </li>
+    </ol>
+  </li>
+  <li>
+    Click <span class="interface">Save</span>.<br>
+    <img src="/guide-media/01JQDESD1YXYW64Y9T5ZTG8SRG" alt="Redacted GIF for privacy" width="500" height="459">
+  </li>
+</ol>
+<h2 id="">Step 5: Add Phone Numbers</h2>
+<p>
+  You must enter the phone number(s) that you procured from Twilio. This allows
+  your domain to make calls and receive calls using your Twilio numbers.
+</p>
+<ol>
+  <li>
+    Navigate to <span class="interface">Conversation settings</span>
+    <img class="inline-icon" src="/guide-media/01JPBC9MJP6PN7MFJCF23GRYM5" alt="ConversationsettingsButton.png">.
+  </li>
+  <li>
+    Click <span class="interface">Voice settings</span>.
+  </li>
+  <li>
+    Click the <span class="interface">Phone numbers</span> tab.
+  </li>
+  <li>
+    Click
+    <img src="/guide-media/01JQDER1GE1TDX8RQC3M8CCVB7" alt="NewPhoneNumberButton.png" class="inlie-icon">.
+  </li>
+  <li>
+    Add a name for the number, like Collections, Lending, or Contact Center.
+  </li>
+  <li>Enter the Twilio phone number.</li>
+  <li>
+    Select your desired inbound and outbound call flows. You can optionally choose
+    <span class="fieldValue">Dynamic Routing</span>, which does not use a call
+    flow. Instead, the system routes the phone call like interaction requests
+    from other channels; it uses your skill based routing setup to route the
+    call to the most appropriate agent.
+  </li>
+  <li>
+    (Optional) Enter an address for your Emergency calling settings. If the agent
+    makes an emergency call, this address is associated with the number, and
+    is therefore accessible to the 911 call handler.<br>
+    <img src="/guide-media/01JQDEREKQ5BRK5QDCNSTZAJ5H" alt="Redacted GIF for privacy" width="550" height="298">
+  </li>
+  <li>
+    Click <span class="interface">Save</span>.
+  </li>
+</ol>
+<p>
+  <a name="AddExternalNumbers"></a>
+</p>
+<h2 id="">Step 6: Add External Numbers (Optional)</h2>
+<p>
+  <a href="#" target="_blank" rel="noopener noreferrer">External numbers</a>
+  are for inbound or outbound transfers. You may want to add these numbers in your
+  Voice Plus settings to ensure that the system handles them appropriately.
+</p>
+<ol>
+  <li>
+    Navigate to <span class="interface">Conversation settings</span>
+    <img class="inline-icon" src="/guide-media/01JPBC9MJP6PN7MFJCF23GRYM5" alt="ConversationsettingsButton.png">.
+  </li>
+  <li>
+    Click <span class="interface">Voice settings</span>.
+  </li>
+  <li>
+    Click the <span class="interface">External Phone Numbers</span> tab.
+  </li>
+  <li>
+    Select either <span class="interface">Inbound transfer</span> or
+    <span class="interface">Outbound transfer</span>, depending on the type of
+    external number you want to add.
+  </li>
+  <li>
+    Click
+    <img style="height: 1em;" src="/guide-media/01JQDET9MKF7DBYKF1GCHR5Y6W" alt="Redacted image for privacy">.
+  </li>
+  <li>Add name for the external number.</li>
+  <li>Add the company name.</li>
+  <li>Add the phone number.</li>
+  <li>
+    Click <span class="interface">Save</span>.<br>
+    <div class="notification-note">
+      <p><strong>Note</strong>:</p>
+      <p>You can also edit or delete external phone number by clicking on the
+      three-dots for an external number.</p>
+    </div>
+  </li>
+</ol>
+            </div>
+
+            <div id="callflowdesigner" class="tab-pane">
+<h1>Call Flow Designer</h1>
+<p>
+  The call flow designer lets you build an interactive menu system for voice calls.
+  This allows you to customize the contact’s experience for both inbound and outbound
+  voice calls. If call flows are enabled for your domain, you can access the call
+  flow designer from the main navigation bar under <strong>Flows</strong>.
+</p>
+<p>Key capabilities of call flows are:</p>
+<ul>
+  <li>
+    Providing navigation options so the contact can choose who they want to speak
+    with
+  </li>
+  <li>Offering AI voice bots and other self-service options</li>
+  <li>
+    Allowing multiple calls to occur through a phone number at the same time
+  </li>
+  <li>
+    Generally ensuring that the agent most fit for the issue assists their callers
+  </li>
+</ul>
+<div class="expandable">
+  <div class="expandable-header">View a list of typical features of a phone menu system</div>
+  <div class="expandable-content">
+    <ul>
+      <li>
+        A DTMF menu system that lets callers choose which department they
+        want to speak with by pressing a number. For example,
+        <em>“Press 1 for Sales, press 2 for Technical Support, press 3 for Billing; for all other issues, press 4”.</em>
+      </li>
+      <li>
+        Self-service options that let callers perform basic tasks like resetting
+        an account password, accessing an account balance, or paying a bill.
+        The market is already beginning to adopt AI bots to help contacts
+        accomplish these tasks.
+      </li>
+      <li>
+        “Quality of life” features that make the phone call experience more
+        convenient for callers. This may include on-hold music, holding the
+        caller’s place in the call queue while waiting for an agent, leaving
+        voicemails, offering surveys, and so forth.
+      </li>
+      <li>
+        The ability to pull-in information about the caller from a CRM (or
+        similar) system. This lets the system authenticate callers, display
+        information to agents, and so forth.
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- closes expandable -->
+<p>
+  Building a call flow is like creating a diagram (the diagram being the call flow).
+  The designer lets you build out each step of the menu system just like a diagram.
+  You drag and drop blocks onto the canvas which you connect one after another.
+  Each block performs a task or action like playing on-hold music, transferring
+  the call, making an API call, and so forth. When the contact calls one of your
+  phone numbers, they start the call flow. Then, the contact moves through the
+  flow block-by-block. When they “arrive” at a block, the block fires and performs
+  its task or functionality.
+</p>
+<p>Here is a basic example of a call flow:</p>
+<p>
+  <img src="/guide-media/01JPBBTPW0KVPGRTXTAC6TKDEQ" alt="Redacted image for privacy">
+</p>
+<p>
+  You can learn more about each call block in the
+  <a href="#CallFlowBlocks">Call Flow Blocks</a> section of this page.
+</p>
+<p>
+  For instructions on creating and managing call flows, see the<a href="/hc/en-us/articles/39410999502355"> Manage Call Flows page</a>.
+</p>
+<h2 id="">Key Facts About Call Flows and the Call Flow Designer</h2>
+<ul>
+  <li>Call flows are called “projects”.</li>
+  <li>
+    You can create both inbound and outbound call flows. A phone number can be
+    assigned one inbound flow and one outbound flow.
+  </li>
+  <li>
+    After creating a call flow, you assign it to a phone number in
+    <span class="interface">Conversation settings <img class="inline-icon" src="/guide-media/01JPBC9MJP6PN7MFJCF23GRYM5" alt="ConversationsettingsButton.png"></span>
+    &gt; <span class="interface">Voice settings</span> &gt;
+    <span class="interface">Phone Numbers</span>.
+  </li>
+  <li>
+    You can create call flows for both English and Spanish languages.
+  </li>
+  <li>
+    Single connectors between blocks are called paths. A group of blocks and
+    paths connected together is called a pathway.
+  </li>
+  <li>
+    Call flows are not yet fully integrated with AI capabilities. If you have
+    AI set up for your domain, you can use the IVA Transfer block to send the
+    contact from the call flow IVR to interact with an IVA.
+  </li>
+</ul>
+<h2 id="">Call Flow Interface</h2>
+<p>
+  The following is the interface of a call flow. The numbers in the screenshot
+  indicate key components of the interface. The table under the screenshot explains
+  these key components.
+</p>
+<p>
+  <img src="/guide-media/01JPBBWKQPFPH7FNYD76DBAVVM" alt="Redacted image for prviacy">
+</p>
+
+  <table style="width: 100%;border:1px solid black;">
+    <tbody>
+      <tr>
+        <th style="text-align: center;">
+          <p><strong>Interface Element</strong><p>
+        </th>
+        <th style="text-align: center;">
+          <p><strong>Details</strong></p>
+        </th>
+      </tr>
+      <tr>
+        <td style="text-align: center;">1 - Back button</td>
+        <td>
+          <p>Lets you exit from editing a call flow and return to the list
+          of call flow projects. You do not need to save changes you made
+          to a call flow, changes save automatically. Any changes you make
+          are not updated to the production version of a flow until you
+          publish it.</p>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">2 - Variables</td>
+        <td>
+          <p>
+            If you’re familiar with programming concepts – or message
+            template tags like <span class="fieldValue">{{.firstName}}</span>
+            – a variable is like an empty box or container that can hold
+            any value. Variables help you design dynamic call flows.
+          </p>
+          <p>
+            Call flows come with a default set of variables. You can
+            also create custom variables. Both appear in this Variables
+            list, which gives you quick visibility and access to manage
+            variables on-demand.
+          </p>
+          <p>
+            You can only delete variables that you’ve created in the
+            call flow. Do so by hovering over the variable in this list
+            and clicking the trash can.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">3 - Blocks menu</td>
+        <td>
+          The blocks menu lets you drag and drop blocks onto the canvas.
+          The blocks are organized into the following categories:
+          <ul>
+            <li>
+              <strong>Output</strong>: Blocks that play an output to
+              the caller.
+            </li>
+            <li>
+              <strong>Input</strong>: Blocks that prompt an input from
+              the contact like pressing a number on their keypad.
+            </li>
+            <li>
+              <strong>Advanced</strong>: Blocks that let you add conditional
+              logic to the flow, like setting variables or <em>if…else</em>
+              statements.
+            </li>
+            <li>
+              <strong>Code</strong>: Blocks for adding custom JavaScript
+              or REST API calls.
+            </li>
+            <li>
+              <strong>Queue management</strong>: Blocks for performing
+              all types of tasks around a queue and active calls, like
+              call transfers, checking business hours, or requesting
+              a callback.
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">4 - Action buttons</td>
+        <td>
+          <p>
+            <strong>Versions</strong>: Displays a list of all published
+            versions of the call flow. You can revert your production
+            flow to a specific version or restore the call flow designer
+            to a specific version for editing.
+          </p>
+          <p>
+            <strong>Test</strong>: Lets you test the flow that you’re
+            actively editing. This lets you prepare a flow to be published
+            and used in production for your live calls.
+          </p>
+          <p>
+            <strong>Publish</strong>: Finalizes any changes you’ve made
+            to the call flow and creates a new version. Any phone numbers
+            using the call flow you publish automatically start using
+            the newly-published call flow version.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">5 - Start button</td>
+        <td>
+          <p>
+            Indicates the starting point of your call flow. The first
+            block you connect to this button is the first block that
+            fires when the call flow runs.
+          </p>
+          <p>
+            This also gives you another method of testing the call flow.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">6 - Canvas</td>
+        <td>
+          The canvas is where you drag-and-drop call blocks and build the
+          call flow. You can click the canvas and drag your mouse around
+          to move around your flow. You can also right-click the canvas
+          to perform quick actions.
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">7 - Block properties</td>
+        <td>
+          When you click the properties within a call block, the properties
+          editor opens on the right-side of the canvas. This lets you easily
+          configure the block’s properties like entering text for the AI
+          voice to speak, adding menu options, and so forth.<br>
+          Each call block have different properties. For example, the
+          <span class="interface">Select Queue</span> block only has a
+          drop-down select for you to select a queue, compared to the
+          <span class="interface">Options</span> block, which lets you
+          create a menu, use different text-to-speech effects, and so forth.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<p>
+  <a name="CallFlowBlocks"></a>
+</p>
+<h2 id="">Call Flow Blocks</h2>
+<p>
+  This section provides information on each call flow block. The blocks are organized
+  into six categories by their purpose and functionality. The following sections
+  explain each block in their correlating category.
+</p>
+<h3 id="">Output Blocks</h3>
+<div class="expandable">
+  <div class="expandable-header">Speak</div>
+  <div class="expandable-content">
+    <p>
+      Plays an audio message to the contact using an AI generated voice. You
+      can enter the text that you want the voice to speak to the contact.
+    </p>
+    <p>
+      You can delete an existing text to speak by clicking the minus sign next
+      to a text.
+    </p>
+    <p>
+      Click the <span class="interface">Voice - Default</span> button to choose
+      which AI voice you want to speak the text. The default voice is the one
+      you chose in the <span class="fieldName">Default Voice</span> setting
+      when creating the flow.
+    </p>
+    <div class="notification-tip">
+      <p><strong>Tip</strong>:</p>
+      <p>You can add multiple texts to speak. If you do have multiple texts, be
+      sure to connect the paths to and/or from the individual text options
+      and not to the call block overall. See the Call block paths section of
+      this page for more information.</p>
+    </div>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">Send SMS</div>
+  <div class="expandable-content">
+    <p>
+      Sends a text message to the contact from a department you specify in
+      this block’s properties. This block has two properties, one to select
+      a specific department and the other to enter the message you want to
+      send to the contact.
+    </p>
+    <p>Examples of usage:</p>
+    <ul>
+      <li>
+        Send a text to a contact after their call finishes with a survey
+        link
+      </li>
+      <li>
+        Prompt a follow-up interaction after a call with a message like
+        <span class="fieldValue">How was your experience today?</span>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">Media</div>
+  <div class="expandable-content">
+    <p>
+      Lets you play an audio file to the contact. You can upload an MP3 or
+      WAV file from your computer or link to a file stored on the internet.
+      The maximum file size that you can upload is 20MB.
+    </p>
+    <p>
+      Be sure to consider the following when uploading a media file, especially
+      when the file is used for on-hold music:
+    </p>
+    <p>
+      Audio played over the telephone network is transcoded to a format the
+      telephone network understands. Regardless of the quality of the file,
+      the system transcodes the file so it plays correctly. This may result
+      in lower quality because the telephone network does not support high
+      bitrate audio. High bitrate, lossy encoded files, such as 128kbps mp3
+      files, take longer to transcode and potentially sound worse than files
+      that are in lossless 8kbps formats. This is due to the inevitable degradation
+      that occurs when converting from lossy compressed formats and the processing
+      involved in converting from higher bit rates to low bit rates. Playing
+      a file that is longer than 40 minutes can result in a dropped call. If
+      you need to play a file longer than 40 minutes, consider splitting it
+      up into smaller chunks.
+    </p>
+  </div>
+</div>
+<!-- closes expandable -->
+<h3 id="">Input Blocks</h3>
+<div class="expandable">
+  <div class="expandable-header">Options</div>
+  <div class="expandable-content">
+    <p>
+      <span class="interface">Options</span> lets you present a set of menu
+      options to the caller. They can make a selection with their keypad.
+    </p>
+    <p>
+      Compared to other similar options like
+      <span class="interface">Queues</span>, this block lets you create menus
+      that are more flexible; you can enter the prompt that plays for each
+      option, the button the option is associated with, and so forth. You are
+      not obligated to provide options for 1, 2, 3 buttons in order; you can
+      add options for 1, 2, and 9, for example. You can also add options for
+      the * and # keys.
+    </p>
+    <p>
+      An example usage of this would be a language menu that says
+      <em>“For English, press one; para español, marca dos”</em>.
+    </p>
+    <p>Keep the following in mind when using these options:</p>
+    <ul>
+      <li>
+        If the DTMF option is configured but not connected to any subsequent
+        block, the menu will be repeated if that DTMF value is selected (applies
+        to * and #)
+      </li>
+      <li>
+        If the No Reply and No Match paths are not connected to subsequent
+        blocks, the menu will be repeated.
+      </li>
+      <li>
+        If you add options for the contact to choose a queue (or department),
+        be sure to connect that option with a
+        <span class="interface">Select Queue</span> block then a
+        <span class="interface">Transfer to queue</span> block. This is because
+        the options menu only presents a list of options; the other two blocks
+        handle the actually routing of the call.
+      </li>
+    </ul>
+    <div class="notification-tip">
+      <P><strong>Tip</strong>:</p>
+      <P>Be careful with using * and # options. To make sure the text-to-speech
+      says exactly what you want to say, you may want to spell out the word
+      instead of using the actual character. For example, "<em>Press star to repeat the menu options</em>".</p>&nbsp;
+      <img src="/guide-media/01JSHTSJZGDACBQ7CGH48WWQB1" alt="Redacted image for privacy" width="351" height="155">
+    </div>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">Options Group</div>
+  <div class="expandable-content">
+    <p>
+      Lets you dynamically create a menu of options from a variable value.
+      This block is typically used with the <span class="interface">API</span>
+      block. You can make an API call that returns a type of list or set of
+      fields. When that response is captured in a variable, you can reference
+      it in this <span class="interface">Options Group</span> block, which
+      presents the options to the contact.
+    </p>
+    <p>To create a menu with this block:</p>
+    <ol>
+      <li>
+        Make an API call to retrieve a set of options. This must occur in
+        the flow before you want to present the menu.
+      </li>
+      <li>Capture the response as a variable.</li>
+      <li>
+        Add an <span class="interface">Options Group</span> block in the
+        flow when you want to present the menu.
+      </li>
+      <li>
+        In the <span class="interface">Options Group</span> properties, select
+        the variable with which you captured the API response in the
+        <span class="fieldName">Create callflow options from variable</span>
+        drop-down.
+      </li>
+      <li>
+        For <span class="fieldName">Label key</span>, enter the JSON key
+        from which you want to generate the menu options. This key should
+        be the name of the object in the returned block of JSON.
+      </li>
+    </ol>
+    <div class="notification-example">
+      <strong>For example</strong>:<br>
+      You make an API call that returns a list of external phone numbers. From
+      this list of numbers, you present each phone number as an option in a
+      menu. When the contact makes a selection, you use the selected number
+      in an <span class="interface">External transfer</span> block. The system
+      makes an outbound call to the number and transfers the contact out of
+      the system to the external number.
+    </div>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">Queues</div>
+  <div class="expandable-content">
+    <p>
+      <span class="interface">Queues</span> lets you present a menu of your
+      external queues to the caller. You select which queues you want to populate
+      the menu with, and the block automatically plays the prompt
+      <em>“Press one for &lt;queue 1&gt;, press two for &lt;queue 2&gt;…”</em>.
+      The queues you add as menu options are played in consecutive order, starting
+      with one. This is different from <span class="interface">Options</span>,
+      which lets you add options for whichever key you’d like.
+    </p>
+    <p>
+      This block is similar to <span class="interface">Options</span>, however
+      it’s built to specifically provide a menu of queues.
+    </p>
+    <p>Keep in mind the following when using this block:</p>
+    <ul>
+      <li>
+        Be sure to connect each queue option with a path to a
+        <span class="interface">Transfer to queue</span> block. This
+        <span class="interface">Queues</span> block handles the queue selection
+        and text-to-speech, however you still need to use a
+        <span class="interface">Transfer to queue</span> block for the system
+        to move the call into the selected queue.&nbsp;
+      </li>
+      <li>
+        If you enable
+        <span class="fieldName">Dynamically show available queues</span>
+        in this block's properties, the caller will only be offered queues
+        that have agents online who can handle this queue. This way, they
+        don't select a queue with no agents online, leading to a dead end.
+      </li>
+    </ul>
+    <p>
+      <strong>Error Paths</strong>:
+    </p>
+    <ul>
+      <li>
+        <strong>No Reply</strong>: This path is taken if the menu prompt
+        plays and the contact does not enter a value during a specified amount
+        of time. Enter the amount of time you want the menu to wait before
+        taking this path. Best practice is to wait 5-10 seconds. You can
+        also choose which path should be taken if the amount of time specified
+        here passes.
+      </li>
+      <li>
+        <strong>No Match</strong>: This path is taken when the contact presses
+        a key that does not match an option that you’ve configured. For example,
+        if you add three queues, acceptable key presses are 1, 2, or 3. If
+        the contact presses 9, which does not match 1, 2, or 3, this error
+        path is taken.
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- closes expandable-->
+<div class="expandable">
+  <div class="expandable-header">Voicemail</div>
+  <div class="expandable-content">
+    <p>
+      Sends the contact to an
+      <a href="#">offline queue</a> that you
+      created, letting them leave a voicemail message. The voicemail appears
+      in the inbox of each agent who is assigned the offline queue in their
+      routing profile.
+    </p>
+    <p>
+      As the contact moves through the call flow paths, when it arrives at
+      this block and this block fires, it first plays an audible <em>beep</em>
+      to the contact, then begins recording the contact-side microphone for
+      the amount of time specified in the
+      <span class="interface">Duration (seconds)</span> property. Before this
+      block, you may want to add a <span class="interface">Speak</span> block
+      that informs the contact to leave a message after the beep.
+    </p>
+    <p>
+      In addition to selecting a specific offline queue, you can configure
+      two additional properties:
+    </p>
+    <ul>
+      <li>
+        <strong>Timeout (seconds)</strong>: The amount of silence that the
+        system waits for before automatically ending the voicemail message
+        and the call.
+      </li>
+      <li>
+        <strong>Duration (seconds)</strong>: The amount of time that contacts
+        have to record a voicemail.
+      </li>
+    </ul>
+    <p>
+      Additionally, you can continue the call after this block. For example,
+      you may want to use a Speak block that provides one last statement after
+      the contact leaves a voicemail. If you continue the call flow after this
+      block, the call moves to the next block after the amount of time you
+      enter as the duration.
+    </p>
+    <p>
+      Lastly, a voicemail is not offered for a missed callback request. When
+      the system offers an agent a callback request, if no agents accept it,
+      it goes missed. A voicemail is not offered because callback requests
+      initiate an outbound call to the contact (ie: calling them back); since
+      the contact is not yet engaged on the call, they cannot leave a voicemail.
+    </p>
+  </div>
+</div>
+<h3 id="">Advanced Blocks</h3>
+<div class="expandable">
+  <div class="expandable-header">Condition</div>
+  <div class="expandable-content">
+    <p>
+      Lets you create conditional logic, like an <em>if…else</em> statement.
+      Depending on a certain condition that you set, a certain pathway can
+      be taken as a result. You can add conditions for variables, variable
+      values, logic groups, or expressions.
+    </p>
+    <p>
+      A logic group lets you create nested conditions using both
+      <strong>AND</strong> and <strong>OR</strong> blocks together. Without
+      a logic group you could have only one level of conditions (A and B and
+      C and D). With logic groups, you can use something like (A or B) and
+      (C or D).
+    </p>
+    <p>
+      An expression lets you directly write the conditions (like a code block)
+      using the logical operators, variables, and brackets.&nbsp;
+    </p>
+    <div class="notification-example">
+      <strong>For example</strong>:<br>
+      In an <span class="interface">Options</span> block, the result path of
+      <strong>No Reply</strong> leads to a <span class="interface">Set</span>
+      block. Here, you set a variable that increments +1 each time the block
+      fires. This <span class="interface">Set</span> block leads to a
+      <span class="interface">Condition</span> block. The condition is that
+      if the variable is less than or equal to 3, the contact is directed back
+      to the <span class="interface">Options</span> menu. If the variable value
+      is greater than 3, the path is taken to play a message that says
+      <em>“We weren’t able to hear your response. Please text us at 8018675309”</em>.
+    </div>
+    <p>
+      The idea is that the caller has three tries to make a selection in the
+      menu. If the system does not detect a selection three times, it plays
+      the message that prompts the caller to text the business instead.
+    </p>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">Set</div>
+  <div class="expandable-content">
+    <p>
+      Lets you set a variable value. You can create a new variable and set
+      its value, or change an existing variable’s value. If you create a new
+      variable with this block, the new variable is automatically added to
+      the Variables list on the left-side of the canvas.
+    </p>
+    <p>
+      The scope of all variables listed in the left-hand Variables section
+      is global <em>within a flow</em>. You can use and reference any variable
+      within a flow; you cannot reference variables from other flows. The exception
+      to this global scope are any variables that you set in a Javascript block.
+      Variables set in a Javascript block are limited to that specific block.
+    </p>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">End</div>
+  <div class="expandable-content">
+    <p>Ends the call.</p>
+    <p>
+      If any call block does not have a path to another block – if a block
+      is the last in a pathway – the call will automatically end after it finishes
+      firing or functioning. This means that you do not need to explicitly
+      end every pathway that you create. However, best practice is to end a
+      pathway with this <span class="interface">End</span> block, making it
+      clear that this is your desired and designed behavior.
+    </p>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">Continue waiting</div>
+  <div class="expandable-content">
+    <p>
+      Keeps the contact waiting in a queue. This block is specifically designed
+      to work with an advanced queue options flow. This flow lets you present
+      options to a contact while they're waiting in a queue. For example, they
+      can request a callback, switch to texting, or continue waiting. To continue
+      waiting, the option should connect with this block. When doing so, this
+      loops the queue waiting experience again:
+      <span class="interface">Transfer to queue</span> block → wait template
+      text-to-speech → wait music → options while waiting.&nbsp;
+    </p>
+    <p>Keep in mind the following when using this block:</p>
+    <ul>
+      <li>
+        When this block fires and loops the contact back through the queue
+        waiting experience, the contact does not lose their position in the
+        queue. This ensures that they're able to select a different option
+        while waiting in a queue, like requesting a callback, without losing
+        their spot in line.
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- closes expandable -->
+<h3 id="">Code Blocks</h3>
+<div class="expandable">
+  <div class="expandable-header">Javascript</div>
+  <div class="expandable-content">
+    <p>
+      Lets you add custom JavaScript code that runs when the block fires.
+    </p>
+    <p>
+      You can reference any variables created outside the block and are listed
+      in the left-hand Variables section. The scope of all variables listed
+      on the left-hand Variables section is global <em>within a flow</em>.
+      You can use and reference any variable within a flow; you cannot reference
+      variables from other flows. The exception to this global scope are any
+      variables that you set in a <span class="interface">Javascript</span>
+      block. Variables set in a <span class="interface">Javascript</span> block
+      are limited to that specific block.
+    </p>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">API</div>
+  <div class="expandable-content">
+    <p>
+      Lets you make a REST API call. You must enter the full URI, select the
+      verb, then add any headers, parameters, and how you want to capture the
+      response. The API you’re calling must respond with a JSON block. From
+      this block, you must capture the value of a specific JSON key in a variable.
+      In the <span class="fieldName">Capture Response</span> field, use dot
+      notation to specify which field in the response you want to capture.
+      Use the following format:
+      <span class="fieldValue">response.&lt;JSON key&gt;</span>. In the
+      <span class="fieldName">Capture Response</span> drop-down, choose which
+      variable you want to set the value to.
+    </p>
+    <p>
+      You can configure the success and failure result paths. The success path
+      is taken when the API response is able to successfully locate the JSON
+      key you specified. The failure path is taken when the key you specified
+      cannot be found.
+    </p>
+  </div>
+</div>
+<!-- closes expandable -->
+<h3 id="">Queue Management Blocks</h3>
+<div class="expandable">
+  <div class="expandable-header">Select Queue</div>
+  <div class="expandable-content">
+    <p>
+      <span class="interface">Select Queue</span> lets you create a path that
+      leads to a specific queue. For example, you could add one of these blocks
+      for each queue in an menu created with an
+      <span class="interface">Options</span> block. If a contact wants to speak
+      to a sales rep in the Sales queue, you can select the queue, check that
+      sales agents are online, then transfer the contact to the queue with
+      a <span class="interface">Transfer to queue</span> block. In this block’s
+      properties, use the drop-down to choose which queue you want to work
+      with in the path you’re creating.
+    </p>
+    <p>Keep in mind the following when using this block:</p>
+    <ul>
+      <li>
+        When you add blocks after this
+        <span class="interface">Select Queue</span> block, the subsequent
+        blocks "know" the queue that this block selected. For example, let's
+        say you added this series of blocks:
+        <span class="interface">Select Queue</span> →
+        <span class="interface">Check queue reps online</span> →
+        <span class="interface">Transfer to queue</span>. In this example,
+        the Pony Loans queue was selected. The subsequent two blocks that
+        check for reps then transfer the call keep the context that the Pony
+        Loans queue was selected.
+      </li>
+      <li>
+        You do not need to use this block after a
+        <span class="interface">Queues</span> block. This is because the
+        <span class="interface">Queues</span> block selects a queue when
+        the contact chooses one of the options.
+      </li>
+    </ul>
+    <div class="notification-tip">
+      <p><strong>Tip</strong>:</p>
+      <p>When agents manually transfer a contact from their agent workspace, that
+      is not handled by the call flow; you do not need to build that capability
+      in your call flow.</p>
+    </div>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">Check anonymous call</div>
+  <div class="expandable-content">
+    <p>
+      Checks whether the incoming call is from an anonymous contact. An anonymous
+      caller means that you don’t already have the phone number added in your
+      Eltropy system for a contact. You can put this block early in your call
+      flow to split the path between anonymous and known contacts, allowing
+      you to handle them as desired.
+    </p>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">Check holiday</div>
+  <div class="expandable-content">
+    <p>
+      Checks whether the current day is a holiday that you’ve configured for
+      your domain. This lets you set up a unique call branch for holidays.
+      For example, if it is a holiday, you can play a unique message to the
+      caller and ask them to try again tomorrow. You can set holidays in your <a href="#">out of office settings</a>.
+    </p>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">Check queue business hours</div>
+  <div class="expandable-content">
+    <p>
+      Checks the hours of operation profile assigned to a queue and determines
+      whether the current time is in or out of the profile’s hours of service.
+      The resulting paths are <strong>Yes</strong> (within hours of service)
+      or <strong>No</strong> (not within hours of service).
+    </p>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">Check queue reps online</div>
+  <div class="expandable-content">
+    <p>
+      Checks whether there are reps online who can handle contacts from a specific
+      queue.
+    </p>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">Check queue depth</div>
+  <div class="expandable-content">
+    <p>
+      Checks how many contacts are already waiting in a queue. If you are experiencing
+      high call volume and wait times are long, you can give an incoming contact
+      other options like leaving a message or requesting a callback.
+    </p>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">Transfer to queue</div>
+  <div class="expandable-content">
+    <p>
+      Places a caller in a specific queue. This block also handles what happens
+      as the contact is in the specified queue, like playing wait music. This
+      block is actively running for the duration of the call between the agent
+      and contact. If you add a path after this block, the contact will continue
+      along the path only after the call ends.
+    </p>
+    <div class="notification-tip">
+      <p><strong>Tip</strong>:</p>
+      <p>When agents manually transfer a contact from their agent workspace, that
+      is not handled by the call flow; you do not need to build that capability
+      in your call flow.</p>
+    </div>
+    <p>Settings to configure:</p>
+    <ul>
+      <li>
+        <strong>Wait Template</strong>: Similar to the
+        <span class="interface">Speak</span> block, you can use an AI voice
+        to speak a message to the contact. Enter the text here that you want
+        to play to the contact as text-to-speech. For example, you could
+        enter: "<span class="fieldValue"><em>Please wait while we find the right agent to assist you</em>"</span>.
+        After this message plays, this block then starts playing the
+        <span class="fieldName">Wait Music</span>. After the music finishes,
+        this wait message plays once again. As the contact waits for an agent,
+        the block loops through playing the wait message and wait music.&nbsp;<br>
+        In this setting, you can use specific tags. These tags dynamically
+        insert information into the spoken text. For example, {{.firstName}}
+        would play the contact's first name. You could enter:
+        <span class="fieldValue">Thank you for waiting, {{.firstName}}, we'll be with you shortly</span>.
+        Be sure to include the double curly braces and the period (dot notation).
+        The following are tags that you can use for a wait message:
+        <ul>
+          <li>
+            <strong>firstName</strong>: The contact's first name.
+          </li>
+          <li>
+            <strong>lastName</strong>: The contact's last name.
+          </li>
+          <li>
+            <strong>email</strong>: The contact's email address.
+          </li>
+          <li>
+            <strong>countryCode</strong>: The country code of the contact's
+            phone number.
+          </li>
+          <li>
+            <strong>mobile</strong>: The contact's phone number.
+          </li>
+          <li>
+            <strong>domainName</strong>: The name of your Eltropy domain.
+          </li>
+          <li>
+            <strong>queuePosition</strong>: The contact's current position
+            in the queue.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Wait Music</strong>: Plays music to the contact as they’re
+        in a queue waiting for an agent to answer. You can upload an MP3
+        or WAV file from your computer, or link to a file stored on the internet.
+        After the file finishes playing, the
+        <span class="fieldName">Wait Template</span> you configured plays
+        to the contact, then loops back to the wait music. Alternatively,
+        if you connected this block to a subsequent block, the next block
+        will fire instead of looping back and forth between the wait template
+        and music.<br>
+        If you do not upload or link any music, Eltropy plays a default wait
+        music file. This default wait music is 25 seconds long.
+      </li>
+      <li>
+        <strong>Hold Message</strong>: When an agent is actively speaking
+        with the contact then places them on hold, an AI voice speaks this
+        message. After the message finishes, the hold music begins playing.
+        This block loops between the hold message and hold music while the
+        contact is on hold.
+      </li>
+      <li>
+        <strong>Hold Music</strong>: When an agent is actively speaking with
+        the contact then places them on hold, this music plays after the
+        Hold Message finishes. You can upload a music file from your computer
+        or link to a file stored on the internet.<br>
+        If you do not upload or link any music, Eltropy plays a default wait
+        music file.
+      </li>
+      <li>
+        <strong>Advanced Queue Options</strong>: Lets you offer a set of
+        options while the contact is waiting in a queue. This is useful for
+        long wait times; you can let the contact choose a callback, send
+        a text message, leave a voicemail, and so forth. By default, the
+        Wait Template configured in this block plays first, then the wait
+        music. The system-default wait music plays for four minutes (or the
+        wait music you uploaded), then the advanced queue options plays.
+        If the contact continues waiting, this process repeats (Wait Template
+        &gt; Wait Music &gt; Options). If you use the default wait music
+        plays for 1.5 minutes with each subsequent loop before offering the
+        options.<br>
+        See the
+        <a href="#" target="_blank" rel="noopener noreferrer">Queue with Options section</a>
+        of the Call Flow Customizations page for more information.
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">External transfer</div>
+  <div class="expandable-content">
+    <p>
+      Lets you transfer the contact outside of your Eltropy system. For example,
+      you could have a menu option that lets contacts report fraud. The resulting
+      pathway for that option would lead to this block, which contains the
+      phone number for the FTC fraud reporting hotline.
+    </p>
+    <p>
+      You can transfer contacts externally via phone number or SIP ID (SIP
+      is a protocol commonly used in telephony systems).
+    </p>
+    <p>
+      When the contact reaches this block and it fires, the contact exits the
+      Eltropy system completely. This means that the contact ends, you cannot
+      produce any further reporting data, they must call again to re-enter
+      your system, and so forth.
+    </p>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">IVA Transfer</div>
+  <div class="expandable-content">
+    <p>
+      Transfers the contact to an AI voice agent. To use this block, you must
+      have AI enabled for your domain and an AI voice agent set up. The only
+      accepted property for this block is the AI voice agent's project ID.
+      This is the unique identifier for your AI agent. You can find this identifier
+      at Conversations module &gt;
+      <span class="interface">Conversations settings</span>
+      <img class="inline-icon" src="/guide-media/01JPBC9MJP6PN7MFJCF23GRYM5" alt="ConversationsettingsButton.png">
+      &gt; <span class="interface">Voice settings</span> &gt;
+      <span class="interface">AI Config</span> tab &gt;
+      <span class="fieldName">Project ID for AI Voice</span>.
+    </p>
+    <div class="notification-note">
+      <strong>Note</strong>:<br>
+      If you use this block in your call flow, your Eltropy representative
+      may need to update the settings for the Voice Plus phone number you use for
+      this call flow. When setting up the phone number, if your Eltropy representative
+      did not add a <span class="fieldValue">Call status change</span> webhook
+      in Twilio, they must do so. This ensures that the Interaction List properly
+      tracks the status changes of the call after it's transferred to the AI
+      voice agent.
+    </div>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">IVA Transfer v2</div>
+  <div class="expandable-content">
+    <p>
+      Transfers the contact to an AI voice agent (AI Voice 2.0). To use this
+      block, you must have AI enabled for your domain and an AI voice agent
+      set up. The only accepted property for this block is the AI voice agent's
+      ID. This is the unique identifier for the AI agent.
+    </p>
+  </div>
+</div>
+<!-- closes expandable -->
+<div class="expandable">
+  <div class="expandable-header">Request callback</div>
+  <div class="expandable-content">
+    <p>
+      Saves a contact’s position in a queue, allowing the contact to drop from
+      the call. When their turn comes up, the system makes a callback call
+      to the contact.&nbsp;
+    </p>
+    <p>
+      This block is typically used in combination with
+      <span class="interface">Check queue depth</span>. You can check the queue
+      depth, and if there are a certain number of contacts already waiting
+      in the queue, you can offer the incoming contact the option to save their
+      spot and receive a callback.
+    </p>
+    <p>
+      The <span class="fieldName">Enhanced Callback Options</span> setting
+      in this block lets you offer a set of options to the contact during their
+      callback. See the
+      <a href="#" target="_blank" rel="noopener noreferrer">Callback with Options section</a>
+      on the Call Flow Customizations page for more information.
+    </p>
+    <p>
+      <a href="#" target="_blank" rel="noopener noreferrer">RONA</a>
+      also applies to callback requests for voice calls. Callback requests
+      allow a contact who is waiting in a queue to stop the call, but the system
+      keeps their position in the queue. When it's their turn, the system offers
+      the callback to an agent. When an agent accepts, the system makes an
+      outbound call to the contact.&nbsp;
+    </p>
+    <p>
+      This block also allows you to upload a file that plays wait or hold music.
+      The maximum file size that you can upload is 20MB. Be sure to consider
+      the following when uploading a media file, especially when the file is
+      used for on-hold music:
+    </p>
+    <p>
+      Audio played over the telephone network is transcoded to a format the
+      telephone network understands. Regardless of the quality of the file,
+      the system transcodes the file so it plays correctly. This may result
+      in lower quality because the telephone network does not support high
+      bitrate audio. High bitrate, lossy encoded files, such as 128kbps mp3
+      files, take longer to transcode and potentially sound worse than files
+      that are in lossless 8kbps formats. This is due to the inevitable degradation
+      that occurs when converting from lossy compressed formats and the processing
+      involved in converting from higher bit rates to low bit rates. Playing
+      a file that is longer than 40 minutes can result in a dropped call. If
+      you need to play a file longer than 40 minutes, consider splitting it
+      up into smaller chunks.
+    </p>
+  </div>
+</div>
+<!-- closes expandable -->
+<h2 id="">Nodes and Blocks</h2>
+<p>
+  A call block contains nodes. For example, the screenshot below shows an
+  <span class="interface">Options</span> block. Each option in the block is an
+  individual node. The first three DTMF nodes were added in the block’s settings,
+  and the <strong>No Reply</strong> and <strong>No Match</strong> nodes are default
+  nodes that are configured in the properties.
+</p>
+<p>
+  <img src="/guide-media/01JPBBZGDMK3WM8K1ZAFAAKBAH" alt="Redacted image for privacy">
+</p>
+<p>
+  When a block fires, the nodes run sequentially, one after another. In a simple
+  block like <span class="interface">Options</span>, this plays the prompts one
+  after another (requesting the caller to select 1, 2, and 3).
+</p>
+<p>
+  You can combine nodes from multiple blocks into one block. In the below example,
+  a single call block contains nodes from both the
+  <span class="interface">Javascript</span> and
+  <span class="interface">API</span> blocks. Because the nodes run sequentially,
+  the API call would be made first, then the custom JavaScript would execute afterward.
+  Click and drag a node to move it from one block to another, or to re-order the
+  nodes within a single block.
+</p>
+<p>
+  <img src="/guide-media/01JPBC0B0NWH9R2K6G3V4KVWGK" alt="Redacted image for privacy">
+</p>
+<h2 id="h_01JSCP8WT34N3K8RP1EZFME4AZ">Text-to-Speech Effects</h2>
+<p>
+  Some blocks let you use text-to-speech. This means that you type a phrase in
+  the block properties, and the Eltropy system speaks that sentence when the call
+  block fires. A simple example of this is when you create a menu system with the
+  Options block, and the system speaks "<em>Press 1 to speak with a teller. Press 2 to speak with a loan officer...</em>".&nbsp;
+</p>
+<p>
+  <img src="/guide-media/01JSCKR99ZAWVN1E1C7PA2HN4X" alt="Redacted image for privacy" width="250" height="249">
+</p>
+<p>
+  You can select which effects to add to your text from the Effects drop-down.
+  This adds XML to the text, denoting which words have the effect. You can edit
+  the text + XML to control exactly how you want the effects to apply to the text.&nbsp;
+</p>
+<p>Remember the following when adding TTS effects:</p>
+<ul>
+  <li>
+    Be sure to include the text that you want to receive the effect
+    <strong>in between</strong> the opening and closing tags. As shown in the
+    screenshot below, the opening tag indicates that the text will be spoken
+    slowly, and the closing tag is at the end of the sentence, ensuring that
+    the full sentence will be spoken slowly. In other words, the tags are around
+    the full text, so the full text receives the effect.
+  </li>
+  <li>
+    As shown in the screenshot below, the text that will be spoken slowly is
+    black. If the color of the text is light blue, like the color of the tags,
+    then the text you type <strong>will not save</strong>.
+  </li>
+</ul>
+<p>
+  <img src="/guide-media/01JSCNM0J866CFMW04568MWGHQ" alt="Redacted image for privacy" width="250" height="263">
+</p>
+<h2 id="">Call Flow Templates</h2>
+<p>
+  Eltropy does not yet support call flow templates. However, templates are on the
+  roadmap as a future enhancement. If you have ideas for call flow templates, feel
+  free to share them with your Eltropy support rep, as this may be useful for future
+  enhancements or documentation.
+</p>
+<h2 id="">Call Block Paths</h2>
+<p>
+  The connectors between blocks are called paths. When a contact calls your system
+  and enters the call flow, they’re able to navigate around the network of call
+  blocks that are connected by paths. The only way a contact can move to different
+  blocks is through a path.
+</p>
+<p>
+  When you create a path between blocks, the system automatically creates the shape
+  of the path. If you have a large, complex call flow, this may require you to
+  spread out your blocks to for an easy-to-read structure. You may want to label
+  your paths to simplify your designing experience.
+</p>
+<p>With paths, you can:</p>
+<ul>
+  <li id="">
+    <strong>Connect Call Blocks</strong><br>
+    Each option in a block has a dot on the right side. Left-click the dot and
+    drag your mouse to whichever new block or option you want to connect it with.
+  </li>
+  <li>
+    <strong>Delete Block Paths</strong><br>
+    You can delete a path by clicking the path and pressing the delete key on
+    your keyboard.
+  </li>
+  <li>
+    <strong>Label Block Paths<br></strong>You can add a label to call paths.
+    This adds text to the mid-point of a path, giving you insight into where.
+    the path leads and what it’s for. Just like call block labels, path labels
+    are purely informational for call flow designers, they do not impact the
+    contact experience or call flow.<br>
+    To add a label, left-click a path to select it then click
+    <span class="fieldName">Enter label</span> to begin typing.
+  </li>
+</ul>
+<h2 id="">Call Flow Versioning and Publishing</h2>
+<p>
+  As you edit a flow, your changes are automatically saved in the call flow designer.
+  This means you do not need to save your changes as you work. It also means that
+  your changes are only saved in the designer; a call flow is not updated with
+  changes until you publish it. Publishing a call flow creates a new version of
+  the flow with all changes that have been made. You can see and interact with
+  these versions by clicking the <span class="interface">Version</span> button
+  in the designer.
+</p>
+<p>
+  Changes are only saved in the designer because the flow might already be in-use.
+  When you assign a flow to a phone number, any time a call happens for that number,
+  the call flow is in-use for that call. The flow designer lets you make and test
+  changes that only exist in the designer. Once you click
+  <span class="interface">Publish</span> in the designer, the system creates a
+  new version of the flow and the phone number automatically uses the newest version.
+  In this case, if a call flow is actively running for another contact, that call
+  flow will not change. Only new contacts will use the newly-published call flow.
+</p>
+<h2 id="">Call Flow Best Practices</h2>
+<ul>
+  <li>
+    You should always check for active agents before transferring to a queue.
+    The only exception is when you use the
+    <span class="fieldName">Dynamically show available queues</span> setting
+    in the <span class="interface">Queue</span> block. Other checks are optional
+    and depend on the use case, such as if you want a different message or handling
+    for out of office hours.
+  </li>
+  <li>
+    <span class="interface">Select Queue</span> is only needed when using the
+    <span class="interface">Options</span> block. When using the
+    <span class="interface">Queues</span> block, it will automatically handle
+    this.
+  </li>
+  <li>
+    You can test different AI voices in the AI Config tab of your Voice settings
+    (Conversations module &gt;
+    <span class="interface">Conversations settings <img class="inline-icon" src="/guide-media/01JPBC9MJP6PN7MFJCF23GRYM5" alt="ConversationsettingsButton.png"></span>
+    &gt; <span class="interface">Video settings</span> &gt;
+    <span class="interface">AI Config</span>).
+  </li>
+  <li>
+    End every pathway with an <span class="interface">End</span> block. This
+    makes it clear to others who may edit the call flow – including yourself
+    – what the design is.
+  </li>
+  <li>
+    Create a set of guidelines for your call flows, like a style guide. The guidelines
+    help you structure all your call flows similarly, keeping them organized
+    and uniform even if multiple personnel have access to them. Examples of call
+    flow guidelines:
+    <ul>
+      <li>
+        Label each call block according to its function, like
+        <span class="fieldValue">Request callback</span> or
+        <span class="fieldValue">Present menu of queues</span>.
+      </li>
+      <li>Label each pathway.</li>
+      <li>
+        Color code sets of pathways, like all blocks along the path for each
+        queue in a menu option.
+      </li>
+      <li>
+        Use canvas comments
+        <strong><span class="wysiwyg-underline" style="color: #292a2e;">only</span></strong>
+        for questions or suggestions about the call flow.
+      </li>
+    </ul>
+  </li>
+</ul>
+<h2 id="">Right-Click Options</h2>
+<p>
+  You can right-click an area of the canvas to open a list of quick actions. You
+  can also right-click the header of a call block for quick actions to perform
+  on the specific block. The following sections explain these quick actions.
+</p>
+<div class="notification-important">
+  <p>Not all quick actions described in this section may be available yet.</p>
+</div>
+<h3 id="">Canvas Quick Actions</h3>
+<ul>
+  <li>
+    <strong>Add Text</strong>: Similar to a comment, you can add text directly
+    to the canvas.
+  </li>
+  <li>
+    <strong>Add Image</strong>: Lets you add an image to the canvas that you
+    upload from your computer.
+  </li>
+  <li>
+    <strong>Add Comment</strong>: Lets you add an annotation to a specific location
+    on the canvas. These may be helpful to add questions or suggestions about
+    the flow or pathway that others may read, or notes to yourself as you design
+    the flow. Comments do not impact the functionality of a flow or the contact’s
+    experience; they are purely informative for call flow designers.
+  </li>
+  <li>
+    <strong>Paste</strong>: Pastes a call block that you copied to your clipboard
+    in the location where you right-clicked.
+  </li>
+</ul>
+<h3 id="">Call Block Quick Actions</h3>
+<ul>
+  <li>
+    <strong>Change color</strong>: Opens a color picker for you to select the
+    color theme of the block. This
+  </li>
+  <li>
+    <strong>Add comment</strong>: Lets you add an annotation for the block, which
+    displays beside the block. These may be helpful to add questions or suggestions
+    about the block that others may read, or notes to yourself as you design
+    the flow. Comments do not impact the functionality of a block or the contact’s
+    experience; they are purely informative for call flow designers.
+  </li>
+  <li>
+    <strong>Copy</strong>: Copies the block to your clipboard. To paste the copied
+    block to the canvas right-click the canvas and click <strong>Paste</strong>.
+  </li>
+  <li>
+    <strong>Duplicate</strong>: Automatically creates a copy of the call block
+    directly on top of the existing block. You can click and drag the duplicate
+    around the canvas to view the original block underneath.
+  </li>
+  <li>
+    <strong>Delete</strong>: Deletes the call block. You can also click the block
+    and press the delete key on your keyboard.&nbsp;
+  </li>
+</ul>
+	</div>
+
+            
+			<div id="managecallflows" class="tab-pane">
+<h1>Manage Call Flows</h1>
+<h2 id="">Create a Call Flow</h2>
+<p>
+  <strong>Required role</strong>: Domain Manager
+</p>
+<p>
+  Before creating a call flow, work with your internal teams to understand the
+  experience you want to create for your callers.
+</p>
+<ol>
+  <li>Open your UAT domain.</li>
+  <li>
+    Click the <span class="interface">Flows</span> module in the left-hand main
+    navigation.
+  </li>
+  <li>
+    Click <span class="interface">Create</span>.
+  </li>
+  <li>Name the call flow.</li>
+  <li>
+    For <span class="fieldName">Modality</span>, select if you want to create
+    an inbound or outbound flow.
+  </li>
+  <li>
+    For <span class="fieldName">Languages</span>, select which language you want
+    the flow to support. This impacts the voice options and prompts the call
+    flow plays to callers.
+  </li>
+  <li>
+    Select a <span class="fieldName">Default Voice</span>. This is the voice
+    that speaks audio prompts to the callers. Individual call blocks can override
+    this voice and use a different voice. You can hear what the voices sound
+    like in the AI Config section of the Voice settings (Conversations module
+    &gt; <span class="interface">Conversation settings</span>
+    <img class="inline-icon" src="/guide-media/01JPBC9MJP6PN7MFJCF23GRYM5" alt="ConversationsettingsButton.png">
+    &gt; <span class="interface">Voice settings</span> &gt;
+    <span class="interface">AI Config</span>).
+  </li>
+  <li>
+    Click <span class="interface">Save</span>. The new flow is added to the list
+    of call flow projects.
+  </li>
+  <li>Click the newly-created call flow project.</li>
+  <li>
+    Design the call flow. Use the information on this page to help you create
+    the flow.
+  </li>
+  <li>Test the flow to ensure that it functions as-designed.</li>
+  <li>
+    When the flow is tested sufficiently and ready to be used, click
+    <span class="interface">Publish</span>. This creates a new version of the
+    flow. If this is the first time the flow has been published, it is now available
+    to assign to a phone number.
+  </li>
+  <li>
+    Assign the flow to a phone number, explained in the next section.
+  </li>
+</ol>
+<h2 id="">Assign a Call Flow to a Phone Number</h2>
+<p>
+  <strong>Required role</strong>: Domain manager
+</p>
+<p>
+  <strong>Pre-requisite</strong>: You must already have phone numbers added in
+  the Voice settings.
+</p>
+<p>
+  You assign call flows to phone numbers that are added in the Voice settings of
+  the Conversation settings.
+</p>
+<ol>
+  <li>
+    In your domain, navigate to the Phone numbers tab of their Voice settings
+    (<span class="interface">Conversation settings</span>
+    <img class="inline-icon" src="/guide-media/01JPBC9MJP6PN7MFJCF23GRYM5" alt="ConversationsettingsButton.png">
+    &gt; <span class="interface">Voice settings</span> &gt;
+    <span class="interface">Phone Numbers</span>).
+  </li>
+  <li>
+    Locate the phone number for which you want to assign a call flow.
+  </li>
+  <li>Click the three-dots menu.</li>
+  <li>
+    Click <span class="interface">Edit</span>.
+  </li>
+  <li>
+    Select your desired call flow for
+    <span class="fieldName">Inbound Call flow</span> or
+    <span class="fieldName">Outbound Call flow</span>.<br>
+    <img src="/guide-media/01JPBCAXGGPV29Q74HYY7HHVAE" alt="Redacted image for privacy" width="500" height="164">
+  </li>
+  <li>
+    Click <span class="interface">Save</span>.
+  </li>
+</ol>
+<h2 id="">Start or Test a Call Flow</h2>
+<p>
+  An inbound call flow starts when a contact calls a phone number added in your
+  voice settings. When this occurs, the inbound call flow selected in the phone
+  number’s settings begins.
+</p>
+<p>
+  An outbound call flow starts when an agent creates an outbound call using a phone
+  number added in your voice settings. When this occurs the outbound call flow
+  selected in the phone number’s settings begins.
+</p>
+<p>
+  When you are editing a call flow, you can start the flow by clicking the
+  <strong>Start</strong> button on the canvas or the <strong>Test</strong> button
+  at the top. You must connect your first call block to this start button with
+  a path. The contact begins its journey at the start button, through the path
+  to your first block, then onto other blocks in the network you’ve created.
+</p>
+<h2 id="">Edit a Block’s Label</h2>
+<p>
+  Each block has a label at the top, like a heading or a title. By default, when
+  you add a new block, its label is <span class="fieldValue">New Block</span>.
+  You can change this label by clicking on
+  <span class="fieldValue">New Block</span> and typing a new label. This helps
+  you keep your call flow organized and understandable. Customizing a block’s label
+  does not impact its functionality or how it runs, rather, it helps you manage
+  your call flows and stay organized.
+</p>
+<p>
+  You can enter whatever label you’d like. Best practice is to either add the name
+  of the block, like <span class="fieldValue">Queues</span> or
+  <span class="fieldValue">Check queue business hours</span>, or explain what the
+  block is accomplishing, like
+  <span class="fieldValue">Transfer to FTC for fraud report</span>.
+</p>
+<div class="notification-tip">
+  <p><strong>Tip</strong>:</p>
+  <p>If your organization has multiple staff who might edit call flows, you may want
+  to draft a list of best practices for your call flows. For example, you may want
+  to specify that each block’s label should be the name of the block, like Select
+  Queue. This helps others understand each other’s call flows and easily manage
+  all your flows.</p>
+</div>
+<p>You can also label paths that connect blocks.</p>
+<h2 id="">Export a Call Flow</h2>
+<p>
+  You can export (or download) a call flow as a JSON file. This gives you flexibility
+  to quickly transfer flows from one environment to another. You can export a call
+  flow in two locations:
+</p>
+<p>
+  While editing a call flow, click the download button beside the flow’s name:
+</p>
+<p>
+  <img src="/guide-media/01JPBCBSGFX3H50NQWJ5FQ70GC" alt="Redacted image for privacy">
+</p>
+<p>
+  While viewing a flow’s version history, click the download button:
+</p>
+<p>
+  <img src="/guide-media/01JPBCC5XBXN18Z2GA926TWR2A" alt="Redacted image for privacy">
+</p>
+<h2 id="">Import a Call Flow</h2>
+<p>
+  You can import call flow JSON files. This may be a simple option to bring a call
+  flow from one environment to another.
+</p>
+<ol>
+  <li>
+    Click <span class="interface">Flows</span> in the main Eltropy navigation.
+  </li>
+  <li>
+    Click <span class="interface">Import</span>.
+  </li>
+  <li>
+    For <span class="fieldName">Name</span>, give the call flow a descriptive
+    name.
+  </li>
+  <li>
+    Click the <span class="fieldName">Project File</span> area to search for
+    and select the file. You can also drag and drop the file into this area.
+  </li>
+  <li>
+    Click <span class="interface">Import</span>.
+  </li>
+</ol>
+<h2 id="">Restore a Call Flow</h2>
+<p>
+  When you click the <span class="interface">Versions</span> button in the call
+  flow designer, a list of versions displays. Beside each version is a
+  <span class="interface">Restore</span> Flow button. This opens the call flow
+  version that you restored from the list. This does not impact any flow that is
+  actively used in production by a phone number. It only changes what you are actively
+  editing.
+</p>
+<h2 id="">Revert a Production Call Flow</h2>
+<p>
+  When you click the <span class="interface">Versions</span> button in the call
+  flow designer, a list of versions displays. Beside each version is a
+  <span class="interface">Revert Production</span> button. The version with
+  <span class="interface">(deployed)</span> beside its name is the call flow that
+  your phone number is actively using and contacts are interacting with. You can
+  choose any published call flow version to use in production.
+</p>
+<p>
+  Click <span class="interface">Revert Production</span> and confirm your decision
+  to use a specific flow in your live calls.
+</p>
+<div class="notification-note">
+  <p><strong>Note</strong>:</p>
+  <p>Anytime you publish a new version of a call flow, that newly-published version
+  is automatically used in production; calls to the associated phone number automatically
+  use the version you just published. If you’re uncertain which version is deployed
+  to production, click the <span class="interface">Versions</span> button and locate the version with <span class="interface">(deployed)</span> beside its name.</p>
+</div>
+</div>
+			
+			<div id="callflowcustomizations" class="tab-pane">
+			<h1>Call Flow Customizations</h1>
+<p>
+  Every financial institution has its own unique needs. Depending on your organization
+  size and structure, the services you offer, and other factors, you may need to
+  tailor your call flows to meet your needs. This page provides example customizations
+  that may help you design your call flows.
+</p>
+<p>
+  Feel free to use these possibilities as inspiration for your own call flow expertise
+  and creativity; this page is not exhaustive for all the potential use cases.
+</p>
+<div class="notification-important">
+  <p><strong>Important!</strong></p>
+  <p>Be sure to test your call flows extensively to ensure they function appropriately
+  according to your Eltropy system.</p>
+</div>
+<h2 id="">Menus</h2>
+<p>
+  You have multiple options for creating a menu. The two most common options are
+  to use either a <span class="interface">Queues</span> or
+  <span class="interface">Options</span> block:
+</p>
+<ul>
+  <li>
+    <strong>Queues</strong><br>
+    This block is specifically designed to create a menu for contacts to select
+    queues (or to reach certain departments). This is mainly because of its
+    <span class="fieldName">Dynamically show available queues</span> setting.
+    When enabled, if no agents are online to handle a specific queue, then it
+    will not be presented to the contact as an option. Also, because contacts
+    select a specific queue with this block, you do not need to add a
+    <span class="interface">Select Queue</span> block after each option.
+  </li>
+  <li>
+    <strong>Options</strong><br>
+    This essentially lets you create a custom menu. It allows you to use the
+    text-to-speech (TTS) to present any prompt, then a contact can use their
+    keypad to make a selection. Example menus using this block are:
+    <ul>
+      <li>Contacts choosing between English and Spanish.</li>
+      <li>
+        While a contact is waiting in a queue, present them options like
+        continue waiting, requesting a callback, switching to text messaging,
+        and so forth.&nbsp;
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>
+  You can also use the Options Group block. This block requires advanced configurations
+  that involve API calls, parsing JSON, and so forth, and is less commonly used.
+</p>
+<p>
+  <a name="QueueWithOptions"></a>
+</p>
+<h2 id="">Queue with Options</h2>
+<p>
+  You can present options to a contact while waiting in a queue. The purpose is
+  to mitigate the time spent waiting. Even if a queue has a long wait time, the
+  contact can possibly solve their issue in other ways. Also, giving the contact
+  options allows them to choose their desired experience, increasing their satisfaction.&nbsp;
+</p>
+<p>
+  This section explains how to make a queue with the following options:
+</p>
+<ul>
+  <li>Continue waiting</li>
+  <li>Leave a voicemail</li>
+  <li>Request a callback</li>
+  <li>Switch to the texting channel</li>
+  <li>Connect with a specialist (an external transfer)</li>
+</ul>
+<div class="expandable">
+  <div class="expandable-header">
+    Expand to view image of the call flow segment this section helps you create
+  </div>
+  <div class="expandable-content">
+    <p>
+      <img src="/guide-media/01JWHECXZFXJ3A01DTWDH8YSRJ" alt="Redacted image for privacy">
+    </p>
+    <p>
+      You can download this example flow and import it into your own Call Flow
+      Designer. The file is attached at the bottom of this page. After importing
+      the example flow, be sure to update all the properties to work with your
+      system.
+    </p>
+  </div>
+</div>
+<!-- closes expandable -->
+<p>
+  <strong>Pre-requisite: You must have an offline queue created for voicemails</strong>
+</p>
+<p>To create a queue with options:</p>
+<ol>
+  <li>
+    Open an existing call flow in your Call Flow Designer. You can optionally
+    create a new flow. If you create a new flow, you must configure the flow
+    as desired and eventually add a menu to select a queue.
+  </li>
+  <li>
+    After the menu, add a <span class="interface">Transfer to queue</span> block
+    and connect it with the first queue option in the menu.
+  </li>
+  <li>
+    Configure the <span class="interface">Transfer to queue</span> properties:
+    <ol>
+      <li>Click on the nodes in the block to open the properties.</li>
+      <li>
+        For <span class="fieldName">Wait Template</span>, add a text-to-speech
+        prompt. This prompt plays before the wait music begins playing. For
+        example, you could add
+        <span class="fieldValue">Thank you for waiting, {{.firstName}}. Your queue position is {{.queuePosition}}</span>.
+      </li>
+      <li>
+        (Optional) If you do not want to use the system-default wait music,
+        which is 25 seconds long, upload your own music file. The system-default
+        music loops for four minutes before offering your options menu. Then,
+        each subsequent loop, it plays for 1.5 minutes before offering your
+        options menu.
+      </li>
+      <li>
+        Scroll down in the properties panel and enable
+        <span class="fieldName">Enhanced Queue Options</span>.
+      </li>
+    </ol>
+  </li>
+  <li>
+    Add an <span class="interface">Options</span> block and connect it with the
+    <span class="interface">Transfer to queue</span> block.
+  </li>
+  <li>
+    Add the following five options:
+    <ul>
+      <li>
+        <span class="fieldValue">Press one to continue waiting.</span>
+      </li>
+      <li>
+        <span class="fieldValue">Press two to leave a voicemail.</span>
+      </li>
+      <li>
+        <span class="fieldValue">Press three to request a callback.</span>
+      </li>
+      <li>
+        <span class="fieldValue">Press four to send a text message.</span>
+      </li>
+      <li>
+        <span class="fieldValue">If you would like to speak with a specialist instead, press five.</span>
+        <em>(Optional)</em>
+      </li>
+    </ul>
+  </li>
+  <li>
+    (Optional) Customize these five options to your liking. You can change the
+    prompt, choose a specific voice or effects, and so forth.
+  </li>
+  <li>
+    Connect the five options with subsequent blocks:
+    <ul>
+      <li>
+        Add a <span class="interface">Continue waiting</span> block and connect
+        it with option one. This block repeats the queue waiting flow without
+        losing the contact's spot in the queue. It repeats the wait template
+        → wait music → queue options flow. Alternatively, you can set a custom
+        repeat time with a <span class="interface">Media</span> block. See
+        the <a href="CustomWaitMusic">Custom Wait Music</a> section below
+        for more information.
+      </li>
+      <li>
+        Add a <span class="interface">Voicemail</span> block and connect
+        it with option two. In this block's properties, select which offline
+        queue you want to leave voicemails through.
+      </li>
+      <li>
+        Add a <span class="interface">Request Callback</span> block and connect
+        it with option three. Connect this with another
+        <span class="interface">Options</span> block. Add two options:
+        <ul>
+          <li>
+            <span class="fieldValue">An agent is waiting for you. Press one to connect</span>.
+            Then, connect this with a
+            <span class="interface">Continue waiting</span> block.
+          </li>
+          <li>
+            <span class="fieldValue">Press two to end the call</span>.
+            Then, connect this with an <span class="interface">End</span>
+            block.
+          </li>
+        </ul>
+        Refer to the image above for assistance.
+      </li>
+      <li>
+        Add a <span class="interface">Send SMS</span> block and connect it
+        with option four. In the <span class="interface">Send SMS</span>
+        block, enter the text message that you want to send to the contact.
+        If they respond, the text will be routed and handled as a completely
+        new text request.
+      </li>
+      <li>
+        (Optional) Add an <span class="interface">External transfer</span>
+        block and connect it with option five. In this block, enter the phone
+        number of SIP ID for a number outside of your system for someone
+        who can handle the call.
+      </li>
+    </ul>
+  </li>
+  <li>
+    Be sure to configure the <span class="fieldName">No Reply</span> and
+    <span class="fieldName">No Match</span> nodes in the
+    <span class="interface">Options</span> blocks.
+  </li>
+  <li>Test the call flow.</li>
+</ol>
+<p>
+  <a name="CallbackWithOptions"></a>
+</p>
+<h2 id="">Callback with Options</h2>
+<p>
+  A callback is when a contact is waiting in a queue, and instead of waiting for
+  a long time, the system automatically calls them back when their "spot" reaches
+  the front of the queue. Callbacks are a great way to ease your contact's stress
+  of waiting for an agent.&nbsp;
+</p>
+<p>
+  <strong>How it works</strong>:<br>
+  After requesting a callback, the contact can hang up the phone. The system saves
+  their spot in the queue. When their spot reaches the front of the queue, the
+  system offers a call request to an agent who can handle the queue. When the agent
+  answers, the system then makes an outbound call to the contact. When they answer,
+  they're presented with the option to end the call or speak with an agent.
+</p>
+<div class="expandable">
+  <div class="expandable-header">Expand to view image of an example call flow segment</div>
+  <div class="expandable-content">
+    <p>
+      The following screenshot shows a queue options flow. The branch highlighted
+      in blue is the callback functionality.
+    </p>
+    <p>
+      Callbacks are generally created in conjunction with queue options, explained
+      in the previous section. While the contact is waiting in a queue, they
+      listen to wait music. After the wait music finishes one loop, a series
+      of options plays. One of which is a callback option.&nbsp;
+    </p>
+    <p>
+      <img src="/guide-media/01JWHDWA35R7MZ725HWJW5W30R" alt="Redacted image for privacy">
+    </p>
+  </div>
+</div>
+<p>
+  <!-- closes expandable -->
+</p>
+<p>To start a callback:</p>
+<ol>
+  <li>Open an existing call flow in your Call Flow Designer.</li>
+  <li>
+    Add the <span class="interface">Request Callback</span> block to your flow.
+    This is typically preceded by an <span class="interface">Options</span> block,
+    where one option is to request a callback. This is illustrated in the previous
+    example segment.
+  </li>
+  <li>
+    Click the nodes to open the properties panel, then enable the
+    <span class="fieldName">Enhanced Callback Options</span> setting.
+  </li>
+  <li>
+    Connect the callback block to an <span class="interface">Options</span> block.
+  </li>
+  <li>
+    Add two options: one for connecting with an agent and the other to end the
+    call. Remember, the <span class="interface">Options</span> block uses text-to-speech,
+    so consider the prompts that you want spoken to the contact.
+  </li>
+  <li>
+    Add an <span class="interface">End</span> block and connect it with the option
+    to end the call.
+  </li>
+  <li>
+    Add a <span class="interface">Continue waiting</span> block and connect it
+    with the option to speak with an agent.&nbsp;
+  </li>
+  <li>
+    Configure the <span class="fieldName">No Reply</span> and
+    <span class="fieldName">No Match</span> nodes of the
+    <span class="interface">Options</span> block however you see fit. For example,
+    you could connect them with a <span class="interface">Speak</span> block
+    that says <span class="fieldValue">Sorry, I didn't catch that</span>, then
+    returns to the options menu.
+  </li>
+  <li>Test the call flow.</li>
+</ol>
+<p>
+  <a name="CustomWaitMusic"></a>
+</p>
+<h2 id="">Custom Wait Music</h2>
+<p>
+  Consider the standard experience of waiting in a call queue:
+</p>
+<ol>
+  <li>Contact selects which department they want to talk to</li>
+  <li>Contact is placed in that department's queue</li>
+  <li>
+    A text-to-speech prompt is played, and the contact starts waiting for an
+    agent to accept their call request
+  </li>
+  <li>While waiting, music plays</li>
+  <li>Loop through steps 3 and 4 until an agent accepts the call</li>
+</ol>
+<p>
+  The system-default wait music plays on a 25-second loop. However, you can customize:
+</p>
+<ul>
+  <li>The music that plays by using your own music file</li>
+  <li>
+    The repeated wait music time in an advanced queue with options
+  </li>
+</ul>
+<p>
+  These two customization options are explained in the following sections.
+</p>
+<h3 id="">Use a Custom Music File</h3>
+<p>
+  In the <span class="interface">Transfer to queue</span> block, the
+  <span class="fieldName">Wait Music</span> property lets you use your own music.
+  You can upload an MP3 or WAV file, or you can host a file on a cloud server and
+  link to it. If you don't use your own file, the system-default music will play,
+  which repeats every 25 seconds.
+</p>
+<p>
+  <img src="/guide-media/01JXK76D3V98NT94ED1MV2HT7K" alt="Redacted image for privacy" width="499" height="231">
+</p>
+<h3 id="">Custom Repeat Time for Wait Music</h3>
+<p>
+  This is applicable when you have an advanced queue with options, explained
+  <a href="#">in the section above</a>.&nbsp;
+</p>
+<p>
+  You use a <span class="interface">Media</span> block to control the amount of
+  time that wait music plays after the first music loop. The first music loop plays
+  with the <span class="interface">Transfer to queue</span> block. Then, one of
+  the queue options is to continue waiting. This option should connect to a
+  <span class="interface">Media</span> block. In this block, you upload a music
+  file with the duration that you want the subsequent music loops to be. The screenshot
+  below illustrates an example.
+</p>
+<p>
+  <img src="/guide-media/01JXK7DXE5AAJ6RKF8MR1BAM57" alt="Redacted image for privacy" width="499" height="292">
+</p>
+<p>
+  In this instance, you could upload a 4-minute music file in the initial
+  <span class="interface">Transfer to queue</span> block. Then, in the
+  <span class="interface">Media</span> block, you could upload a separate file
+  that's only 1.5 minutes long. This way, the queue options are repeated every
+  1.5 minutes, if the contact chooses to continue waiting. Additionally, if the
+  contact makes a menu selection while listening to the custom wait music, the
+  call flow recognizes their selection even though the music is playing.&nbsp;
+</p>
+<h2 id="">Call Overflow</h2>
+<p>
+  During busy times of the day, you may want to offload calls to a third party
+  or contact center outside of your Eltropy system. This may help you reduce certain
+  SLAs like a high average hold time (AHT) and may improve your staffing options
+  since agents may become overwhelmed.
+</p>
+<p>
+  You can accomplish this in the call flow designer. You can use a combination
+  of <span class="interface">Check queue depth</span> and
+  <span class="interface">External transfer</span> blocks to handle the overflow.
+  For example, you can add a threshold for your queue size. If the queue reaches
+  and surpasses a certain number of callers, the system can start directing the
+  new incoming callers to an external number.
+</p>
+<p>
+  <strong>Alternate options</strong>:
+</p>
+<p>For high call volume, you can also:</p>
+<ul>
+  <li>
+    Use the <span class="interface">Request callback</span> block. This lets
+    the contact hang up the phone so they don’t have to sit and wait. The system
+    holds their spot in the queue and calls the contact when it’s their turn.
+  </li>
+  <li>
+    Use the <span class="interface">Voicemail</span> block to transfer calls
+    to an offline queue. This lets the contact leave a message for your agents.
+  </li>
+</ul>
+<h2 id="">Automate an NPS Survey after a Voice Call</h2>
+<p>
+  At the conclusion of a call, you can automatically send a text message with a
+  link to a survey. This can be done using the
+  <span class="interface">Send SMS</span> block. Add the message you want to send
+  for the survey and include the survey link.
+</p>
+<h2 id="">Internal Queues for Non-Eltropy Agents</h2>
+<p>
+  Contact your Eltropy representative to learn how to handle internal queues for
+  non-Eltropy agents.
+</p>
+			</div>
+        </div>
+    </div>
+
+	
+	
+	
+
+		
+</div> <!-- closes voiceplus-wrapper -->
+</div> <!-- closes voiceplus-orange -->
+</div> <!-- closes home-body-container -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<script src="gsap.js"></script>
+<script src="voiceplus-js.js"></script>
+
+</body>
+</html>
