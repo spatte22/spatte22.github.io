@@ -62,9 +62,9 @@
 				<h1>Voice Plus</h1>
 <p>
   Voice Plus is the traditional channel for phone calls, plus all the other features
-  that Eltropy provides. Not only can agents handle a phone call, they can also
+  that <company> provides. Not only can agents handle a phone call, they can also
   do things like send text messages, perform a Remote Check Deposit, or co-browse
-  with a contact while on the call. The ability to use Eltropy features while on
+  with a contact while on the call. The ability to use <company> features while on
   a call expands your ability to assist contacts and meet their needs.&nbsp;
 </p>
 <p>
@@ -130,7 +130,7 @@
 <h2 id="">Contacts Using Private Numbers</h2>
 <p>
   Mobile devices often have a setting for the owner to hide their personal information
-  from caller ID. This makes the number Private or Unknown. Eltropy accepts calls
+  from caller ID. This makes the number Private or Unknown. <company> accepts calls
   from these numbers, and will handle them as anonymous contacts. This means that:
 </p>
 <ul class="ak-ul">
@@ -146,7 +146,7 @@
 </ul>
 <h2 id="">International Phone Calls</h2>
 <p>
-  Eltropy generally supports calls to countries outside the USA. Refer to the
+  <company> generally supports calls to countries outside the USA. Refer to the
   <a href="#" target="_blank" rel="noopener noreferrer">International Phone Numbers</a>
   page for more information.
 </p>
@@ -161,25 +161,25 @@
   <u>from</u> your Voice Plus setup. For example, a
   credit card company may frequently send callers over to you to handle issues.
   Similarly, you may be doing the same; sending callers over to a credit card company.
-  You want to be sure that your Eltropy system handles these scenarios separate
+  You want to be sure that your <company> system handles these scenarios separate
   from standard calls from contacts:
 </p>
 <ul>
   <li>
     <strong>Repeated inbound calls or transfers</strong><br>
-    By default, Eltropy treats these like any other inbound call. This is problematic
-    because even though the actual caller is different each time, Eltropy is
+    By default, <company> treats these like any other inbound call. This is problematic
+    because even though the actual caller is different each time, <company> is
     receiving the transfer from the
     <u>same phone number</u>. For example, a
     credit card company's Billing department may repeatedly send callers to you.
-    Your Eltropy system uses phone numbers as the primary identifier for contacts,
+    Your <company> system uses phone numbers as the primary identifier for contacts,
     so the system thinks that it's repeatedly receiving calls from the same contact,
     just because they're coming from the same Billing department. This causes
     two problems:
     <ul>
       <li>
         The actual caller that is being transferred does not have its own
-        contact entry in your Eltropy system.&nbsp;
+        contact entry in your <company> system.&nbsp;
       </li>
       <li>
         This skews your reporting data since individual phone numbers - ie:
@@ -216,20 +216,20 @@
   </li>
   <li>
     Procure at least one phone number from the Twilio voice provider. Create
-    a ticket with Eltropy Support or contact your Eltropy representative to assist
+    a ticket with <company> Support or contact your <company> representative to assist
     you with this.
   </li>
 </ol>
 <div class="notification-note">
   <p><strong>Note</strong>:</p>
-  <P>Before configuring the Twilio number in Eltropy, ensure that necessary features
+  <P>Before configuring the Twilio number in <company>, ensure that necessary features
   like Audio Management and Workflow Manager are enabled in the Admin Portal with
-  the help of your Eltropy representative.</p>
+  the help of your <company> representative.</p>
 </div>
 <h2 id="">Step 1: Configure Your Skill Based Routing</h2>
 <p>
   A call flow lets you customize what happens when a caller initially calls you,
-  like offering a menu system. In addition to this menu system, the Eltropy system
+  like offering a menu system. In addition to this menu system, the <company> system
   must route the caller to the most-appropriate agent to handle their request.
   Your skill based routing components allow your system to do so. This includes
   components like departments, queues, routing profiles, and so on.
@@ -272,7 +272,7 @@
 <div class="notification-note">
   <p><strong>Note</strong>:</p>
   <p>Even though Puerto Rico uses the +1 country code, you cannot communicate to phone
-  numbers from Puerto Rico by default. An Eltropy representative must enable Puerto
+  numbers from Puerto Rico by default. An <company> representative must enable Puerto
   Rico for your domain.</p>
 </div>
 <h2 id="">Step 3: Create a Voice Plus Call Flow</h2>
@@ -287,7 +287,7 @@
 </p>
 <p>
   <a href="#">Follow the instructions here to create a new call flow</a>.
-  You may want to work with your Eltropy representative for guidance. Also, you
+  You may want to work with your <company> representative for guidance. Also, you
   may want to create the flow in a UAT environment. This will allow you to test
   the flow and your voice settings before going live.
 </p>
@@ -372,7 +372,7 @@
       </li>
       <li>
         For <span class="fieldName">Emergency call notification to users</span>,
-        add a phone number that will receive a text message from Eltropy
+        add a phone number that will receive a text message from <company>
         when an agent makes a 911 call. This informs the owner of this phone
         number that the 911 call was made.
       </li>
@@ -1203,7 +1203,7 @@
     <p>
       Checks whether the incoming call is from an anonymous contact. An anonymous
       caller means that you don’t already have the phone number added in your
-      Eltropy system for a contact. You can put this block early in your call
+      <company> system for a contact. You can put this block early in your call
       flow to split the path between anonymous and known contacts, allowing
       you to handle them as desired.
     </p>
@@ -1307,7 +1307,7 @@
             <strong>mobile</strong>: The contact's phone number.
           </li>
           <li>
-            <strong>domainName</strong>: The name of your Eltropy domain.
+            <strong>domainName</strong>: The name of your <company> domain.
           </li>
           <li>
             <strong>queuePosition</strong>: The contact's current position
@@ -1325,7 +1325,7 @@
         if you connected this block to a subsequent block, the next block
         will fire instead of looping back and forth between the wait template
         and music.<br>
-        If you do not upload or link any music, Eltropy plays a default wait
+        If you do not upload or link any music, <company> plays a default wait
         music file. This default wait music is 25 seconds long.
       </li>
       <li>
@@ -1340,7 +1340,7 @@
         the contact then places them on hold, this music plays after the
         Hold Message finishes. You can upload a music file from your computer
         or link to a file stored on the internet.<br>
-        If you do not upload or link any music, Eltropy plays a default wait
+        If you do not upload or link any music, <company> plays a default wait
         music file.
       </li>
       <li>
@@ -1367,7 +1367,7 @@
   <div class="expandable-header">External transfer</div>
   <div class="expandable-content">
     <p>
-      Lets you transfer the contact outside of your Eltropy system. For example,
+      Lets you transfer the contact outside of your <company> system. For example,
       you could have a menu option that lets contacts report fraud. The resulting
       pathway for that option would lead to this block, which contains the
       phone number for the FTC fraud reporting hotline.
@@ -1378,7 +1378,7 @@
     </p>
     <p>
       When the contact reaches this block and it fires, the contact exits the
-      Eltropy system completely. This means that the contact ends, you cannot
+      <company> system completely. This means that the contact ends, you cannot
       produce any further reporting data, they must call again to re-enter
       your system, and so forth.
     </p>
@@ -1402,9 +1402,9 @@
     </p>
     <div class="notification-note">
       <strong>Note</strong>:<br>
-      If you use this block in your call flow, your Eltropy representative
+      If you use this block in your call flow, your <company> representative
       may need to update the settings for the Voice Plus phone number you use for
-      this call flow. When setting up the phone number, if your Eltropy representative
+      this call flow. When setting up the phone number, if your <company> representative
       did not add a <span class="fieldValue">Call status change</span> webhook
       in Twilio, they must do so. This ensures that the Interaction List properly
       tracks the status changes of the call after it's transferred to the AI
@@ -1509,7 +1509,7 @@
 <h2 id="h_01JSCP8WT34N3K8RP1EZFME4AZ">Text-to-Speech Effects</h2>
 <p>
   Some blocks let you use text-to-speech. This means that you type a phrase in
-  the block properties, and the Eltropy system speaks that sentence when the call
+  the block properties, and the <company> system speaks that sentence when the call
   block fires. A simple example of this is when you create a menu system with the
   Options block, and the system speaks "<em>Press 1 to speak with a teller. Press 2 to speak with a loan officer...</em>".&nbsp;
 </p>
@@ -1542,9 +1542,9 @@
 </p>
 <h2 id="">Call Flow Templates</h2>
 <p>
-  Eltropy does not yet support call flow templates. However, templates are on the
+  <company> does not yet support call flow templates. However, templates are on the
   roadmap as a future enhancement. If you have ideas for call flow templates, feel
-  free to share them with your Eltropy support rep, as this may be useful for future
+  free to share them with your <company> support rep, as this may be useful for future
   enhancements or documentation.
 </p>
 <h2 id="">Call Block Paths</h2>
@@ -1880,7 +1880,7 @@
 </p>
 <ol>
   <li>
-    Click <span class="interface">Flows</span> in the main Eltropy navigation.
+    Click <span class="interface">Flows</span> in the main <company> navigation.
   </li>
   <li>
     Click <span class="interface">Import</span>.
@@ -1943,7 +1943,7 @@
 <div class="notification-important">
   <p><strong>Important!</strong></p>
   <p>Be sure to test your call flows extensively to ensure they function appropriately
-  according to your Eltropy system.</p>
+  according to your <company> system.</p>
 </div>
 <h2 id="">Menus</h2>
 <p>
@@ -2288,7 +2288,7 @@
 <h2 id="">Call Overflow</h2>
 <p>
   During busy times of the day, you may want to offload calls to a third party
-  or contact center outside of your Eltropy system. This may help you reduce certain
+  or contact center outside of your <company> system. This may help you reduce certain
   SLAs like a high average hold time (AHT) and may improve your staffing options
   since agents may become overwhelmed.
 </p>
@@ -2322,10 +2322,10 @@
   <span class="interface">Send SMS</span> block. Add the message you want to send
   for the survey and include the survey link.
 </p>
-<h2 id="">Internal Queues for Non-Eltropy Agents</h2>
+<h2 id="">Internal Queues for Non-<company> Agents</h2>
 <p>
-  Contact your Eltropy representative to learn how to handle internal queues for
-  non-Eltropy agents.
+  Contact your <company> representative to learn how to handle internal queues for
+  non-<company> agents.
 </p>
 			</div>
         </div>
