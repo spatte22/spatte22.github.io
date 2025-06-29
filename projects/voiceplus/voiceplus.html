@@ -53,6 +53,7 @@
             <button class="tab-button active" onclick="showTab(event, 'overview')">Overview</button>
             <button class="tab-button" onclick="showTab(event, 'setup')">Set Up Voice Plus</button>
             <button class="tab-button" onclick="showTab(event, 'callflowdesigner')">Call Flow Designer</button>
+			<button class="tab-button" onclick="showTab(event, 'callblocks')">Call Blocks</button>
             <button class="tab-button" onclick="showTab(event, 'managecallflows')">Manage Call Flows</button>
 			<button class="tab-button" onclick="showTab(event, 'callflowcustomizations')">Call Flow Customizations</button>
         </div>
@@ -717,7 +718,248 @@
 <p>
   <a name="CallFlowBlocks"></a>
 </p>
-<h2 id="">Call Flow Blocks</h2>
+
+<h2 id="">Nodes and Blocks</h2>
+<p>
+  A call block contains nodes. For example, the screenshot below shows an
+  <span class="interface">Options</span> block. Each option in the block is an
+  individual node. The first three DTMF nodes were added in the block’s settings,
+  and the <strong>No Reply</strong> and <strong>No Match</strong> nodes are default
+  nodes that are configured in the properties.
+</p>
+<p>
+  <img src="/guide-media/01JPBBZGDMK3WM8K1ZAFAAKBAH" alt="Redacted image for privacy">
+</p>
+<p>
+  When a block fires, the nodes run sequentially, one after another. In a simple
+  block like <span class="interface">Options</span>, this plays the prompts one
+  after another (requesting the caller to select 1, 2, and 3).
+</p>
+<p>
+  You can combine nodes from multiple blocks into one block. In the below example,
+  a single call block contains nodes from both the
+  <span class="interface">Javascript</span> and
+  <span class="interface">API</span> blocks. Because the nodes run sequentially,
+  the API call would be made first, then the custom JavaScript would execute afterward.
+  Click and drag a node to move it from one block to another, or to re-order the
+  nodes within a single block.
+</p>
+<p>
+  <img src="/guide-media/01JPBC0B0NWH9R2K6G3V4KVWGK" alt="Redacted image for privacy">
+</p>
+<h2 id="h_01JSCP8WT34N3K8RP1EZFME4AZ">Text-to-Speech Effects</h2>
+<p>
+  Some blocks let you use text-to-speech. This means that you type a phrase in
+  the block properties, and the <company> system speaks that sentence when the call
+  block fires. A simple example of this is when you create a menu system with the
+  Options block, and the system speaks "<em>Press 1 to speak with a teller. Press 2 to speak with a loan officer...</em>".&nbsp;
+</p>
+<p>
+  <img src="/guide-media/01JSCKR99ZAWVN1E1C7PA2HN4X" alt="Redacted image for privacy" width="250" height="249">
+</p>
+<p>
+  You can select which effects to add to your text from the Effects drop-down.
+  This adds XML to the text, denoting which words have the effect. You can edit
+  the text + XML to control exactly how you want the effects to apply to the text.&nbsp;
+</p>
+<p>Remember the following when adding TTS effects:</p>
+<ul>
+  <li>
+    Be sure to include the text that you want to receive the effect
+    <strong>in between</strong> the opening and closing tags. As shown in the
+    screenshot below, the opening tag indicates that the text will be spoken
+    slowly, and the closing tag is at the end of the sentence, ensuring that
+    the full sentence will be spoken slowly. In other words, the tags are around
+    the full text, so the full text receives the effect.
+  </li>
+  <li>
+    As shown in the screenshot below, the text that will be spoken slowly is
+    black. If the color of the text is light blue, like the color of the tags,
+    then the text you type <strong>will not save</strong>.
+  </li>
+</ul>
+<p>
+  <img src="/guide-media/01JSCNM0J866CFMW04568MWGHQ" alt="Redacted image for privacy" width="250" height="263">
+</p>
+<h2 id="">Call Flow Templates</h2>
+<p>
+  <company> does not yet support call flow templates. However, templates are on the
+  roadmap as a future enhancement. If you have ideas for call flow templates, feel
+  free to share them with your <company> support rep, as this may be useful for future
+  enhancements or documentation.
+</p>
+<h2 id="">Call Block Paths</h2>
+<p>
+  The connectors between blocks are called paths. When a contact calls your system
+  and enters the call flow, they’re able to navigate around the network of call
+  blocks that are connected by paths. The only way a contact can move to different
+  blocks is through a path.
+</p>
+<p>
+  When you create a path between blocks, the system automatically creates the shape
+  of the path. If you have a large, complex call flow, this may require you to
+  spread out your blocks to for an easy-to-read structure. You may want to label
+  your paths to simplify your designing experience.
+</p>
+<p>With paths, you can:</p>
+<ul>
+  <li id="">
+    <strong>Connect Call Blocks</strong><br>
+    Each option in a block has a dot on the right side. Left-click the dot and
+    drag your mouse to whichever new block or option you want to connect it with.
+  </li>
+  <li>
+    <strong>Delete Block Paths</strong><br>
+    You can delete a path by clicking the path and pressing the delete key on
+    your keyboard.
+  </li>
+  <li>
+    <strong>Label Block Paths<br></strong>You can add a label to call paths.
+    This adds text to the mid-point of a path, giving you insight into where.
+    the path leads and what it’s for. Just like call block labels, path labels
+    are purely informational for call flow designers, they do not impact the
+    contact experience or call flow.<br>
+    To add a label, left-click a path to select it then click
+    <span class="fieldName">Enter label</span> to begin typing.
+  </li>
+</ul>
+<h2 id="">Call Flow Versioning and Publishing</h2>
+<p>
+  As you edit a flow, your changes are automatically saved in the call flow designer.
+  This means you do not need to save your changes as you work. It also means that
+  your changes are only saved in the designer; a call flow is not updated with
+  changes until you publish it. Publishing a call flow creates a new version of
+  the flow with all changes that have been made. You can see and interact with
+  these versions by clicking the <span class="interface">Version</span> button
+  in the designer.
+</p>
+<p>
+  Changes are only saved in the designer because the flow might already be in-use.
+  When you assign a flow to a phone number, any time a call happens for that number,
+  the call flow is in-use for that call. The flow designer lets you make and test
+  changes that only exist in the designer. Once you click
+  <span class="interface">Publish</span> in the designer, the system creates a
+  new version of the flow and the phone number automatically uses the newest version.
+  In this case, if a call flow is actively running for another contact, that call
+  flow will not change. Only new contacts will use the newly-published call flow.
+</p>
+<h2 id="">Call Flow Best Practices</h2>
+<ul>
+  <li>
+    You should always check for active agents before transferring to a queue.
+    The only exception is when you use the
+    <span class="fieldName">Dynamically show available queues</span> setting
+    in the <span class="interface">Queue</span> block. Other checks are optional
+    and depend on the use case, such as if you want a different message or handling
+    for out of office hours.
+  </li>
+  <li>
+    <span class="interface">Select Queue</span> is only needed when using the
+    <span class="interface">Options</span> block. When using the
+    <span class="interface">Queues</span> block, it will automatically handle
+    this.
+  </li>
+  <li>
+    You can test different AI voices in the AI Config tab of your Voice settings
+    (Conversations module &gt;
+    <span class="interface">Conversations settings <img class="inline-icon" src="/guide-media/01JPBC9MJP6PN7MFJCF23GRYM5" alt="ConversationsettingsButton.png"></span>
+    &gt; <span class="interface">Video settings</span> &gt;
+    <span class="interface">AI Config</span>).
+  </li>
+  <li>
+    End every pathway with an <span class="interface">End</span> block. This
+    makes it clear to others who may edit the call flow – including yourself
+    – what the design is.
+  </li>
+  <li>
+    Create a set of guidelines for your call flows, like a style guide. The guidelines
+    help you structure all your call flows similarly, keeping them organized
+    and uniform even if multiple personnel have access to them. Examples of call
+    flow guidelines:
+    <ul>
+      <li>
+        Label each call block according to its function, like
+        <span class="fieldValue">Request callback</span> or
+        <span class="fieldValue">Present menu of queues</span>.
+      </li>
+      <li>Label each pathway.</li>
+      <li>
+        Color code sets of pathways, like all blocks along the path for each
+        queue in a menu option.
+      </li>
+      <li>
+        Use canvas comments
+        <strong><span class="wysiwyg-underline" style="color: #292a2e;">only</span></strong>
+        for questions or suggestions about the call flow.
+      </li>
+    </ul>
+  </li>
+</ul>
+<h2 id="">Right-Click Options</h2>
+<p>
+  You can right-click an area of the canvas to open a list of quick actions. You
+  can also right-click the header of a call block for quick actions to perform
+  on the specific block. The following sections explain these quick actions.
+</p>
+<div class="notification-important">
+  <p>Not all quick actions described in this section may be available yet.</p>
+</div>
+<h3 id="">Canvas Quick Actions</h3>
+<ul>
+  <li>
+    <strong>Add Text</strong>: Similar to a comment, you can add text directly
+    to the canvas.
+  </li>
+  <li>
+    <strong>Add Image</strong>: Lets you add an image to the canvas that you
+    upload from your computer.
+  </li>
+  <li>
+    <strong>Add Comment</strong>: Lets you add an annotation to a specific location
+    on the canvas. These may be helpful to add questions or suggestions about
+    the flow or pathway that others may read, or notes to yourself as you design
+    the flow. Comments do not impact the functionality of a flow or the contact’s
+    experience; they are purely informative for call flow designers.
+  </li>
+  <li>
+    <strong>Paste</strong>: Pastes a call block that you copied to your clipboard
+    in the location where you right-clicked.
+  </li>
+</ul>
+<h3 id="">Call Block Quick Actions</h3>
+<ul>
+  <li>
+    <strong>Change color</strong>: Opens a color picker for you to select the
+    color theme of the block. This
+  </li>
+  <li>
+    <strong>Add comment</strong>: Lets you add an annotation for the block, which
+    displays beside the block. These may be helpful to add questions or suggestions
+    about the block that others may read, or notes to yourself as you design
+    the flow. Comments do not impact the functionality of a block or the contact’s
+    experience; they are purely informative for call flow designers.
+  </li>
+  <li>
+    <strong>Copy</strong>: Copies the block to your clipboard. To paste the copied
+    block to the canvas right-click the canvas and click <strong>Paste</strong>.
+  </li>
+  <li>
+    <strong>Duplicate</strong>: Automatically creates a copy of the call block
+    directly on top of the existing block. You can click and drag the duplicate
+    around the canvas to view the original block underneath.
+  </li>
+  <li>
+    <strong>Delete</strong>: Deletes the call block. You can also click the block
+    and press the delete key on your keyboard.&nbsp;
+  </li>
+</ul>
+	</div>
+
+<div id="callblocks" class="tab-pane">
+	<p class="voiceplus-note">
+	The drop-downs are non-functional for privacy.
+	</p>
+	<h2 id="">Call Flow Blocks</h2>
 <p>
   This section provides information on each call flow block. The blocks are organized
   into six categories by their purpose and functionality. The following sections
@@ -1478,242 +1720,7 @@
   </div>
 </div>
 <!-- closes expandable -->
-<h2 id="">Nodes and Blocks</h2>
-<p>
-  A call block contains nodes. For example, the screenshot below shows an
-  <span class="interface">Options</span> block. Each option in the block is an
-  individual node. The first three DTMF nodes were added in the block’s settings,
-  and the <strong>No Reply</strong> and <strong>No Match</strong> nodes are default
-  nodes that are configured in the properties.
-</p>
-<p>
-  <img src="/guide-media/01JPBBZGDMK3WM8K1ZAFAAKBAH" alt="Redacted image for privacy">
-</p>
-<p>
-  When a block fires, the nodes run sequentially, one after another. In a simple
-  block like <span class="interface">Options</span>, this plays the prompts one
-  after another (requesting the caller to select 1, 2, and 3).
-</p>
-<p>
-  You can combine nodes from multiple blocks into one block. In the below example,
-  a single call block contains nodes from both the
-  <span class="interface">Javascript</span> and
-  <span class="interface">API</span> blocks. Because the nodes run sequentially,
-  the API call would be made first, then the custom JavaScript would execute afterward.
-  Click and drag a node to move it from one block to another, or to re-order the
-  nodes within a single block.
-</p>
-<p>
-  <img src="/guide-media/01JPBC0B0NWH9R2K6G3V4KVWGK" alt="Redacted image for privacy">
-</p>
-<h2 id="h_01JSCP8WT34N3K8RP1EZFME4AZ">Text-to-Speech Effects</h2>
-<p>
-  Some blocks let you use text-to-speech. This means that you type a phrase in
-  the block properties, and the <company> system speaks that sentence when the call
-  block fires. A simple example of this is when you create a menu system with the
-  Options block, and the system speaks "<em>Press 1 to speak with a teller. Press 2 to speak with a loan officer...</em>".&nbsp;
-</p>
-<p>
-  <img src="/guide-media/01JSCKR99ZAWVN1E1C7PA2HN4X" alt="Redacted image for privacy" width="250" height="249">
-</p>
-<p>
-  You can select which effects to add to your text from the Effects drop-down.
-  This adds XML to the text, denoting which words have the effect. You can edit
-  the text + XML to control exactly how you want the effects to apply to the text.&nbsp;
-</p>
-<p>Remember the following when adding TTS effects:</p>
-<ul>
-  <li>
-    Be sure to include the text that you want to receive the effect
-    <strong>in between</strong> the opening and closing tags. As shown in the
-    screenshot below, the opening tag indicates that the text will be spoken
-    slowly, and the closing tag is at the end of the sentence, ensuring that
-    the full sentence will be spoken slowly. In other words, the tags are around
-    the full text, so the full text receives the effect.
-  </li>
-  <li>
-    As shown in the screenshot below, the text that will be spoken slowly is
-    black. If the color of the text is light blue, like the color of the tags,
-    then the text you type <strong>will not save</strong>.
-  </li>
-</ul>
-<p>
-  <img src="/guide-media/01JSCNM0J866CFMW04568MWGHQ" alt="Redacted image for privacy" width="250" height="263">
-</p>
-<h2 id="">Call Flow Templates</h2>
-<p>
-  <company> does not yet support call flow templates. However, templates are on the
-  roadmap as a future enhancement. If you have ideas for call flow templates, feel
-  free to share them with your <company> support rep, as this may be useful for future
-  enhancements or documentation.
-</p>
-<h2 id="">Call Block Paths</h2>
-<p>
-  The connectors between blocks are called paths. When a contact calls your system
-  and enters the call flow, they’re able to navigate around the network of call
-  blocks that are connected by paths. The only way a contact can move to different
-  blocks is through a path.
-</p>
-<p>
-  When you create a path between blocks, the system automatically creates the shape
-  of the path. If you have a large, complex call flow, this may require you to
-  spread out your blocks to for an easy-to-read structure. You may want to label
-  your paths to simplify your designing experience.
-</p>
-<p>With paths, you can:</p>
-<ul>
-  <li id="">
-    <strong>Connect Call Blocks</strong><br>
-    Each option in a block has a dot on the right side. Left-click the dot and
-    drag your mouse to whichever new block or option you want to connect it with.
-  </li>
-  <li>
-    <strong>Delete Block Paths</strong><br>
-    You can delete a path by clicking the path and pressing the delete key on
-    your keyboard.
-  </li>
-  <li>
-    <strong>Label Block Paths<br></strong>You can add a label to call paths.
-    This adds text to the mid-point of a path, giving you insight into where.
-    the path leads and what it’s for. Just like call block labels, path labels
-    are purely informational for call flow designers, they do not impact the
-    contact experience or call flow.<br>
-    To add a label, left-click a path to select it then click
-    <span class="fieldName">Enter label</span> to begin typing.
-  </li>
-</ul>
-<h2 id="">Call Flow Versioning and Publishing</h2>
-<p>
-  As you edit a flow, your changes are automatically saved in the call flow designer.
-  This means you do not need to save your changes as you work. It also means that
-  your changes are only saved in the designer; a call flow is not updated with
-  changes until you publish it. Publishing a call flow creates a new version of
-  the flow with all changes that have been made. You can see and interact with
-  these versions by clicking the <span class="interface">Version</span> button
-  in the designer.
-</p>
-<p>
-  Changes are only saved in the designer because the flow might already be in-use.
-  When you assign a flow to a phone number, any time a call happens for that number,
-  the call flow is in-use for that call. The flow designer lets you make and test
-  changes that only exist in the designer. Once you click
-  <span class="interface">Publish</span> in the designer, the system creates a
-  new version of the flow and the phone number automatically uses the newest version.
-  In this case, if a call flow is actively running for another contact, that call
-  flow will not change. Only new contacts will use the newly-published call flow.
-</p>
-<h2 id="">Call Flow Best Practices</h2>
-<ul>
-  <li>
-    You should always check for active agents before transferring to a queue.
-    The only exception is when you use the
-    <span class="fieldName">Dynamically show available queues</span> setting
-    in the <span class="interface">Queue</span> block. Other checks are optional
-    and depend on the use case, such as if you want a different message or handling
-    for out of office hours.
-  </li>
-  <li>
-    <span class="interface">Select Queue</span> is only needed when using the
-    <span class="interface">Options</span> block. When using the
-    <span class="interface">Queues</span> block, it will automatically handle
-    this.
-  </li>
-  <li>
-    You can test different AI voices in the AI Config tab of your Voice settings
-    (Conversations module &gt;
-    <span class="interface">Conversations settings <img class="inline-icon" src="/guide-media/01JPBC9MJP6PN7MFJCF23GRYM5" alt="ConversationsettingsButton.png"></span>
-    &gt; <span class="interface">Video settings</span> &gt;
-    <span class="interface">AI Config</span>).
-  </li>
-  <li>
-    End every pathway with an <span class="interface">End</span> block. This
-    makes it clear to others who may edit the call flow – including yourself
-    – what the design is.
-  </li>
-  <li>
-    Create a set of guidelines for your call flows, like a style guide. The guidelines
-    help you structure all your call flows similarly, keeping them organized
-    and uniform even if multiple personnel have access to them. Examples of call
-    flow guidelines:
-    <ul>
-      <li>
-        Label each call block according to its function, like
-        <span class="fieldValue">Request callback</span> or
-        <span class="fieldValue">Present menu of queues</span>.
-      </li>
-      <li>Label each pathway.</li>
-      <li>
-        Color code sets of pathways, like all blocks along the path for each
-        queue in a menu option.
-      </li>
-      <li>
-        Use canvas comments
-        <strong><span class="wysiwyg-underline" style="color: #292a2e;">only</span></strong>
-        for questions or suggestions about the call flow.
-      </li>
-    </ul>
-  </li>
-</ul>
-<h2 id="">Right-Click Options</h2>
-<p>
-  You can right-click an area of the canvas to open a list of quick actions. You
-  can also right-click the header of a call block for quick actions to perform
-  on the specific block. The following sections explain these quick actions.
-</p>
-<div class="notification-important">
-  <p>Not all quick actions described in this section may be available yet.</p>
 </div>
-<h3 id="">Canvas Quick Actions</h3>
-<ul>
-  <li>
-    <strong>Add Text</strong>: Similar to a comment, you can add text directly
-    to the canvas.
-  </li>
-  <li>
-    <strong>Add Image</strong>: Lets you add an image to the canvas that you
-    upload from your computer.
-  </li>
-  <li>
-    <strong>Add Comment</strong>: Lets you add an annotation to a specific location
-    on the canvas. These may be helpful to add questions or suggestions about
-    the flow or pathway that others may read, or notes to yourself as you design
-    the flow. Comments do not impact the functionality of a flow or the contact’s
-    experience; they are purely informative for call flow designers.
-  </li>
-  <li>
-    <strong>Paste</strong>: Pastes a call block that you copied to your clipboard
-    in the location where you right-clicked.
-  </li>
-</ul>
-<h3 id="">Call Block Quick Actions</h3>
-<ul>
-  <li>
-    <strong>Change color</strong>: Opens a color picker for you to select the
-    color theme of the block. This
-  </li>
-  <li>
-    <strong>Add comment</strong>: Lets you add an annotation for the block, which
-    displays beside the block. These may be helpful to add questions or suggestions
-    about the block that others may read, or notes to yourself as you design
-    the flow. Comments do not impact the functionality of a block or the contact’s
-    experience; they are purely informative for call flow designers.
-  </li>
-  <li>
-    <strong>Copy</strong>: Copies the block to your clipboard. To paste the copied
-    block to the canvas right-click the canvas and click <strong>Paste</strong>.
-  </li>
-  <li>
-    <strong>Duplicate</strong>: Automatically creates a copy of the call block
-    directly on top of the existing block. You can click and drag the duplicate
-    around the canvas to view the original block underneath.
-  </li>
-  <li>
-    <strong>Delete</strong>: Deletes the call block. You can also click the block
-    and press the delete key on your keyboard.&nbsp;
-  </li>
-</ul>
-	</div>
-
             
 			<div id="managecallflows" class="tab-pane">
 <h1>Manage Call Flows</h1>
