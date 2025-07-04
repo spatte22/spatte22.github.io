@@ -439,13 +439,21 @@ hr {
 /* CONTACT STYLES */
 
 .contact {
-    display: flex;
+	display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     padding: 3em;
     width: 95vw;
     height: 95vh;
+}
+
+.contact-wrapper {
+	
+	max-width: 1600px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
 }
 
 .contact img {
