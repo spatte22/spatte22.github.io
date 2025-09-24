@@ -1,0 +1,1270 @@
+/*<meta />*/
+
+/* Block side nav display */
+
+/*.row outer-row sidenav-layout {
+	display:none;
+}*/
+
+@font-face 
+{
+	font-family: 'Open Sans';
+	src: url(../fonts/open-sans/opensans-regular.ttf);
+}
+
+body
+{
+	font-family: 'Open Sans', Trebuchet, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.sticky-container
+{
+	display: none;
+}
+
+data-sticky-container
+{
+	display: none;
+}
+
+div.sidenav-wrapper
+{
+	display: none;
+}
+
+.off-canvas-wrapper-inner nav.title-bar .outer-row
+{
+	display: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav.title-bar
+{
+	display: none;
+}
+
+.body-container
+{
+	flex: 1 1;
+	margin-top: -14px;
+	margin-left: -14px;
+	margin-right: -14px;
+	/*overflow: auto; seems to be adding a bunch of padding to the right side of the page  */
+}
+
+.search,
+.search-bar
+{
+	width: 100%;
+	position: relative;
+	/*padding-top: 100px;*/
+	/*left: -123px;*/
+	color: #D0D2D3;
+	margin: 0 auto;
+	max-width: 1300px;
+}
+
+.search-field:focus,
+.search-submit:focus,
+.search-filter:focus
+{
+	outline: none;
+}
+
+.search-filter-content
+{
+	z-index: 3;
+	/*max-height: 600px;*/
+	border: solid 1px #d9d9d9;
+	right: auto;
+	left: 16px;
+}
+
+.search-filter-content ul li
+{
+	padding: 0px 0px 1px 0px;
+}
+
+.search-bar .search-filter-wrapper
+{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 16px;
+	right: auto;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	background-image: url('../images/arrow_sidenav_down.png');
+	background-repeat: no-repeat;
+}
+
+.search-bar._Skins_HomepageSearch.mc-component .search-filter-wrapper.open
+{
+	background: transparent;
+}
+
+.search-bar._Skins_HomepageSearch.mc-component .search-filter-wrapper
+{
+	font-size: 14px;
+	right: auto;
+	margin-left: -16px;
+}
+
+span#filterText
+{
+	color: black;
+	line-height: 26px;
+	padding-right: 30px;
+	text-align: right;
+	display: block;
+	padding-left: 20px;
+	padding-top: 3px;
+	margin-right: 0px;
+}
+
+.search-bar .search-filter
+{
+	width: auto !important;
+	background-position: 93% 50% !important;
+	/*max-width: 160px;*/
+}
+
+/*.search-bar .search-filter.selected
+{
+    background-image: url(../Images/arrow_sidenav_down.png);
+	background-repeat: no-repeat;
+}*/
+
+.search-bar._Skins_HomepageSearch.mc-component .search-field
+{
+	padding-left: 60px;
+}
+
+/*.search-bar._Skins_HomepageSearch.mc-component .search-field::placeholder
+{ 
+    content: 'Searching in...';
+	color: #d0d2d3;
+}*/
+
+/* Preventing 1em of padding below the footer that happens automatically in Flare 2020r2 */
+
+.main-section > .outer-row
+{
+	padding-bottom: 0;
+}
+
+/* Preventing search filter drop-down from getting cut off at around 600px. tall */
+
+.main-section
+{
+	overflow-y: visible;
+}
+
+.hero
+{
+	width: 100%;
+	text-align: center;
+	/*background-image: url("../Images/hero4.jpg");*/
+	/*margin-top: 50px;*/
+	height: 300px;
+	padding-top: 60px;
+	/*background-color: lightgray;*/
+}
+
+.heroImage
+{
+	background-repeat: no-repeat;
+	height: 300px;
+	width: 100%;
+	position: absolute;
+	z-index: -1;
+	margin-top: -60px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
+}
+
+.themePurplehero
+{
+	background-color: #3E354C;
+	/*background-color: #291F39;
+	opacity: 0.9;*/
+	height: 300px;
+	margin-top: -60px;
+}
+
+.themeBluehero
+{
+	background-color: #415D6B;
+	/*background-color: #2C4B5B;
+	opacity: 0.9;*/
+	height: 300px;
+	margin-top: -60px;
+}
+
+.themeGreenhero
+{
+	background-color: #3E4A39;
+	/*background-color: #293623;
+	opacity: 0.9;*/
+	height: 300px;
+	margin-top: -60px;
+}
+
+.themeMaroonhero
+{
+	background-color: #412D2D;
+	/*background-color: #2C1616;
+	opacity: 0.9;*/
+	height: 300px;
+	margin-top: -60px;
+}
+
+.themeGrayhero
+{
+	background-color: #4C4C4C;
+	/*background-color: #393838;
+	opacity: 0.9;*/
+	height: 300px;
+	margin-top: -60px;
+}
+
+/* Centers the tabs and hides the input radio button */
+
+div.tabContainer
+{
+	text-align: center;
+	margin-top: 125px;
+}
+
+div.tabs
+{
+	top: -56px;
+	position: relative;
+}
+
+div.tab-links
+{
+	display: flex;
+	justify-content: center;
+	vertical-align: bottom;
+	margin: 0;
+	/*	border-bottom: solid 0.5px #B3B3B3; */
+	position: absolute;
+	width: 100%;
+	top: -200px;
+	padding-top: 10px;
+	background-color: #fff;
+}
+
+.tabs .switch
+{
+	display: none;
+}
+
+/* Styles the tabs */
+
+div.homePageTabs
+{
+	width: 220px;
+	/*	height: 236px;*/
+	background-color: white;
+	margin-right: 20px;
+	border-radius: 5px;
+	margin-top: 23px;
+}
+
+div.homePageTabsContent a
+{
+	text-decoration: none;
+}
+
+p.homePageTabs
+{
+	font-size: .875rem;
+	line-height: 18px;
+}
+
+h4.homePageTabs
+{
+	margin-top: 0px;
+	margin-bottom: 6px;
+	vertical-align: top;
+	font-size: 18px;
+}
+
+.center-tab-content
+{
+	text-align: center;
+}
+
+/* Styles for the panel */
+
+.panelTable
+{
+	margin: 0px auto;
+}
+
+.panelTable tr td
+{
+	width: 280px;
+	/*	padding-right: 65px;
+	padding-left: 65px;*/
+}
+
+.panelTable tr td:nth-child(2)
+{
+	padding: 0 138px 0 138px;
+	width: 556px;
+}
+
+/*
+.panelTable tr td:first-child
+{
+	max-width: 280px;
+	padding-right: 65px;
+	padding-left: 0px;
+}
+
+.panelTable tr td:last-child
+{
+	max-width: 280px;
+	padding-right: 0px;
+	padding-left: 65px;
+}
+*/
+
+.panelTable tr td h4
+{
+	line-height: 23px;
+	margin-bottom: 7px;
+	color: #007CBE;
+	font-size: 1.125rem;
+}
+
+.panelTable tr td p
+{
+	color: #808080;
+	font-size: 14px;
+	width: 280px;
+}
+
+.home-release-notes
+{
+	margin-top: 2em;
+}
+
+.home-release-notes.h4
+{
+	text-decoration: underline;
+}
+
+/*Tweaks to native title bar */
+
+.off-canvas-wrapper-inner nav.title-bar .outer-row
+{
+	max-width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	display: flex;
+	justify-content: flex-end;
+	align-content: flex-end;
+	align-items: center;
+	position: relative;
+	flex: 1 100%;
+	border-bottom: 1px solid #d0d2d3;
+	top: 5px;
+	height: 60px;
+}
+
+/*Custom title bar*/
+
+.customTitleBar
+{
+	display: flex;
+	/*align-items: center;*/
+	position: absolute;
+	width: 100%;
+	opacity: 1;
+	border: none;
+	height: 70px;
+	z-index: 1001;
+}
+
+.topic-container
+{
+	margin-left: 335px;
+	margin-top: 115px;
+}
+
+div.icons
+{
+	align-self: center;
+	display: flex;
+	margin: auto 50px;
+	order: 3;
+}
+
+div.icon
+{
+	height: 22px;
+	width: 22px;
+	margin: 8px;
+	background-color: #ffffff;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+div.title
+{
+	color: #fff;
+	display: block;
+	margin: auto;
+	align-self: center;
+	margin-left: 0;
+	padding: 4px;
+	width: 62%;
+	order: 2;
+}
+
+div.CompanyLogo
+{
+	margin: auto 0px;
+	align-self: center;
+	order: 4;
+	height: 41px;
+}
+
+.CompanyLogo img
+{
+	border: 0;
+	/*new with responsiveness*/
+	min-width: 125px;
+}
+
+div.ProductLogo
+{
+	margin: auto;
+	margin-right: 20px;
+	margin-left: 20px;
+	align-self: center;
+	order: 1;
+	/*width: 118px;*/
+	font: Regular 22px;
+}
+
+div.ProductLogo img
+{
+	border: 0;
+	/*new with responsiveness*/
+	min-width: 60px;
+}
+
+/* Top Nav Selector styles */
+
+.TopNavSelector-btn
+{
+	background: transparent;
+	color: white;
+	border: none;
+	font-size: 14px;
+	background-image: url('../images/caretdown_white.png');
+	background-position: right;
+	background-repeat: no-repeat;
+	padding-right: 15px;
+}
+
+.TopNavSelector
+{
+	order: 5;
+	margin-right: 20px;
+	margin-left: 40px;
+	margin-top: 19px;
+	/*padding: 0px 32px 10px 0px;*/
+}
+
+.TopNavSelector-content-box
+{
+	position: relative;
+	display: block;
+}
+
+.TopNavSelector-content
+{
+	background: #fff;
+	/*margin-left: -60px;
+	margin-right: -32px;*/
+	margin-top: 14px;
+	box-shadow: 0px 2px 4px #00000029;
+	border: solid 1px #d9d9d9;
+	display: none;
+	min-width: 156px;
+	position: absolute;
+	right: 0;
+	white-space: nowrap;
+}
+
+.TopNavSelector-content a
+{
+	color: #2E2E2E;
+	padding: 8px 16px 8px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.TopNavSelector-content a:hover
+{
+	background-color: #e5e5e5;
+}
+
+.TopNavSelector:hover .TopNavSelector-content
+{
+	display: block;
+}
+
+.TopNavSelector:hover .TopNavSelector-btn
+{
+	background-image: url('../images/caretup_white.png');
+}
+
+p.MyStyle
+{
+	font-family: Arial;
+	font-size: 12pt;
+	margin: 0px;
+}
+
+img
+{
+	border: none;
+}
+
+a.Popup
+{
+	
+}
+
+div.HomeBody
+{
+	float: left;
+	width: 100%;
+	margin-top: 15px;
+}
+
+div.PopLinks
+{
+	border: 1px solid #d0d2d3;
+	width: 10%;
+	float: left;
+	padding: 8px;
+	margin-right: 60px;
+	margin-left: 24px;
+	margin-top: 24px;
+}
+
+div.PopLinks table
+{
+	border: 0;
+}
+
+div.PopLinks table td
+{
+	height: 100px;
+	max-height: 100px;
+	text-align: center;
+	padding-top: 20px;
+}
+
+/* DEMO STYLES */
+
+.tabs .switch
+{
+	position: absolute;
+	z-index: 1;
+}
+
+.tabs .tab
+{
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	z-index: 2;
+	width: 217px;
+	text-align: center;
+	color: #404041;
+}
+
+.tab0
+{
+	display: none;
+}
+
+.tab0-panel
+{
+	height: 500px;
+}
+
+/* Sets effects on the selected tab */
+
+#tab1:checked ~ .tab-links #tab1-tab,
+#tab2:checked ~ .tab-links #tab2-tab,
+#tab3:checked ~ .tab-links #tab3-tab,
+#tab4:checked ~ .tab-links #tab4-tab,
+#tab5:checked ~ .tab-links #tab5-tab
+{
+	border-bottom: 4px solid #007CBE;
+	height: 199px;
+}
+
+.tabs .panels
+{
+	background-color: #fff;
+	padding: 20px;
+	padding-left: 0;
+	padding-top: 30px;
+}
+
+.tabs .panel
+{
+	position: absolute;
+	/*display: inline-block; This seems to be adding an extra vertical scrollbar. */
+	left: -9999;
+	bottom: -9999;
+	display: none;
+	opacity: 0;
+}
+
+/* Adds a border below the tabs row once the user selects a tab */
+
+.tabs .panel:not(#tab0-panel)
+{
+	border-top: solid 0.5px #B3B3B3;
+}
+
+/* This is the magic - http://alistapart.com/article/radio-controlled-web-design */
+
+#tab1:checked ~ .panels #tab1-panel,
+#tab2:checked ~ .panels #tab2-panel,
+#tab3:checked ~ .panels #tab3-panel,
+#tab4:checked ~ .panels #tab4-panel,
+#tab5:checked ~ .panels #tab5-panel
+{
+	position: relative;
+	left: 0;
+	opacity: 1;
+	display: block;
+}
+
+p
+{
+	margin-bottom: 15px;
+}
+
+/*  Footer styles
+	===============================================================================
+*/
+
+.footer-links
+{
+	background: #E5E5E5;
+	border-top: none;
+	padding: 10px 0 5px;
+	padding-right: 15px;
+	padding-left: 15px;
+	text-align: center;
+	width: 100%;
+	/*	height: 91px;*/
+}
+
+.footer-links p
+{
+	color: #dfdfdf;
+}
+
+.footer-links a
+{
+	margin: 0 2px;
+	color: #505050;
+	text-decoration: none;
+	font-size: 14px;
+	padding-left: 60px;
+	padding-right: 60px;
+}
+
+.footer-border
+{
+	border: none;
+}
+
+.container
+{
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.copyright
+{
+	border-top: none;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.list-inline
+{
+	padding-left: 0;
+	margin-left: -5px;
+	list-style: none;
+}
+
+.list-inline > li
+{
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+/* ===== RESPONSIVE STYLES START HERE ===== */
+
+@media only screen and (max-width: 1316px)
+{
+	.hero
+	{
+		padding-top: 54px;
+	}
+
+	div.homePageTabs
+	{
+		max-width: 190px;
+		margin-right: 0px;
+	}
+
+	.tabs .tab
+	{
+		max-width: 190px;
+	}
+
+	.tabs .panels
+	{
+		padding-left: 20px;
+	}
+
+	.panelTable tr td:nth-child(1)
+	{
+		padding-left: 10px;
+	}
+
+	.panelTable tr td:nth-child(2)
+	{
+		padding: 0 50px 0 50px;
+		width: 350px;
+	}
+
+	#tab1:checked ~ .tab-links #tab1-tab,
+	#tab2:checked ~ .tab-links #tab2-tab,
+	#tab3:checked ~ .tab-links #tab3-tab,
+	#tab4:checked ~ .tab-links #tab4-tab,
+	#tab5:checked ~ .tab-links #tab5-tab
+	{
+		width: 90%;
+	}
+
+	.footer-links a
+	{
+		padding: 0 30px 0 30px;
+	}
+}
+
+@media only screen and (max-width: 1000px)
+{
+	div.title
+	{
+		font-size: 14px;
+	}
+
+	.TopNavSelector
+	{
+		margin-left: 25px;
+	}
+
+	.TopNavSelector-btn
+	{
+		font-size: 12px;
+	}
+
+	.TopNavSelector-content
+	{
+		font-size: 12px;
+		/*right: -76px;*/
+	}
+
+	.hero
+	{
+		padding-top: 20px;
+		max-height: 230px;
+	}
+
+	.search-bar._Skins_HomepageSearch.mc-component .search-field
+	{
+		font-size: 12px;
+	}
+
+	._Skins_HomepageSearch.mc-component .search-filter-content
+	{
+		font-size: 12px;
+	}
+
+	div.homePageTabs
+	{
+		max-width: 150px;
+	}
+
+	h4.homePageTabs
+	{
+		font-size: 16px;
+	}
+
+	p.homePageTabs
+	{
+		font-size: 12px;
+	}
+
+	.tabs .tab
+	{
+		max-width: 140px;
+	}
+
+	table.panelTable tr td:nth-child(2)
+	{
+		padding: 0 25px 0 25px;
+		max-width: 250px;
+	}
+
+	p.center-tab-content > img
+	{
+		max-width: 60px;
+	}
+
+	table.panelTable tr td h4
+	{
+		max-width: 200px;
+		font-size: 16px;
+	}
+
+	table.panelTable tr td p
+	{
+		max-width: 200px;
+		margin-bottom: 5px;
+		font-size: 12px;
+	}
+
+	table.panelTable tr td
+	{
+		max-width: 202px;
+	}
+
+	.footer-links a
+	{
+		padding: 0 15px 0 15px;
+		font-size: 12px;
+	}
+
+	.footer-links
+	{
+		height: 60px;
+	}
+
+	ul.footer-socials.list-inline
+	{
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+
+	/* Custom search filter */
+
+	.search-bar._Skins_HomepageSearch.mc-component
+	{
+		width: 80%;
+	}
+}
+
+@media only screen and (max-width: 767px)
+{
+	.customTitleBar
+	{
+		position: fixed;
+	}
+
+	div.ProductLogo
+	{
+		margin-left: 10px;
+	}
+
+	.TopNavSelector
+	{
+		margin-left: 12px;
+	}
+
+	/*
+	.TopNavSelector-content
+	{
+		right: -76px;
+	}
+*/
+
+	.search
+	{
+		width: 90%;
+	}
+
+	div.tab-links
+	{
+		display: grid;
+		justify-content: center;
+	}
+
+	div.homePageTabs
+	{
+		margin-top: 10px;
+	}
+
+	h4.homePageTabs
+	{
+		margin-top: -10px;
+	}
+
+	#tab5-tab.tab
+	{
+		margin-bottom: 75px;
+	}
+
+	.off-canvas-content
+	{
+		overflow: inherit;
+	}
+
+	.copyright
+	{
+		position: fixed;
+		z-index: 2;
+	}
+
+	.panelTable
+	{
+		display: block;
+	}
+
+	.panelTable tr td
+	{
+		display: inline-block;
+	}
+
+	.panelTable tr td:nth-child(1)
+	{
+		padding: 0px;
+	}
+
+	.tabs.panels
+	{
+		padding: 0px;
+	}
+
+	.tabs .panel:not(#tab0-panel)
+	{
+		border: none;
+	}
+
+	#tab1:checked ~ .tab-links #tab1-tab,
+	#tab2:checked ~ .tab-links #tab2-tab,
+	#tab3:checked ~ .tab-links #tab3-tab,
+	#tab4:checked ~ .tab-links #tab4-tab,
+	#tab5:checked ~ .tab-links #tab5-tab
+	{
+		border-right: 4px solid #007CBE;
+		border-bottom: none;
+		padding-right: 10px;
+		height: auto;
+		margin-left: -85%;
+	}
+
+	#tab1:checked ~ .tab-links #tab2-tab,
+	#tab1:checked ~ .tab-links #tab3-tab,
+	#tab1:checked ~ .tab-links #tab4-tab,
+	#tab1:checked ~ .tab-links #tab5-tab
+	{
+		padding-right: 10px;
+		height: auto;
+		margin-left: -85%;
+	}
+
+	#tab2:checked ~ .tab-links #tab1-tab,
+	#tab2:checked ~ .tab-links #tab3-tab,
+	#tab2:checked ~ .tab-links #tab4-tab,
+	#tab2:checked ~ .tab-links #tab5-tab
+	{
+		padding-right: 10px;
+		height: auto;
+		margin-left: -85%;
+	}
+
+	#tab3:checked ~ .tab-links #tab1-tab,
+	#tab3:checked ~ .tab-links #tab2-tab,
+	#tab3:checked ~ .tab-links #tab4-tab,
+	#tab3:checked ~ .tab-links #tab5-tab
+	{
+		padding-right: 10px;
+		height: auto;
+		margin-left: -85%;
+	}
+
+	#tab4:checked ~ .tab-links #tab1-tab,
+	#tab4:checked ~ .tab-links #tab2-tab,
+	#tab4:checked ~ .tab-links #tab3-tab,
+	#tab4:checked ~ .tab-links #tab5-tab
+	{
+		padding-right: 10px;
+		height: auto;
+		margin-left: -85%;
+	}
+
+	#tab5:checked ~ .tab-links #tab1-tab,
+	#tab5:checked ~ .tab-links #tab2-tab,
+	#tab5:checked ~ .tab-links #tab3-tab,
+	#tab5:checked ~ .tab-links #tab4-tab
+	{
+		padding-right: 10px;
+		height: auto;
+		margin-left: -85%;
+	}
+
+	#tab1:checked ~ .panels #tab1-panel
+	{
+		margin-top: -230px;
+	}
+
+	#tab2:checked ~ .panels #tab2-panel
+	{
+		margin-top: -70px;
+	}
+
+	#tab3:checked ~ .panels #tab3-panel
+	{
+		margin-top: 95px;
+	}
+
+	#tab4:checked ~ .panels #tab4-panel
+	{
+		margin-top: 256px;
+	}
+
+	#tab5:checked ~ .panels #tab5-panel
+	{
+		margin-top: 435px;
+	}
+
+	.tabs .tab
+	{
+		max-width: 190px;
+	}
+
+	div.homePageTabs
+	{
+		max-width: none;
+	}
+
+	ul.footer-socials.list-inline
+	{
+		margin-left: -10px;
+	}
+
+	ul.footer-socials.list-inline > li
+	{
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.home-release-notes
+	{
+		margin-top: 50em;
+	}
+}
+
+@media only screen and (max-width: 500px)
+{
+	div.title
+	{
+		display: none;
+	}
+
+	div.icons
+	{
+		display: none;
+	}
+
+	div.ProductLogo img
+	{
+		max-width: 60px;
+	}
+
+	div.CompanyLogo img
+	{
+		max-width: 125px;
+		margin-left: 36vw;
+		/*may need adjusted on smaller screens, haven't tested*/
+	}
+}
+
+@media only screen and (max-width: 450px)
+{
+	div.ProductLogo
+	{
+		margin-right: 2px;
+	}
+
+	div.title
+	{
+		display: none;
+	}
+
+	div.CompanyLogo
+	{
+		margin-right: 0px;
+	}
+
+	.TopNavSelector
+	{
+		margin-left: 0;
+		margin-right: 10px;
+	}
+
+	.search
+	{
+		width: 80%;
+	}
+
+	div.homePageTabs
+	{
+		max-width: 140px;
+	}
+
+	div.homePageTabsContent
+	{
+		max-width: 140px;
+	}
+
+	#tab1:checked ~ .tab-links #tab2-tab,
+	#tab1:checked ~ .tab-links #tab3-tab,
+	#tab1:checked ~ .tab-links #tab4-tab,
+	#tab1:checked ~ .tab-links #tab5-tab
+	{
+		padding-right: 10px;
+		padding-left: 10px;
+		height: auto;
+		margin-left: -95%;
+		max-width: 150px;
+	}
+
+	#tab2:checked ~ .tab-links #tab1-tab,
+	#tab2:checked ~ .tab-links #tab3-tab,
+	#tab2:checked ~ .tab-links #tab4-tab,
+	#tab2:checked ~ .tab-links #tab5-tab
+	{
+		padding-right: 10px;
+		padding-left: 10px;
+		height: auto;
+		margin-left: -95%;
+		max-width: 150px;
+	}
+
+	#tab3:checked ~ .tab-links #tab1-tab,
+	#tab3:checked ~ .tab-links #tab2-tab,
+	#tab3:checked ~ .tab-links #tab4-tab,
+	#tab3:checked ~ .tab-links #tab5-tab
+	{
+		padding-right: 10px;
+		padding-left: 10px;
+		height: auto;
+		margin-left: -95%;
+		max-width: 150px;
+	}
+
+	#tab4:checked ~ .tab-links #tab1-tab,
+	#tab4:checked ~ .tab-links #tab2-tab,
+	#tab4:checked ~ .tab-links #tab3-tab,
+	#tab4:checked ~ .tab-links #tab5-tab
+	{
+		padding-right: 10px;
+		padding-left: 10px;
+		height: auto;
+		margin-left: -95%;
+		max-width: 150px;
+	}
+
+	#tab5:checked ~ .tab-links #tab1-tab,
+	#tab5:checked ~ .tab-links #tab2-tab,
+	#tab5:checked ~ .tab-links #tab3-tab,
+	#tab5:checked ~ .tab-links #tab4-tab
+	{
+		padding-right: 10px;
+		padding-left: 10px;
+		height: auto;
+		margin-left: -95%;
+		max-width: 150px;
+	}
+
+	#tab2:checked ~ .panels #tab2-panel
+	{
+		margin-top: -45px;
+	}
+
+	#tab3:checked ~ .panels #tab3-panel
+	{
+		margin-top: 135px;
+	}
+
+	#tab4:checked ~ .panels #tab4-panel
+	{
+		margin-top: 315px;
+	}
+
+	#tab5:checked ~ .panels #tab5-panel
+	{
+		margin-top: 515px;
+	}
+
+	table.panelTable tr td h4
+	{
+		max-width: 150px;
+	}
+
+	table.panelTable tr td p
+	{
+		max-width: 150px;
+	}
+
+	table.panelTable tr td:nth-child(2)
+	{
+		padding: 0px 0px 0px 25px;
+	}
+
+	.footer-links a
+	{
+		padding: 0px 2px 0px 0px;
+	}
+}
+
+@media only screen and (max-width: 370px)
+{
+	div.icons
+	{
+		margin: 0;
+	}
+}
+

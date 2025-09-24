@@ -1,0 +1,15 @@
+﻿/*<meta />*/
+/*This stylesheet provides North American English settings for text strings configured in CSS*/
+
+:root
+{
+	--importantNote: "Important";
+	--tipNote: "Tip";
+	--exampleNote: "Example";
+	--warningNote: "Warning";
+	--newfeatureNote: "New Feature";
+	--codeSnippetCopyLabel: "Copy to Clipboard";
+	--onThisPage: "ON THIS PAGE";
+	--shareThisPage: "SHARE THIS PAGE";
+	--giveFeedback: "FEEDBACK";
+}

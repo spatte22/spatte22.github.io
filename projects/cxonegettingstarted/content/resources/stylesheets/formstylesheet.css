@@ -1,0 +1,48 @@
+﻿#private-key-jwt-field {
+	display: none;
+}
+
+#conf-or-pub-app-fields {
+	display: none;
+}
+
+.form-section {
+	margin: 1em 2em 2em;
+}
+
+.form-section p {
+	font-weight: bold;
+}
+
+.form-section textarea {
+	width: 50vw;
+	height: 10vh;
+}
+
+#app-name,
+#JWKS-endpoint {
+	width: 30vw;
+}
+
+#form-thank-you {
+	width: 50vw;
+	margin-top: 3em;
+	margin-left: auto;
+	margin-right: auto;
+	display: none;
+	font-size: 1.5em;
+}
+
+#form-thank-you p {
+	font-weight: bold;
+}
+
+#form input[type=text],
+textarea {
+	max-width: 30vw;
+}
+
+#form {
+	background-color: #F2F2F2;
+	padding: 2em;
+}

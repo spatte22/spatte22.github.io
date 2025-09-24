@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" class="_Skins_HTML5skin" data-mc-search-type="Stem" data-mc-help-system-file-name="Index.xml" data-mc-path-to-help-system="../../../" data-mc-has-content-body="True" data-mc-toc-path="Documentation" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic;Default" data-mc-preload-images="false" data-mc-in-preview-mode="false">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-config" content="../../../Skins/Favicons/browserconfig.xml" />
+        <meta name="description" content="Showcases a basic example of using CXone APIs to perform a simple task. This app reports any agent in a business unit that has been inactive for over 12 hours." />
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../Skins/Favicons/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="../../../Skins/Favicons/favicon-32x32.png" />
+        <link rel="icon" sizes="96x96" href="../../../Skins/Favicons/favicon-96x96.png" />
+        <link rel="icon" sizes="32x32" href="../../../Skins/Favicons/favicon-32x32.png" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" /><title>Your First App</title>
+        <link href="../../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Default/Stylesheets/Components/Print.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Fluid/stylesheets/foundation.6.2.3.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Fluid/stylesheets/styles.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Fluid/stylesheets/tablet.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Fluid/stylesheets/mobile.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <link href="../../../Skins/Fluid/stylesheets/print.css" rel="stylesheet" type="text/css" data-mc-generated="True" />
+        <style>/*&lt;meta /&gt;*/
+
+.button.share-button
+{
+	-pie-background: linear-gradient(transparent, transparent);
+}
+
+.button.feedback-button
+{
+	-pie-background: linear-gradient(transparent, transparent);
+}
+
+.needs-pie
+{
+	behavior: url('../../../Resources/Scripts/PIE-no-motw.htc');
+}
+
+</style>
+        <link href="../../resources/stylesheets/mainstyles.css" rel="stylesheet" type="text/css" />
+        <style>
+		body {scroll-behavior: smooth;}
+	</style>
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../Skins/Favicons/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="../../../Skins/Favicons/favicon-32x32.png" />
+        <link rel="icon" sizes="96x96" href="../../../Skins/Favicons/favicon-96x96.png" />
+        <link rel="icon" sizes="32x32" href="../../../Skins/Favicons/favicon-32x32.png" />
+        <link rel="icon" sizes="16x16" href="../../../Skins/Favicons/favicon-16x16.png" />
+        <script src="../../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../../Resources/Scripts/purify.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/require.config.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/foundation.6.2.3_custom.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/plugins.min.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../../Resources/Scripts/MadCapAll.js" type="text/javascript" defer="defer">
+        </script>
+        <script src="../../resources/scripts/searchfilterlabels.js">
+        </script>
+        <script type="text/javascript" src="../../resources/prism/prism.js">
+        </script>
+    </head>
+    <body>
+        <div class="foundation-wrap off-canvas-wrapper">
+            <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper="">
+                <aside class="off-canvas position-right" role="complementary" id="offCanvas" data-off-canvas="" data-position="right" data-mc-ignore="true">
+                    <ul class="off-canvas-drilldown vertical menu off-canvas-list" data-drilldown="" data-mc-back-link="Back" data-mc-css-tree-node-expanded="is-drilldown-submenu-parent" data-mc-css-tree-node-collapsed="is-drilldown-submenu-parent" data-mc-css-sub-menu="vertical menu slide-in-right is-drilldown-submenu" data-mc-include-indicator="False" data-mc-include-icon="False" data-mc-include-parent-link="True" data-mc-include-back="True" data-mc-defer-expand-event="True" data-mc-expand-event="click.zf.drilldown" data-mc-toc="True">
+                    </ul>
+                </aside>
+                <div class="off-canvas-content inner-wrap" data-off-canvas-content="">
+                    <div>
+                        <nav class="title-bar tab-bar" aria-label="Main navigation and search" data-mc-ignore="true"><a class="skip-to-content fluid-skip showOnFocus" href="#">Skip To Main Content</a>
+                            <div class="middle title-bar-section outer-row clearfix">
+                                <div class="menu-icon-container relative clearfix">
+                                    <div class="central-account-wrapper">
+                                        <div class="central-dropdown"><a class="central-account-drop"><span class="central-account-image"></span><span class="central-account-text">Account</span></a>
+                                            <div class="central-dropdown-content"><a class="MCCentralLink central-dropdown-content-settings">Settings</a>
+                                                <hr class="central-separator" /><a class="MCCentralLink central-dropdown-content-logout">Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="menu-icon" aria-label="Show Navigation Panel" data-toggle="offCanvas"><span></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="title-bar-layout outer-row">
+                                <div class="logo-wrapper"><a class="logo" href="../../home.htm" alt="Logo"></a>
+                                </div>
+                                <div class="navigation-wrapper nocontent">
+                                    <ul class="navigation clearfix" data-mc-css-tree-node-has-children="has-children" data-mc-css-sub-menu="sub-menu" data-mc-expand-event="mouseenter" data-mc-top-nav-menu="True" data-mc-max-depth="2" data-mc-include-icon="False" data-mc-include-indicator="False" data-mc-include-children="True" data-mc-include-siblings="True" data-mc-include-parent="True" data-mc-toc="True">
+                                        <li class="placeholder" style="visibility:hidden"><a>placeholder</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="central-account-wrapper">
+                                    <div class="central-dropdown"><a class="central-account-drop"><span class="central-account-image"></span><span class="central-account-text">Account</span></a>
+                                        <div class="central-dropdown-content"><a class="MCCentralLink central-dropdown-content-settings">Settings</a>
+                                            <hr class="central-separator" /><a class="MCCentralLink central-dropdown-content-logout">Logout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="nav-search-wrapper">
+                                    <div class="nav-search row">
+                                        <form class="search" action="#">
+                                            <div class="search-bar search-bar-container needs-pie">
+                                                <input class="search-field needs-pie" type="search" aria-label="Search Field" placeholder="Search for..." />
+                                                <div class="search-filter-wrapper"><span class="invisible-label" id="search-filters-label">Filter: </span>
+                                                    <div class="search-filter" aria-haspopup="true" aria-controls="sf-content" aria-expanded="false" aria-label="Search Filter" title="All pages" role="button" tabindex="0">
+                                                    </div>
+                                                    <div class="search-filter-content" id="sf-content">
+                                                        <ul>
+                                                            <li>
+                                                                <button class="mc-dropdown-item" aria-labelledby="search-filters-label filterSelectorLabel-00001"><span id="filterSelectorLabel-00001">All pages</span>
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="search-submit-wrapper" dir="ltr">
+                                                    <div class="search-submit" title="Search" role="button" tabindex="0"><span class="invisible-label">Submit Search</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="main-section">
+                        <div class="row outer-row sidenav-layout">
+                            <nav class="sidenav-wrapper">
+                                <div class="sidenav-container">
+                                    <ul class="off-canvas-accordion vertical menu sidenav" data-accordion-menu="" data-mc-css-tree-node-expanded="is-accordion-submenu-parent" data-mc-css-tree-node-collapsed="is-accordion-submenu-parent" data-mc-css-sub-menu="vertical menu accordion-menu is-accordion-submenu nested" data-mc-include-indicator="False" data-mc-include-icon="False" data-mc-include-parent-link="False" data-mc-include-back="False" data-mc-defer-expand-event="True" data-mc-expand-event="click.zf.accordionMenu" data-mc-toc="True" data-mc-side-nav-menu="True">
+                                    </ul>
+                                </div>
+                            </nav>
+                            <div class="body-container">
+                                <div data-mc-content-body="True">
+                                    <div class="hidden">
+                                        <!-- Global site tag (gtag.js) - Google Analytics -->
+                                        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-73782956-4">
+                                        </script>
+                                        <script>/* <![CDATA[ */
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+
+				gtag('config', '311724910'); <!--Universal Analytics code - this is the Property ID for "Developer Portal - GA4"-->
+				gtag('config', 'G-X0F05SS2RX'); <!--GA4 code-->/* ]]> */</script>
+                                    </div>
+                                    <div data-sticky-container="" class="title-bar-container sticky-container-custom">
+                                        <div class="customTitleBar themeBlue" data-mc-conditions="_TEMPLATE_LandingPage.themeBlue">
+                                            <div class="ProductLogo"><a href="../../home.htm"><img src="../../resources/masterpages/images/cxone-white.svg" /></a>
+                                            </div>
+                                            <div class="title" data-mc-conditions="_TEMPLATE_LandingPage.HeaderTitle"><a href="../../home.htm"><span class="mc-variable _TEMPLATE.Title variable">Developer Portal</span></a>
+                                            </div>
+                                            <div class="CompanyLogo" data-mc-conditions="_TEMPLATE_LandingPage.HeaderCompanyLogo">
+                                                <img src="../../resources/masterpages/images/nice_white.svg" />
+                                            </div>
+                                            <!--<MadCap:snippetBlock src="TopNavSelector.flsnp" MadCap:conditions="_TEMPLATE_LandingPage.HeaderSelector" />-->
+                                        </div>
+                                    </div>
+                                    <div class="hero">
+                                    </div>
+                                    <div>
+                                        <div class="sideNav">
+                                            <ul class="nocontent menu _Skins_LeftNav mc-component" data-mc-is-context-sensitive="True" data-mc-linked-toc="Data/Tocs/SideTOC.js" data-mc-side-menu="True" data-mc-max-depth="1" data-mc-include-icon="False" data-mc-include-indicator="False" data-mc-include-children="True" data-mc-include-siblings="True" data-mc-include-parent="True" data-mc-toc="True">
+                                            </ul>
+                                        </div>
+                                        <div class="topic-container">
+                                            <div class="ourTopicContainer">
+                                                <div class="nocontent">
+                                                    <div class="MCBreadcrumbsBox_0 breadcrumbs" role="navigation" aria-label="Breadcrumbs" data-mc-breadcrumbs-divider="&gt;" data-mc-breadcrumbs-count="3" data-mc-toc="True"><span class="MCBreadcrumbsPrefix"> </span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="buttons popup-container clearfix topicToolbarProxy _Skins_Breadcrumbs mc-component nocontent" style="mc-topic-toolbar-items: AddTopicToFavorites;">
+                                                        <div class="button-group-container-left">
+                                                            <button class="button needs-pie share-button" onclick="document.location.href=&quot;mailto:?subject=Help Topic: &quot; + document.title +&quot;&amp;body=Help Topic: &quot; + location.href;" title="Email this online help page to someone">
+                                                                <div>
+                                                                    <div role="img" class="button-icon-wrapper">
+                                                                        <div class="button-icon"> </div>
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+                                                            <button class="button needs-pie feedback-button" onclick="document.location.href=&quot;mailto:onlinehelpcr@nice.com?subject=Help Topic: &quot; + document.title +&quot;&amp;body=Help Topic: &quot; + location.href;" title="Send email feedback about this online help page">
+                                                                <div>
+                                                                    <div role="img" class="button-icon-wrapper">
+                                                                        <div class="button-icon"> </div>
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="topicBody">
+                                                    <div role="main" id="mc-main-content">
+                                                        <h1 id="YourFirstApp" data-magellan-target="YourFirstApp"><a name="aanchor5"></a>
+                                                            <MadCap:concept term="Documentation" />Your First App</h1>
+                                                        <p>This tutorial provides a basic example of how to use <span class="mc-variable productVariables.PlatformNameShort variable">CXone</span> APIs to perform a simple task. It demonstrates the following:</p>
+                                                        <ul>
+                                                            <li>
+                                                                <p>How to handle authentication for API&#160;calls</p>
+                                                            </li>
+                                                            <li>
+                                                                <p>How to build your base URL for <span class="mc-variable productVariables.PlatformNameShort variable">CXone</span> APIs</p>
+                                                            </li>
+                                                            <li>
+                                                                <p>Working with <a href="../../api/reportingapi/reportingapi.html">Reporting APIs</a> </p>
+                                                            </li>
+                                                        </ul>
+                                                        <h2 id="Task" data-magellan-target="Task">Task</h2>
+                                                        <p>For all agents in a <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm glossaryTermPopup MCTextPopupHotSpot_ MCTextPopupHotSpot_Popup" glossTerm="CXone.Term37">business unit<img class="MCHelpControl_Image_Icon" src="../../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /><span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>High-level organizational grouping used to manage technical support, billing, and global settings for your CXone environment</span></a>, report any agent that has been inactive for the previous 12 hours or longer. </p>
+                                                        <h2 id="TaskBreakdown" data-magellan-target="TaskBreakdown">Task Breakdown</h2>
+                                                        <p>This task can be broken down into a sequence of subtasks:</p>
+                                                        <ul>
+                                                            <li>Discovery of the authentication endpoint.</li>
+                                                            <li>Authentication of the <span class="mc-variable productVariables.AppMod variable">application</span> using the <span class="mc-variable productVariables.PlatformNameShort variable">CXone</span> authentication endpoint and credentials that have been acquired via <span class="mc-variable productVariables.AppMod variable">application</span> <a href="getstarted.htm">registration</a> (client ID and client secret).</li>
+                                                            <li>Discovery of the business unit-specific <span class="mc-variable productVariables.PlatformNameShort variable">CXone</span> API endpoint.
+				<ul><li>Use tenant ID to acquire the area and domain for the business unit's API Server.</li><li>Use the area and domain to build the full qualified domain name (FQDN) for the business unit's API server. </li></ul></li>
+                                                            <li>Usage of the <span class="mc-variable productVariables.PlatformNameShort variable">CXone</span> <a href="../../api/reportingapi/reportingapi.html">Reporting APIs</a> to get a list of agents and each agent's history.</li>
+                                                        </ul>
+                                                        <p>The following sequence diagram illustrates the interactions between the application and the endpoints referenced above.</p>
+                                                        <div class="MCDropDown MCDropDown_Closed dropDown"><span class="MCDropDownHead dropDownHead"><a href="#" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage" aria-expanded="false" data-mc-conditions="_TEMPLATE_GT-General.Online"><img class="MCDropDown_Image_Icon" src="../../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" />View image</a></span>
+                                                            <div class="MCDropDownBody dropDownBody">
+                                                                <img src="images/agentstatereporterflow.png" alt="Diagram illustrating the interactions between the application and the endpoints referenced above" />
+                                                            </div>
+                                                        </div>
+                                                        <h2 id="Implementation" data-magellan-target="Implementation">Implementation
+        </h2>
+                                                        <p>This example <span class="mc-variable productVariables.app variable">app</span> was implemented  in C# (.NET 6.0).
+        </p>
+                                                        <h2 id="CredentialInputs" data-magellan-target="CredentialInputs">Credential Inputs
+        </h2>
+                                                        <p>The application requires credentials. Those credentials include:
+        </p>
+                                                        <ul>
+                                                            <li><b>Client ID</b>: Provided by <span class="mc-variable General.NiCE variable">NiCE</span> via email after approving your <span class="mc-variable productVariables.AppMod variable">application</span> registration.</li>
+                                                            <li><b>Client Secret</b>: Provided by <span class="mc-variable General.NiCE variable">NiCE</span> via email after approving your <span class="mc-variable productVariables.AppMod variable">application</span> registration.</li>
+                                                            <li><b>Access Key ID</b>: Acquired by creating an access key for a user in the <span class="mc-variable productVariables.PlatformNameShort variable">CXone</span> UI.</li>
+                                                            <li><b>Access Key Secret</b>: Acquired by creating an access key for a user in the <span class="mc-variable productVariables.PlatformNameShort variable">CXone</span> UI.</li>
+                                                        </ul>
+                                                        <p>You can choose how to load these credentials. For the purpose of demonstrating this example task, the credential values are contained in a JSON file. Best practice for a production <span class="mc-variable productVariables.AppMod variable">application</span> is to keep the credentials in a secure location.</p>
+                                                        <div class="MCDropDown MCDropDown_Closed dropDown"><span class="MCDropDownHead dropDownHead"><a href="#" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage" aria-expanded="false" data-mc-conditions="_TEMPLATE_GT-General.Online"><img class="MCDropDown_Image_Icon" src="../../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" />View instructions for creating access key credentials in the <span class="mc-variable productVariables.PlatformNameShort variable">CXone</span> interface:</a><a name="CreateAccessKey"></a></span>
+                                                            <div class="MCDropDownBody dropDownBody">
+                                                                <p> <p>The following instructions assume you've already created a user account to make API calls.</p><ol><li value="1">In <span class="mc-variable productVariables.PlatformNameShort variable">CXone</span>, click the app selector <img src="../../resources/images/icons/appselectoricon.png" class="InlineIcon_NoBorder" /> and select <span class="interface mc-variable productVariables.Admin variable">Admin</span>.</li><li value="2">Click <span class="interface">Employees</span>.</li><li value="3">Locate and select your desired account.</li><li value="4">Click the <span class="interface">Access Keys</span> tab.</li><li value="5">Click <span class="interface">Generate New Access Key</span>.</li><li value="6">Copy the <span class="fieldName">Access Key ID</span> and paste it somewhere you can save it.</li><li value="7">Click <span class="interface">(SHOW&#160;SECRET&#160;KEY)</span>.</li><li value="8">Copy the <span class="fieldName">Secret Access Key</span> and paste it somewhere you can save it. If you ever lose the secret key, you'll need to create a new one.</li><li value="9">Click <span class="interface">Save</span>.</li></ol></p>
+                                                            </div>
+                                                        </div>
+                                                        <h2 id="ApplicationEntryPoint" data-magellan-target="ApplicationEntryPoint">Application Entry Point      </h2>
+                                                        <p>The following <span class="techNamed">Main</span> function outlines the steps to accomplish the task: 
+        </p><pre><code class="language-clike">public static void Main(string[] args)
+{
+	var credentials = new ClientCredentials("[path to]\\credentials.json");
+            
+	// 1. Acquire the URL of the authentication endpoint
+	GetTokenEndpoint();
+            
+	// 2. Authenticate and acquire the access token and a JWT from the token endpoint
+	GetAccessTokenAndTenantId(credentials);
+            
+	// 3. Extract the Area and Domain from JWT claims
+	GetApiAreaAndDomain();
+            
+	// Build the base URL for the Agent API
+	GetApiEndpoint();
+
+	// 4. Use the Agent API endpoints to list agents and get their state history
+	ReportInactiveAgents();
+}</code></pre>
+                                                        <h2 id="ApplicationConstants" data-magellan-target="ApplicationConstants">Application Constants
+        </h2>
+                                                        <p>Three class-scoped, static constant values are used in the <span class="mc-variable productVariables.AppMod variable">application</span> for API discovery. These values don't change with respect to the business unit  you're working with.</p>
+                                                        <table class="fieldDefinitionTable">
+                                                            <tr>
+                                                                <th>Constant</th>
+                                                                <th>Details</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>DiscoveryBaseEndpoint</td>
+                                                                <td><b>Value</b>: <span class="techNamed">https://cxone.niceincontact.com</span><br />The base URL to which the <span class="mc-variable productVariables.OIDC variable">OpenID Connect</span> and <span class="mc-variable productVariables.PlatformNameShort variable">CXone</span> discovery paths may be appended.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>OpenIdDiscoveryPath</td>
+                                                                <td><b>Value</b>: <span class="techNamed">/.well-known/openid-configuration</span><br />This path is appended to the <span class="techNamed">DiscoverBaseEndpoint</span>. It's used to determine the URL of the token API endpoint.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>CxOneDiscoveryPath</td>
+                                                                <td><b>Value</b>: <span class="techNamed">/.well-known/cxone-configuration</span><br />Appended to the <span class="techNamed">DiscoverBaseEndpoint</span>. It's used to acquire the business unit's base API endpoint.</td>
+                                                            </tr>
+                                                        </table>
+                                                        <h2 id="KeyVariables" data-magellan-target="KeyVariables">Key Variables
+        </h2>
+                                                        <p>The values of the following class-scoped, static variables are defined during application execution:</p>
+                                                        <table class="fieldDefinitionTable">
+                                                            <tr>
+                                                                <th>Variable</th>
+                                                                <th>Type</th>
+                                                                <th>Details</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>_tokenEndpoint</td>
+                                                                <td>String</td>
+                                                                <td>
+                                                                    <p>The URL of the token-based authentication API.</p>
+                                                                    <p>Populated by <span class="techNamed">GetTokenEndpoint()</span></p>
+                                                                    <p>Used by <span class="techNamed">GetAccessTokenAndTenantId()</span></p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>_accessToken</td>
+                                                                <td>String</td>
+                                                                <td>
+                                                                    <p>The authentication token acquire through the authentication API.</p>
+                                                                    <p>Populated by <span class="techNamed">GetAccessTokenAndTenantId()</span></p>
+                                                                    <p>Used by all Agent API calls</p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>_tenantId</td>
+                                                                <td>String</td>
+                                                                <td>
+                                                                    <p>The UUID that uniquely represents the business unit.</p>
+                                                                    <p>Populated by <span class="techNamed">GetAccessTokenAndTenantId()</span></p>
+                                                                    <p>Used by <span class="techNamed">GetApiAreaAndDomain()</span></p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>_area</td>
+                                                                <td>String</td>
+                                                                <td>
+                                                                    <p>The business unit's area; for example, <span class="techNamed">na1</span>.</p>
+                                                                    <p>Populated by <span class="techNamed">GetApiAreaAndDomain()</span></p>
+                                                                    <p>Used by <span class="techNamed">GetApiEndpoint()</span></p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>_domain</td>
+                                                                <td>String</td>
+                                                                <td>
+                                                                    <p>The business unit's domain; for example, <span class="techNamed">nice</span>.</p>
+                                                                    <p>Populated by <span class="techNamed">GetApiAreaAndDomain()</span></p>
+                                                                    <p>Used by <span class="techNamed">GetApiEndpoint()</span></p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>_apiEndpoint</td>
+                                                                <td>String</td>
+                                                                <td>
+                                                                    <p>The URL representing the area and domain-specific API endpoint for this business unit.</p>
+                                                                    <p>Populated by <span class="techNamed">GetApiEndpoint()</span></p>
+                                                                    <p>Used by all Agent API calls</p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <h2 id="Step1GettheTokenEndpoint" data-magellan-target="Step1GettheTokenEndpoint">Step 1: Get the Token Endpoint
+        </h2>
+                                                        <p><span class="mc-variable productVariables.OIDC variable">OpenID Connect</span> discovery is the first step to authenticating the <span class="mc-variable productVariables.AppMod variable">application</span>. In the following code block, a request is sent to the <span class="mc-variable productVariables.OIDC variable">OpenID Connect</span> discovery endpoint, which returns a JSON response. This response contains the token endpoint. The token endpoint's value is assigned to the <span class="techNamed">_tokenEndpoint</span> variable.
+        </p><pre><code class="language-clike">private static void GetTokenEndpoint()
+{
+	var client = new HttpClient();
+	var request = new HttpRequestMessage()
+	{
+		RequestUri = new Uri($"{DiscoveryBaseEndpoint}{OpenIdDiscoveryPath}"),
+		Method = HttpMethod.Get,
+	};
+
+	request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("text/plain"));
+	var response = client.Send(request);
+	response.EnsureSuccessStatusCode();
+        
+	var jsonTask = response.Content.ReadAsStringAsync();
+	jsonTask.Wait();
+        
+	var jsonText = jsonTask.Result;
+	var jsonObject = JsonNode.Parse(jsonText);
+	_tokenEndpoint = jsonObject?["token_endpoint"]?.GetValue&lt;string&gt;();
+}</code></pre>
+                                                        <h2 id="Step2AuthenticatetheApplicationAccessTokenandTenantID" data-magellan-target="Step2AuthenticatetheApplicationAccessTokenandTenantID">Step 2: Authenticate the Application – Access Token and Tenant ID
+        </h2>
+                                                        <p>After determining the token endpoint, next is authenticating the <span class="mc-variable productVariables.AppMod variable">application</span>. Here the <span class="mc-variable productVariables.app variable">app</span> sends the credentials as key-value pairs that correspond to the client ID, client secret, access key ID, and access key secret as fields in an URL encoded form. The response contains both the access token and an ID token. The access token's value is assigned to the <span class="techNamed">_accessToken</span> variable. The ID token is parsed into a JSON&#160;Web Token (JWT). Among the claims in that JWT are the <span class="mc-variable productVariables.AppMod variable">application</span>'s tenant ID. The tenant ID is extracted from the JWT and assigned to the <span class="techNamed">_tenantId</span> variable.
+</p>
+                                                        <div class="notification-tip">
+                                                            <div class="notificationContent">
+                                                                <p>More information is included in the token response than just the access token. For example, a refresh token (<span class="techNamed">refresh_token</span>) and an expiration time (<span class="techNamed">expires_in</span>) in seconds that indicates how long the access token is good for. For long-running <span class="mc-variable productVariables.AppMod variable">application</span>s, refresh tokens should be used prior to the expiration of the current access token. </p>
+                                                            </div>
+                                                        </div>
+                                                        <p><![CDATA[        ]]></p><pre><code class="language-clike">private static void GetAccessTokenAndTenantId(ClientCredentials? clientCredentials)
+{
+	if (string.IsNullOrEmpty(_tokenEndpoint) || clientCredentials == null)
+	{
+		return;
+	}
+
+	var client = new HttpClient();
+	var request = new HttpRequestMessage(HttpMethod.Post, _tokenEndpoint);
+
+	var collection = new List&lt;KeyValuePair&lt;string, string&gt;&gt;
+	{
+		new("grant_type", "password"),
+		new("client_id", clientCredentials.ClientId),
+		new("client_secret", clientCredentials.ClientSecret)
+		new("username", clientCredentials.AccessKeyId),
+		new("password", clientCredentials.AccessSecret),
+	};
+
+	request.Content = new FormUrlEncodedContent(collection);
+
+	var response = client.Send(request);
+	response.EnsureSuccessStatusCode();
+
+	var jsonTask = response.Content.ReadAsStringAsync();
+	jsonTask.Wait();
+
+	var jsonText = jsonTask.Result;
+	var jsonObject = JsonNode.Parse(jsonText);
+	if (jsonObject == null)
+	{
+		return;
+	}
+       
+	_accessToken = jsonObject["access_token"]!.GetValue&lt;string&gt;();
+
+	var idToken = jsonObject["id_token"]!.GetValue&lt;string&gt;();
+	var jwt = new JwtSecurityTokenHandler().ReadToken(idToken) as JwtSecurityToken;
+	_tenantId = jwt?.Claims.First(c =&gt; c.Type.Equals("tenantId")).Value;
+}</code></pre>
+                                                        <h2 id="Step3DiscoverYourBaseURL" data-magellan-target="Step3DiscoverYourBaseURL">Step 3: Discover Your Base URL</h2>
+                                                        <p>After acquiring the tenant ID, you can discover the API endpoint using a call to the <span class="mc-variable productVariables.PlatformNameShort variable">CXone</span> discovery endpoint. The <span class="techNamed">_area</span> and <span class="techNamed">_domain</span> variables are populated by the response from a <span class="mc-variable productVariables.PlatformNameShort variable">CXone</span> discovery request. </p><pre><code class="language-clike">private static void GetApiAreaAndDomain()
+{
+	if (string.IsNullOrEmpty(_tenantId))
+	{
+		return;
+	}
+
+	var discoveryEndpoint = $"{DiscoveryBaseEndpoint}{CxOneDiscoveryPath}?tenantId={_tenantId}";
+	var client = new HttpClient();
+	var request = new HttpRequestMessage()
+	{
+		Method = HttpMethod.Get,
+		RequestUri = new Uri(discoveryEndpoint),
+	};
+
+	request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("text/plain"));
+	var response = client.Send(request);
+	response.EnsureSuccessStatusCode();
+
+	var jsonTask = response.Content.ReadAsStringAsync();
+	jsonTask.Wait();
+
+	var jsonText = jsonTask.Result;
+	var jsonObject = JsonNode.Parse(jsonText);
+	if (jsonObject == null)
+	{
+		return;
+	}
+
+	_area = jsonObject["area"]?.GetValue&lt;string&gt;();
+	_domain = jsonObject["domain"]?.GetValue&lt;string&gt;();
+}</code></pre>
+                                                        <p>After determining the business unit's area and domain, those values can be used to format the base URL for calls to <span class="mc-variable productVariables.PlatformNameShort variable">CXone</span> APIs. Here  a formatted value is assigned to the <span class="techNamed">_apiEndpoint</span> variable. </p><pre><code class="language-clike">private static void GetApiEndpoint()
+{
+	if (string.IsNullOrEmpty(_area) || string.IsNullOrEmpty(_domain))
+	{
+		return;
+	}
+	_apiEndpoint = $"https://api-{_area}.{_domain}";
+}</code></pre>
+                                                        <h2 id="Step4UsetheAgentAPIs" data-magellan-target="Step4UsetheAgentAPIs">Step 4: Use the Agent APIs</h2>
+                                                        <p>To report the inactive agents, this step is split into two subtasks:&#160;first acquiring a list of agents, then determining which agents have been inactive during the 12+&#160;hours. These tasks use the Agent State and Agent State History APIs. These subtasks are orchestrated by the following function: 
+        </p><pre><code class="language-clike">private static void ReportInactiveAgents()
+{
+	var agentStates = ListAgents();
+	if (agentStates == null)
+	{
+		return;
+	}
+
+	const int lastHours = 12;
+	var endDateTime = DateTime.Now;
+	var endDateParameter = Uri.EscapeDataString(endDateTime.ToUniversalTime().ToString("o"));
+
+	var startDateTime = endDateTime.Subtract(new TimeSpan(lastHours, 0, 0));
+	var startDateParameter = Uri.EscapeDataString(startDateTime.ToUniversalTime().ToString("o"));
+
+	foreach (var agentState in agentStates)
+	{
+		ReportAgentInactiveWithinHours(agentState, lastHours, startDateParameter, endDateParameter);
+	}
+}</code></pre>
+                                                        <h3>Subtask 1: Listing Agents</h3>
+                                                        <p>This subtask uses the <a href="../../api/reportingapi/reportingapi.html#/Reporting/get_agents_state_history">Agent State API</a> to return a list of agents. From this list, you extract the username and agent ID for each agent. These values must be appended to the list then returned to the <span class="mc-variable productVariables.AppMod variable">application</span>. </p>
+                                                        <p>A&#160;key process not shown in this code block is finding the full endpoint path for the Agent State API. When declaring <span class="techNamed">agentStatePath</span>, notice the full endpoint path includes <span class="fieldValue">/incontactapi/services/v27.0</span>. These segments are not shown in the documentation without executing a test request. You can determine full endpoint paths from the API&#160;reference documentation by trying out the API. Read more about this on the <a href="tryitout.htm">Try it out</a> page.</p>
+                                                        <div class="MCDropDown MCDropDown_Closed dropDown"><span class="MCDropDownHead dropDownHead"><a href="#" class="MCDropDownHotSpot dropDownHotspot MCDropDownHotSpot_ MCHotSpotImage" aria-expanded="false" data-mc-conditions="_TEMPLATE_GT-General.Online"><img class="MCDropDown_Image_Icon" src="../../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" />View steps to make a test call from the documentation:</a></span>
+                                                            <div class="MCDropDownBody dropDownBody">
+                                                                <ol>
+                                                                    <li value="1">Navigate to the documentation for the endpoint you want to use.</li>
+                                                                    <li value="2">Expand the documentation and click <span class="interface">Sign In Try it out</span>. If you've already logged in with your <span class="mc-variable productVariables.PlatformNameShort variable">CXone</span> credentials, the button text is <b>Try it out</b>.</li>
+                                                                    <li value="3">Follow the log in process and enter your <span class="mc-variable productVariables.PlatformNameShort variable">CXone</span> account credentials. This lets you make API calls with your <span class="mc-variable productVariables.PlatformNameShort variable">CXone</span> <a href="#" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm glossaryTermPopup MCTextPopupHotSpot_ MCTextPopupHotSpot_Popup" glossTerm="CXone.Term37">tenant<img class="MCHelpControl_Image_Icon" src="../../../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /><span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"> </span>High-level organizational grouping used to manage technical support, billing, and global settings for your CXone environment</span></a>.</li>
+                                                                    <li value="4">Enter any required parameters into the field descriptions.</li>
+                                                                    <li value="5">Click <span class="interface">Execute</span>. The response returns as a Curl request. It also includes a Request URL. Either contain the full request URL, showing any additional segments of the base URL.</li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                        <p>In the following code block, <span class="techNamed">_apiEndpoint</span> assists in forming the URL, as explained above, which is submitted to in the Agent State request. Next, <span class="techNamed">_accessToken</span> provides authorization for the request. Then, the request is submitted and its response is parsed into JSON.</p>
+                                                        <p>When you have the JSON response containing the list of Agent States, you only require two field values for each agent. The following code sample uses a key-value pair to preserve the agent's username and agent ID for brevity. Each key-value pair is appended to a list to be returned. Another common option may be to create an Agent class and construct an instance to retain the response values. </p><pre><code class="language-clike">private static IList&lt;KeyValuePair&lt;string, long&gt;&gt;? ListAgents()
+{
+	if (string.IsNullOrEmpty(_accessToken) || string.IsNullOrEmpty(_apiEndpoint))
+	{
+		return null;
+	}
+    
+	// Construct the Agent State endpoint. This is composed of the API endpoint and 
+	// a path for agent state queries. The path can be determined through the API Documentation.
+	var agentStatePath = "/incontactapi/services/v27.0/agents/states";
+	var agentStateEndpoint = $"{_apiEndpoint}{agentStatePath}";
+    
+	var client = new HttpClient();
+	var request = new HttpRequestMessage()
+	{
+		Method = HttpMethod.Get,
+		RequestUri = new Uri(agentStateEndpoint)
+	};
+        
+	// Add Authorization Header. Here you use the access token that was acquired during step 2.
+	request.Headers.Add("Authorization", $"Bearer {_accessToken}");
+	request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+    
+	IList&lt;KeyValuePair&lt;string, long&gt;&gt;? agentContexts = null;
+    
+	var response = client.Send(request);
+	response.EnsureSuccessStatusCode();
+    
+	var jsonTask = response.Content.ReadAsStringAsync();
+	jsonTask.Wait();
+    
+	var jsonText = jsonTask.Result;
+	var jsonObject = JsonNode.Parse(jsonText);
+    
+	// The format of the JSON response is noted in the Agent States API call documentation.
+	var agentStatesNode = jsonObject?["agentStates"]?.AsArray();
+	var agentStateEnum = agentStatesNode?.GetEnumerator();
+	if (agentStateEnum == null)
+	{
+		return null;
+	}
+        
+	agentContexts = new List&lt;KeyValuePair&lt;string, long&gt;&gt;();
+	while (agentStateEnum.MoveNext())
+	{
+		var agentStateNode = agentStateEnum.Current;
+		if (agentStateNode == null)
+		{
+			continue;
+		}
+            
+		// Capture the agent's name and their unique identifier.
+		// This uses the name for reporting and the agent ID for 
+		// acquiring the agent's state history.
+		var userName = agentStateNode["userName"]!.GetValue&lt;string&gt;();
+		var agentId = agentStateNode["agentId"]!.GetValue&lt;long&gt;();
+    
+		if (string.IsNullOrEmpty(userName) || agentId == 0)
+		{
+			continue;
+		}
+    
+		agentContexts.Add(new(userName, agentId));
+	}
+    
+	return agentContexts;
+}</code></pre>
+                                                        <h3>Subtask 2: Report Agent State History</h3>
+                                                        <p>As a reminder, the primary task is to report any agent in a business unit that has been inactive for the previous 12 hours or longer. Now that you have a list with each agent's name and ID, you can review their state history using the <a href="../../api/reportingapi/reportingapi.html#/Reporting/get_agents__agentId__state_history">Agent State History API</a>.</p>
+                                                        <p>To construct the Agent State History API request, you need the <span class="techNamed">_apiEndpoint</span> and the following four inputs:</p>
+                                                        <table class="fieldDefinitionTable">
+                                                            <tr>
+                                                                <th>Input</th>
+                                                                <th>Type</th>
+                                                                <th>Details</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>agentContext</td>
+                                                                <td>A KeyValuePair&lt;string, long&gt; </td>
+                                                                <td>
+                                                                    <p>The <span class="techNamed">agentContext</span> <b>Key</b> is the agent's username and is used for reporting. It is captured during the execution of <span class="techNamed">ListAgents()</span>.</p>
+                                                                    <p>The <span class="techNamed">agentContext</span> <b>Value</b> is the agent's ID and is used for composing the agent-specific Agent State History API endpoint. It is also used for reporting. It is captured during the execution of <span class="techNamed">ListAgents()</span>.</p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>lastHour</td>
+                                                                <td>Numeric long value</td>
+                                                                <td>This is the number of hours over which the report is to be generated. Its value is used in reporting.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>startDate</td>
+                                                                <td>String</td>
+                                                                <td>
+                                                                    <p>The beginning date of the period the records must belong to. It must be in ISO 8601 format.</p>
+                                                                    <p>This is calculated during the execution of <span class="techNamed">ReportInactiveAgents()</span> and is provided by that function to the reporting function. Its value is used as a parameter in the call to the Agent State History API.</p>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>endDate</td>
+                                                                <td>String</td>
+                                                                <td>
+                                                                    <p>The last date of the period to which the records must belong. This date cannot be more than 31 days after the <span class="fieldName">startDate</span>. It must be in ISO 8601 format. If this field is empty, you can recognize the current date.</p>
+                                                                    <p>This is calculated during the execution of <span class="techNamed">ReportInactiveAgents()</span> and is provided by that function to the reporting function. Its value is used as a parameter in the call to the Agent State History API.</p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                        <p>First, using these elements, you compose the Agent State History URL to which you submit the Agent State History request. Next, you use the <span class="techNamed">_accessToken</span> to provide authorization for the request. Finally, the request is submitted and its response is parsed into JSON.</p>
+                                                        <p>The total records are reported as a numeric value in the JSON response's <span class="techNamed">totalRecords</span> field. Any record with the value of <span class="fieldValue">0</span> indicates that this agent has not been active within the previous 12 hours.</p><pre><code class="language-clike">private static void ReportAgentInactiveWithinHours(KeyValuePair&lt;string, long&gt; agentContext, int lastHours,
+	string startDateParameter, string endDateParameter)
+{
+	if (string.IsNullOrEmpty(_accessToken) || string.IsNullOrEmpty(_apiEndpoint) || agentContext.Value == 0)
+	{
+		return;
+	}
+
+	// Construct the parameterized Agent State History endpoint URL.
+	// This is composed of the API endpoint, the Agent ID (the key-value pair's value) and a path for agent
+	// state history queries. The path format can be determined through the API Documentation.
+	var historyPath = $"/incontactapi/services/v27.0/agents/{agentContext.Value}/state-history";
+        
+	// Add path parameters to the Agent State History specifying the start date and the end date.
+	var parameterizedPath =
+		$"{historyPath}?startDate={startDateParameter}&amp;endDate={endDateParameter}&amp;orderBy=startDate";
+
+	var client = new HttpClient();
+	var request = new HttpRequestMessage(HttpMethod.Get, $"{_apiEndpoint}{parameterizedPath}");
+
+	// Add Authorization Header. Here you use the access token that was acquired during step 2.
+	request.Headers.Add("Authorization", $"Bearer {_accessToken}");
+	request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+	var response = client.Send(request);
+	response.EnsureSuccessStatusCode();
+
+	var jsonTask = response.Content.ReadAsStringAsync();
+	jsonTask.Wait();
+
+	var jsonText = jsonTask.Result;
+	var jsonObject = JsonNode.Parse(jsonText);
+        
+	// Determine the total record count for the agent's state history.  
+	// The format of the JSON response is noted in the Agent State History API call documentation.
+	var count = jsonObject?["totalRecords"]?.GetValue&lt;long&gt;();
+	if (count == 0)
+	{
+		Console.WriteLine(
+			$"Agent {agentContext.Key} (AgentID: {agentContext.Value}) has not been active in the last {lastHours} hour(s) - Zero Event Records");
+	}
+}</code></pre>
+                                                        <h3>Sample Console Output</h3>
+                                                        <p>The <span class="mc-variable productVariables.AppMod variable">application</span> writes the username and agent ID of inactive agents over the last 12 hours to the console.</p><pre><code class="language-clike">Agent winston.smith@classics.com (AgentID: 39297829) has not been active in the last 12 hour(s) - Zero Event Records</code></pre>
+                                                        <h3>Task Completion</h3>
+                                                        <p>When reports have been generated for all agents, the task is complete.</p>
+                                                        <h2 id="SourceCode" data-magellan-target="SourceCode">Source Code</h2>
+                                                        <p><a href="program.zip">Source for this exercise</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="inTopicMenu">
+                                                <div data-sticky-container="" id="LB94-FCY-EedfwsDtE8pfw">
+                                                    <div class="sticky sticky-menu" style="width:100%" data-sticky="" data-top-anchor="LB94-FCY-EedfwsDtE8pfw:top" data-bottom-anchor="contentBody:bottom" data-sticky-on="small" data-scroll-container-on="small">
+                                                        <ul data-magellan="" data-animation-duration="250" data-active-class="selected" data-scroll-container-on="small" class="nocontent menu _Skins_RightNav mc-component">
+                                                            <li class="tree-node"><a href="#YourFirstApp">Your First App</a>
+                                                                <ul>
+                                                                    <li class="tree-node"><a href="#Task">Task</a>
+                                                                    </li>
+                                                                    <li class="tree-node"><a href="#TaskBreakdown">Task Breakdown</a>
+                                                                    </li>
+                                                                    <li class="tree-node"><a href="#Implementation">Implementation
+        </a>
+                                                                    </li>
+                                                                    <li class="tree-node"><a href="#CredentialInputs">Credential Inputs
+        </a>
+                                                                    </li>
+                                                                    <li class="tree-node"><a href="#ApplicationEntryPoint">Application Entry Point      </a>
+                                                                    </li>
+                                                                    <li class="tree-node"><a href="#ApplicationConstants">Application Constants
+        </a>
+                                                                    </li>
+                                                                    <li class="tree-node"><a href="#KeyVariables">Key Variables
+        </a>
+                                                                    </li>
+                                                                    <li class="tree-node"><a href="#Step1GettheTokenEndpoint">Step 1: Get the Token Endpoint
+        </a>
+                                                                    </li>
+                                                                    <li class="tree-node"><a href="#Step2AuthenticatetheApplicationAccessTokenandTenantID">Step 2: Authenticate the Application – Access Token and Tenant ID
+        </a>
+                                                                    </li>
+                                                                    <li class="tree-node"><a href="#Step3DiscoverYourBaseURL">Step 3: Discover Your Base URL</a>
+                                                                    </li>
+                                                                    <li class="tree-node"><a href="#Step4UsetheAgentAPIs">Step 4: Use the Agent APIs</a>
+                                                                    </li>
+                                                                    <li class="tree-node"><a href="#SourceCode">Source Code</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hidden"><![CDATA[    ]]> <!--<MadCap:snippetBlock src="GoogleAnalytics.flsnp" MadCap:conditions="_TEMPLATE_LandingPage.GoogleAnalytics" />--></div>
+                                    <!-- <div MadCap:conditions="_TEMPLATE_ContentStatus.LocalizationSpecific">
+            <div MadCap:conditions="Outputs.Blorange">
+                <script type="text/javascript" src="../Scripts/i18next-1.10.1.min.js">
+                </script>
+                <script type="text/javascript" src="../Scripts/LangDetectCentral.js">
+                </script>
+            </div>
+        </div>
+        <div MadCap:conditions="_TEMPLATE_ContentStatus.LocalizationSpecific">
+            <div MadCap:conditions="Outputs.Blue">
+                <script type="text/javascript" src="../Scripts/i18next-1.10.1.min.js">
+                </script>
+                <script type="text/javascript" src="../Scripts/LangDetect.js">
+                </script>
+            </div>
+        </div>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div><a data-close="true"></a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
