@@ -121,13 +121,13 @@
         <h3>GET products/{prodTypeId}</h3>
         <p>This endpoint gets a list of customer BUs associated with a given <span class="techNamed">prodTypeId</span>. You can only submit product usage data if the product is associated with the customer BU and active on the NICE billing system.</p>
         <p>The following example is a cURL request for POST product-usage with the access token removed:</p><pre><code class="language-javascript">curl -X POST \
-'https://api-b2.incontact.com/incontactapi/services/v10.0/partners/billing/product-usage' \
+'https://api-{cluster}.incontact.com/incontactapi/services/v10.0/partners/billing/product-usage' \
 --header 'Authorization: Bearer {token} \
 --header 'Content-Type: application/json' \
 --data '{
 	"productUsage": [
 		{
-			"serverName": "Jenny",
+			"serverName": "Fake Server Name",
 			"businessUnitId": 867,
 			"prodTypeId": 5309,
 			"prodAmt": 0,
