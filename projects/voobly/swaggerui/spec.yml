@@ -167,7 +167,7 @@ components:
         display_name:
           type: string 
           description: The username or nickname for the Voobly user account. If the user has joined an official team created on Voobly, Users can change their display name to any name that is not already taken. If the user is part of a team, do not include the team tag in your request.
-          example: &#91;Bull&#93;Michael_Jordan
+          example: "[Bull]Michael_Jordan"
         name:
           type: string 
           description: The original name that the user signed up with.
@@ -190,7 +190,6 @@ components:
         nationid:
           type: string 
           description: The country code that correlates with the IP address used to create the account.
-          format: string 
           example: us
         bday:
           type: integer
@@ -215,12 +214,10 @@ components:
         nation:
           type: string 
           description: The country that the user selected to appear on their profile. This flag displays in their profile details on voobly.com and in the Voobly client.
-          format: string 
           example: us
         imagelarge:
           type: string
           description: The filepath on the Voobly server of the profile image uploaded by the user. This image displays in the user's profile on voobly.com.
-          format: string 
           example: /files/view/7068/3zy8h2kp3qq5ed3is2c37nw00uw3noyo
         imagesmall:
           type: string
@@ -267,10 +264,9 @@ components:
           description: The player's user ID of their Voobly account.
           example: 23
         display_name:
-          type: 
-          format:
+          type: string
           description: The username or nickname for the Voobly user account. If the user has joined an official team created on Voobly, Users can change their display name to any name that is not already taken. If the user is part of a team, do not include the team tag in your request.
-          example: &#91;Bull&#93;Michael_Jordan
+          example: "[Bull]Michael_Jordan"
         rating:
           type: integer
           format: int64

@@ -1,8 +1,8 @@
-var spec = {
+{
   "openapi": "3.1.0",
   "info": {
     "title": "Voobly API",
-    "description": "Voobly is a platform that lets you play PC games with friends or a competitive community. It supports peer-to-peer connections for a multiplayer experience. You can play casual games with friends, or competitively on ranked ladders. \n\nThese APIs let you pull data out of Voobly. You can get information about individual users or games, or statistics for ranked ladders. For example, you may want to display the top 10 rated players for a game, or get statistics about a player.\n\nYou must get an access key from Voobly to use these APIs. Add the key as a parameter in your calls. Contact Voobly support to receive an access key.",
+    "description": "Voobly is a platform that lets you play PC games with friends or a competitive community. It supports peer-to-peer connections for a multiplayer experience. You can play casual games with friends, or competitively on ranked ladders.\n\nThese APIs let you pull data out of Voobly. You can get information about individual users or games, or statistics for ranked ladders. For example, you may want to display the top 10 rated players for a game, or get statistics about a player.\n\nYou must get an access key from Voobly to use these APIs. Add the key as a parameter in your calls.  Contact Voobly support to receive an access key.",
     "version": "1.0.0"
   },
   "externalDocs": {
@@ -31,9 +31,7 @@ var spec = {
   "paths": {
     "/validate": {
       "get": {
-        "tags": [
-          "Validation"
-        ],
+        "tags": ["Validation"],
         "summary": "Checks whether your access key is valid",
         "description": "Developer access keys expire after a certain number of days. You may need to verify that your key is still valid, or if you need to renew it. Contact Voobly Support to renew your key.",
         "operationId": "validate",
@@ -43,15 +41,19 @@ var spec = {
           },
           "400": {
             "description": "Invalid ID supplied"
-		  }
+          },
+          "404": {
+            "description": "Pet not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
         }
       }
     },
     "/finduser/$displayname": {
       "get": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Get user ID by user nickname",
         "description": "Find a user's ID by their display name. This lets you retrieve additional information about their account by using their user ID (uid) in other requests. An example URI would be https://www.voobly.com/api/user/Michael_Jordan?key=xxxxxxxxxx if the top of the NBA2k ladder was the user `Michael_Jordan`.",
         "operationId": "findUser",
@@ -78,11 +80,9 @@ var spec = {
         }
       }
     },
-    "/findusers/$displayname,$displayname2": {
+    "/findusers/$displayname,$displayname2,$displayname3": {
       "get": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Get multiple user IDs by user nicknames",
         "description": "Find multiple users' IDs by their display names. This lets you retrieve additional information about their account by using their user ID (uid) in other requests. An example URI would be https://www.voobly.com/api/user/Michael_Jordan,Dennis_Rodman,Scottie_Pippen?key=xxxxxxxxxx if the top of the NBA2k ladder was the user `Michael_Jordan`.",
         "operationId": "findUsers",
@@ -111,9 +111,7 @@ var spec = {
     },
     "/user/$userid": {
       "get": {
-        "tags": [
-          "Users"
-        ],
+        "tags": ["Users"],
         "summary": "Get account information for a Voobly user",
         "description": "Input a user ID to retrieve information about the Voobly user account. For example, you can find user ID, last login date, or selected country. This API does not provide player statistics for games. Example URI = http://www.voobly.com/api/user/23?key=xxxxxxxxxx.",
         "operationId": "userSummary",
@@ -142,9 +140,7 @@ var spec = {
     },
     "/lobbies/$gameid": {
       "get": {
-        "tags": [
-          "Ladder"
-        ],
+        "tags": ["Ladder"],
         "summary": "Get a list of lobbies for a game",
         "description": "Retrieves a list of lobbies for a game, with basic information about the lobby. Games on Voobly have a list of different lobbies that categorize the different game modes or game formats available to play. For example, for the game of basketball, Voobly could have lobbies for the NBA, WNBA, international leagues outside the USA, or college leagues.  Within each lobby there can be multiple ladders. For example, the NBA lobby could have ladders for 1v1, 3 on 3, dunk contests, and so forth. Example URI = http://www.voobly.com/api/lobbies/13?key=xxxxxxxxxx",
         "operationId": "gameLobby",
@@ -167,9 +163,7 @@ var spec = {
     },
     "/ladder/$ladderid": {
       "get": {
-        "tags": [
-          "Ladder"
-        ],
+        "tags": ["Ladder"],
         "summary": "Get information for a specific ranked ladder",
         "description": "Retrieve player data from a ladder, like their display_name, wins/losses, and so forth.",
         "operationId": "ladderStats",
@@ -205,7 +199,7 @@ var spec = {
           "display_name": {
             "type": "string",
             "description": "The username or nickname for the Voobly user account.",
-            "example": "[Bull]Michael_Jordan"
+            "example": "Michael_Jordan"
           }
         }
       },
@@ -221,7 +215,7 @@ var spec = {
           "display_name": {
             "type": "string",
             "description": "The username or nickname for the Voobly user account.",
-            "example": "[Bull]Michael_Jordan"
+            "example": "Michael_Jordan"
           }
         }
       },
@@ -242,7 +236,7 @@ var spec = {
           "name": {
             "type": "string",
             "description": "The original name that the user signed up with.",
-            "example": "[Bull]Michael_Jordan"
+            "example": "Michael_Jordan"
           },
           "account_created": {
             "type": "integer",
@@ -295,16 +289,19 @@ var spec = {
           "nation": {
             "type": "string",
             "description": "The country that the user selected to appear on their profile. This flag displays in their profile details on voobly.com and in the Voobly client.",
+            "format": "string",
             "example": "us"
           },
           "imagelarge": {
             "type": "string",
             "description": "The filepath on the Voobly server of the profile image uploaded by the user. This image displays in the user's profile on voobly.com.",
+            "format": "string",
             "example": "/files/view/7068/3zy8h2kp3qq5ed3is2c37nw00uw3noyo"
           },
           "imagesmall": {
             "type": "string",
             "description": "The filepath on the Voobly server of the smaller profile image. This image displays in the user's profile on the Voobly client.",
+            "format": "string",
             "example": "/files/view/65009/w57tdcefdmhsz7uvc4brqxyz8dpe0tgo"
           }
         }
@@ -388,37 +385,6 @@ var spec = {
           }
         }
       }
-    },
-    "requestBodies": {
-      "Pet": {
-        "description": "Pet object that needs to be added to the store",
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/Pet"
-            }
-          },
-          "application/xml": {
-            "schema": {
-              "$ref": "#/components/schemas/Pet"
-            }
-          }
-        }
-      },
-      "UserArray": {
-        "description": "List of user object",
-        "content": {
-          "application/json": {
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/User"
-              }
-            }
-          }
-        }
-      }
     }
   }
 }
-	
