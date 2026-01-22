@@ -10,7 +10,7 @@
 	--shadowGray: #4f5254;
 	--buttonColor: #fc5744;
 	--gsapGreen: #89ce02;
-	--vooblyBlue: ##0d386d;
+	--vooblyBlue: #0d386d;
 	--vooblyBlueLight: #3183c3;
 }
 
@@ -54,9 +54,101 @@ body {
 	display: none;
 }
 
+/* Fix white background on endpoint button focus - comprehensive targeting */
+.swagger-ui .opblock .opblock-summary:focus,
+.swagger-ui .opblock .opblock-summary:focus-visible,
+.swagger-ui .opblock .opblock-summary:active,
+.swagger-ui .opblock .opblock-summary-path:focus,
+.swagger-ui .opblock .opblock-summary-description:focus {
+	background: transparent !important;
+	outline: none !important;
+}
 
+.swagger-ui .opblock .opblock-summary,
+.swagger-ui .opblock .opblock-summary-path,
+.swagger-ui .opblock .opblock-summary-description {
+	background: transparent !important;
+}
 
+.swagger-ui .opblock.is-open .opblock-summary {
+	background: transparent !important;
+}
 
+/* Make SVG arrows white */
+.swagger-ui .opblock-summary-control svg,
+.swagger-ui .expand-operation svg,
+.swagger-ui svg.arrow {
+	fill: var(--white) !important;
+}
+
+.swagger-ui .opblock-summary .opblock-summary-control svg polyline,
+.swagger-ui .opblock-summary .opblock-summary-control svg line,
+.swagger-ui .opblock-summary .opblock-summary-control svg path {
+	stroke: var(--white) !important;
+}
+
+/* Remove white background from opblock-section-header and make text white */
+.swagger-ui .opblock-section-header {
+	background: transparent !important;
+	color: var(--white) !important;
+}
+
+.swagger-ui .opblock-section-header h4 {
+	color: var(--white) !important;
+}
+
+.swagger-ui .opblock-section-header label {
+	color: var(--white) !important;
+}
+
+/* Fix Schemas section - remove white backgrounds and make text white */
+.swagger-ui .model-box,
+.swagger-ui .model,
+.swagger-ui .model-container {
+	background: transparent !important;
+	color: var(--white) !important;
+}
+
+.swagger-ui .model-title,
+.swagger-ui .model .property,
+.swagger-ui .prop-type,
+.swagger-ui .prop-format {
+	color: var(--white) !important;
+}
+
+.swagger-ui table thead tr td,
+.swagger-ui table thead tr th {
+	color: var(--white) !important;
+	background: transparent !important;
+}
+
+.swagger-ui .model-box-control:focus,
+.swagger-ui .models-control:focus {
+	background: transparent !important;
+}
+
+.swagger-ui section.models {
+	background: transparent !important;
+}
+
+.swagger-ui section.models .model-container {
+	background: transparent !important;
+}
+
+.swagger-ui .model-toggle:after {
+	background: transparent !important;
+}
+
+button.json-schema-2020-12-accordion,
+div.json-schema-2020-12__title {
+	background: transparent;
+	color: var(--white);
+}
+
+.json-schema-2020-12-expand-deep-button {
+	background: transparent;
+	color: var(--white);
+}
 
 
 
