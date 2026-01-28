@@ -39,17 +39,18 @@
 		<p>This page showcases a variety of release notes I've written. I chose these examples to show different audiences, levels of technicality, and methods of presenting the information.</p>
 		<p>The samples are from two different software platforms:</p>
 			<ul>
-				<li><b>CXone</b>: Contact center software</li>
-				<li><b>Video Banking/Unified Platform</b>: Fintech software for financial institutions</li>
+				<li><b>CXone</b>: Call center software</li>
+				<li><b>Video Banking/Unified Platform</b>: Fintech software</li>
 			</ul>
-		<p>Keep in mind that these notes are written for audiences who use the software. Therefore, the notes assume that readers understand certain concepts or jargon unique to the software. </p>
-		<h2>CXone</h2>
-		<p>The primary audience for CXone release notes was system administrators. Developers may have also checked the notes for API or scripting changes, which were specifically labeled sections. The following were key styles and approaches to these notes:</p>
+		<p>Keep in mind that these notes are written for audiences who use the software. Therefore, the notes assume that readers understand certain concepts or terms. </p>
+		<h2>CXone Examples</h2>
+		<p>The primary audience was system administrators. Developers may have also checked the notes for API or scripting changes, so some were written for both admins and devs. The following were key styles and approaches to the CXone release notes:</p>
 		<ul>
-			<li>The notes were more than a changelog list. Instead, they were one paragraph (on average) with key details of the change. </li>
-			<li>A typical format was to explain the before and after functionality, following this format: "Previously, {it worked this way}. In this release, {it now works this way}".</li>
-			<li>The notes linked to correlating online help documentation about the change.</li>
-			<li>Each note had a table indicating quick information, like whether the UI was impacted by the change.</li>
+			<li>They were more than a changelog list. Instead, they were one paragraph (on average) with key details of the change. </li>
+			<li>A typical format was to explain the before and after functionality, like this: "Previously, {it worked this way}. In this release, {it now works this way}".</li>
+			<li>The target reading level was below 10th grade.</li>
+			<li>The notes linked to online help documentation that was added or updated for the change.</li>
+			<li>Each note had a table indicating at-a-glance information, like whether the UI was impacted.</li>
 		</ul>
 		<!-- Note 1 -->
 		<h4>Remove the Marketing Panel from the Login Page</h4>
@@ -66,13 +67,13 @@
 		</table>
 		<!-- Note 2 -->
 		<h4>Configure After Contact Work at an Agent Level</h4>
-		<p>You will be able to configure after contact work (ACW) settings for individual agents via API. This is a set amount of time at the end of an interaction, allowing the agent time to complete tasks like entering notes.</p>
-		<p>Several agent APIs will include the following new fields:</p>
+		<p>You can now configure after contact work (ACW) settings for individual agents via API. This is a set amount of time at the end of an interaction, allowing the agent time to complete tasks like entering notes.</p>
+		<p>Several agent APIs now have the following new fields:</p>
 		<ul>
 			<li><b>Additional ACW Time Enabled</b>: Indicates if ACW time is enabled for the agent (Boolean).</li>
 			<li><b>Additional ACW Duration</b>: Specifies the duration of additional ACW time (integer, 1–7,200 seconds).</li>
 		</ul>
-		<p>The following APIs will be updated to version 34 and support these new fields:</p>
+		<p>The following APIs were updated to version 34 and support these new fields:</p>
 		<ul>
 			<li><a href="https://developer.niceincontact.com/API/AdminAPI#/Agents/operations-Agents-put-agents-id" target="_blank">PUT /agents/{agentId}</a> </li>
 
@@ -113,18 +114,20 @@
 			</tr>
 		</table>
 	
-		<h2>Video Banking/Unified Platform</h2>
-		<p>The primary audience for the Unified Platform release notes was system administrators. The following were key styles and approaches to these notes:</p>
+		<h2>Video Banking/Unified Platform Examples</h2>
+		<p>The primary audience was system administrators. The following were key styles and approaches to these notes:</p>
 		<ul>
 			<li>The notes linked to correlating support site documentation. I removed links from these notes since the support site is not publicly accessible.</li>
-			<li>Each note had a value statement indicated with the light bulb &#x1F4A1;.</li>
-			<li>Each note also listed at-a-glance information, like whether it was for a paid feature or if the change impacted the UI.</li>
+			<li>Each note had a value statement or marketing blurb, indicated by the light bulb &#x1F4A1;.</li>
+			<li>The target reading level was below 10th grade.</li>
+			<li>Each note listed at-a-glance information, like whether the UI was impacted or if it was a paid feature.</li>
 		</ul>
 		
 		<!-- Note 1 -->
 		<h4>Symitar: Handling Unknown First and Last Names</h4>
 		<div style="margin: .5em 1em;font-style: italic;">&#x1F4A1; Import more accurate contact data from Symitar</div>
-		<p>During the current sync process with Symitar, if a contact’s name is empty, the system pulls in the contact’s phone number instead. With the November release, if the Symitar sync file does not contain a contact’s first or last name, it enters <b>FNU</b> (first name unknown) or <b>LNU</b> (last name unknown).</p>
+		<p>Historically, if a contact in Symitar did not have a name, the sync file entered their phone number as the first name.</p>
+		<p>With this release, the system now enters <b>FNU</b> (first name unknown) or <b>LNU</b> (last name unknown) instead of the phone number. This cleans up your contact list in the Unified Platform. It also prevents agents from misinterpreting contact entries.</p>
 		<div>
 		<b>Availability</b>: On deploy<br>
 		<b>Customer Requested</b>: Yes<br>
@@ -134,7 +137,7 @@
 		<!-- Note 2 -->
 		<h4>Expand Short Code Keywords </h4>
 		<div style="margin: .5em 1em;font-style: italic;">&#x1F4A1; Ensure compliance with messaging regulations</div>
-		<p>If you use texting short codes, your system is now responsive to the full range of standard codes, like CANCEL, HELP, START, and so forth. You can configure auto-response templates in your domain settings and for each department.</p>
+		<p>Your system now responds to the full range of standard short codes, like CANCEL or HELP. Each department has new auto-response templates for these added codes. You can customize these templates in your domain settings.</p>
 		<div>
 		<b>Availability</b>: On deploy<br>
 		<b>Customer Requested</b>: Yes<br>
