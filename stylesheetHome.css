@@ -219,7 +219,8 @@ hr {
 	font-size: .85em;
 }
 
-.portfolio-item {
+.portfolio-item,
+.portfolio-item-2 {
 	border-radius: 20px;
 	box-shadow: 0 5px 15px 0px var(--white);
 	background-color: ;
@@ -232,16 +233,20 @@ hr {
 	margin-bottom: 5em;
 }
 
-.portfolio-item:hover {
+.portfolio-item:hover,
+.portfolio-item-2:hover {
 	box-shadow: 0 5px 25px 5px var(--white);
 }
 
 .portfolio-item a,
-.portfolio-item a:visited {
+.portfolio-item a:visited,
+.portfolio-item-2 a,
+.portfolio-item-2 a:visited {
 	color: var(--white);
 }
 
-.portfolio-item a:hover {
+.portfolio-item a:hover,
+.portfolio-item-2 a:hover {
 	color: var(--vibrantOrange);
 }
 
@@ -521,7 +526,8 @@ hr {
 		width: 95%;
 	}
 	
-	.portfolio-item {
+	.portfolio-item,
+	.portfolio-item-2 {
 		flex-direction: column;
 	}
 	
