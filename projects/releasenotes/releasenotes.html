@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" /><title>Release Notes Examples</title>
+		    <link href="../../stylesheetHome.css" rel="stylesheet" type="text/css" />
+			<link href="releasenotes-stylesheet.css" rel="stylesheet" type="text/css" />
+			<link rel="icon" type="image/png" href="../../images/S.png" /> 
+        <meta name="description" content="Examples of release notes I've written for several products and different companies." />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+    <body>
+<div class="home-body-container">
+<div class="header">
+    <div class="header-items">
+        <div class="header-logo" id="one">
+            <a href="index.html">Sean Patterson</a>
+        </div>
+        <div class="header-nav">
+        <ul>
+            <li id="two">
+                <a href="../../index.html">Home</a>
+            </li>
+			<li id="three">
+				<a href="../../portfolio.html">Portfolio</a>
+			</li>
+            <li id="four">
+                <a href="../../resume.html">Resume</a>
+            </li>
+            <li id="five">
+                <a href="../../contact.html"> Contact</a>
+            </li>
+        </ul>
+        </div>
+    </div> <!-- closes header-items -->
+    </div> <!-- close header -->	
+	<div class="releasenotes-orange">
+	<div class="releasenotes-wrapper">
+        <h1>Release Notes Examples</h1>
+		<p>This page showcases a variety of release notes I've written. I chose these examples to show different audiences, levels of technicality, and methods of presenting the information.</p>
+		<p>The samples are from two different software platforms:</p>
+			<ul>
+				<li><b>CXone</b>: Contact center software</li>
+				<li><b>Video Banking/Unified Platform</b>: Fintech software for financial institutions</li>
+			</ul>
+		<p>Keep in mind that these notes are written for audiences who use the software. Therefore, the notes assume that readers understand certain concepts or jargon unique to the software. </p>
+		<h2>CXone</h2>
+		<p>The primary audience for CXone release notes was system administrators. Developers may have also checked the notes for API or scripting changes, which were specifically labeled sections. The following were key styles and approaches to these notes:</p>
+		<ul>
+			<li>The notes were more than a changelog list. Instead, they were one paragraph (on average) with key details of the change. </li>
+			<li>A typical format was to explain the before and after functionality, following this format: "Previously, {it worked this way}. In this release, {it now works this way}".</li>
+			<li>The notes linked to correlating online help documentation about the change.</li>
+			<li>Each note had a table indicating quick information, like whether the UI was impacted by the change.</li>
+		</ul>
+		<!-- Note 1 -->
+		<h4>Remove the Marketing Panel from the Login Page</h4>
+		<p>Currently, the CXone Mpower login page is split in half. One side is the login form where users enter their credentials. The other side is the marketing panel where NiCE displays promotional content. In this release, you can enable or disable the marketing panel from the <a href="https://help.nicecxone.com/content/admin/manageaccountsettings.htm" target="_blank">Account Settings page</a>.</p>
+		<table>
+			<tr>
+				<td>Customer<br>Request</td>
+				<td>&#10004;</td>
+				<td>UI<br>Change</td>
+				<td>&#10004;</td>
+				<td>Availability</td>
+				<td>GA<br>On Deploy</td>
+			</tr>
+		</table>
+		<!-- Note 2 -->
+		<h4>Configure After Contact Work at an Agent Level</h4>
+		<p>You will be able to configure after contact work (ACW) settings for individual agents via API. This is a set amount of time at the end of an interaction, allowing the agent time to complete tasks like entering notes.</p>
+		<p>Several agent APIs will include the following new fields:</p>
+		<ul>
+			<li><b>Additional ACW Time Enabled</b>: Indicates if ACW time is enabled for the agent (Boolean).</li>
+			<li><b>Additional ACW Duration</b>: Specifies the duration of additional ACW time (integer, 1–7,200 seconds).</li>
+		</ul>
+		<p>The following APIs will be updated to version 34 and support these new fields:</p>
+		<ul>
+			<li><a href="https://developer.niceincontact.com/API/AdminAPI#/Agents/operations-Agents-put-agents-id" target="_blank">PUT /agents/{agentId}</a> </li>
+
+			<li><a href="https://developer.niceincontact.com/API/AdminAPI#/Agents/operations-Agents-get-agents" target="_blank">GET /agents</a> </li>
+
+			<li><a href="https://developer.niceincontact.com/API/AdminAPI#/Agents/operations-Agents-get-agents-id" target="_blank">GET /agents/{agentId}</a> </li>
+
+			<li><a href="https://developer.niceincontact.com/API/AdminAPI#/Agents/operations-Agents-post-agents" target="_blank">POST /agents</a> </li>
+
+			<li><a href="https://developer.niceincontact.com/API/AdminAPI#/Agents/operations-Agents-put-agents" target="_blank">PUT /agents</a> </li>
+		</ul>
+		<table>
+			<tr>
+				<td>Customer<br>Request</td>
+				<td>&#10004;</td>
+				<td>UI<br>Change</td>
+				<td>&#10006;</td>
+				<td>Breaking<br>Change</td>
+				<td>&#10006;</td>
+				<td>Impacted Versions</td>
+				<td>V34</td>
+				<td>Availability</td>
+				<td>GA<br>On Deploy</td>
+			</tr>
+		</table>
+		<!-- Note 3 -->
+		<h4>Fabric Connect for Voice Calls</h4>
+		<p>Fabric Connect lets you use the <a href="https://www.equinix.com/products/digital-infrastructure-services/equinix-fabric" target="_blank">Equinix Fabric</a> for voice traffic. This routes your voice calls over a secure, global, high-performance network instead of the public internet. The Fabric provides high reliability, lower latency, and advanced security. Additionally, it’s an affordable option and quick to set up, even for enterprise organizations.</p>
+		<p>Setup requires you to establish a connection with the Equinix Fabric. After doing so, you can choose bandwidth options between 50 Mbps-10 Gbps. To improve the performance of your voice calls with Fabric Connect, reach out to your Account Representative.</p>
+		<table>
+			<tr>
+				<td>Customer<br>Request</td>
+				<td>&#10004;</td>
+				<td>UI<br>Change</td>
+				<td>&#10006;</td>
+				<td>Availability</td>
+				<td>GA<br>On Toggle</td>
+			</tr>
+		</table>
+	
+		<h2>Video Banking/Unified Platform</h2>
+		<p>The primary audience for the Unified Platform release notes was system administrators. The following were key styles and approaches to these notes:</p>
+		<ul>
+			<li>The notes linked to correlating support site documentation. I removed links from these notes since the support site is not publicly accessible.</li>
+			<li>Each note had a value statement indicated with the light bulb &#x1F4A1;.</li>
+			<li>Each note also listed at-a-glance information, like whether it was for a paid feature or if the change impacted the UI.</li>
+		</ul>
+		
+		<!-- Note 1 -->
+		<h4>Symitar: Handling Unknown First and Last Names</h4>
+		<div style="margin: .5em 1em;font-style: italic;">&#x1F4A1; Import more accurate contact data from Symitar</div>
+		<p>During the current sync process with Symitar, if a contact’s name is empty, the system pulls in the contact’s phone number instead. With the November release, if the Symitar sync file does not contain a contact’s first or last name, it enters <b>FNU</b> (first name unknown) or <b>LNU</b> (last name unknown).</p>
+		<div>
+		<b>Availability</b>: On deploy<br>
+		<b>Customer Requested</b>: Yes<br>
+		<b>UI Change</b>: No<br>
+		<b>Feature Type</b>: Premium
+		</div>
+		<!-- Note 2 -->
+		<h4>Expand Short Code Keywords </h4>
+		<div style="margin: .5em 1em;font-style: italic;">&#x1F4A1; Ensure compliance with messaging regulations</div>
+		<p>If you use texting short codes, your system is now responsive to the full range of standard codes, like CANCEL, HELP, START, and so forth. You can configure auto-response templates in your domain settings and for each department.</p>
+		<div>
+		<b>Availability</b>: On deploy<br>
+		<b>Customer Requested</b>: Yes<br>
+		<b>UI Change</b>: Yes<br>
+		<b>Feature Type</b>: Standard
+		</div>
+		<!-- Note 3 -->
+		<h4>ID Verification Log Report Enhancements</h4>
+		<div style="margin: .5em 1em;font-style: italic;">&#x1F4A1; Access in-depth data on failed ID scans</div>
+		<p>Last release, the ID Verification Log report was added for Video Verify users. This report helps you gain insight into why ID scans may have failed. With this release, the following columns were added to the report:</p>
+		<ul>
+			<li>Consumer Name</li>
+			<li>Agent Name</li>
+			<li>Scan Result Status</li>
+			<li>Confidence Score</li>
+			<li>WorkFlow Status</li>
+		</ul><br>
+		<div>
+		<b>Availability</b>: On deploy<br>
+		<b>Customer Requested</b>: Yes<br>
+		<b>UI Change</b>: Yes<br>
+		<b>Feature Type</b>: Standard
+		</div>
+	</div> <!-- closes releasenotes-wrapper -->
+	</div> <!-- closes orange -->
+</div> <!-- closes home-body-container -->
+    </body>
+</html>
