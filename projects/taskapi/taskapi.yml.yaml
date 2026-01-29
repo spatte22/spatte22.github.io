@@ -1,0 +1,271 @@
+openapi: 3.0.3
+info:
+  version: '1.0'
+  title: Task API
+  description: |
+    This API lets you manage personal tasks on your calendar to stay organized.
+
+    The following is a basic flow for a task:
+    - Call **POST /tasks** to create a new task on your calendar. The task is added on the day specified in `dueDate`. 
+    - Optionally call **PUT /tasks/{taskId}** to update the status to `active`. You can get the ID from the **POST /tasks** or **GET /tasks** responses. 
+    - Call **POST /tasks/{taskId}/complete** once the task is done.
+  contact:
+    name: Sean P.
+    email: sean.patterson1989@gmail.com
+    url: spatte22.github.io
+  license:
+    url: 'https://opensource.org/licenses/MIT'
+    name: MIT
+paths:
+  /tasks:
+    get:
+      tags:
+        - Tasks
+      summary: Get a list of all tasks
+      description: |
+        Returns information about all active, open, and missed tasks for a calendar. You must provide your calendar username as a query parameter. To get information on all completed tasks, use **GET /tasks/completed**. 
+      operationId: getTasks
+      parameters:
+        - name: username
+          in: query
+          description: The username with which you created the calendar.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Tasks retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+              examples:
+                default:
+                  value:
+                    - id: 8675309
+                      title: Buy World Cup tickets
+                      status: open
+                      dueDate: '2026-02-14T12:00:00'
+                    - id: 9035768
+                      title: Make hotel reservation
+                      status: open
+                      dueDate: '2026-02-15T23:59:59'
+    post:
+      tags:
+        - Tasks
+      summary: Create a task
+      description: |
+        Creates a new task on the user's calendar. The task appears in the task list immediately and can be updated, completed, or deleted. This endpoint accepts required fields for `title` and `status`, and optional fields such as `dueDate`. Use this endpoint to add reminders for upcoming events or deadlines. Responses include the complete task object with the server-assigned `id`. 
+      operationId: postTasks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewTask'
+              example:
+                title: Buy World Cup tickets
+                status: open
+                dueDate: '2026-02-14T12:00:00'
+      responses:
+        '201':
+          description: Task created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+                example:
+                  id: 8675309
+                  title: Buy World Cup tickets
+                  status: open
+                  dueDate: '2026-02-14T12:00:00'
+  '/tasks/{taskId}':
+    get:
+      tags:
+        - Tasks
+      summary: Get a task
+      description: |
+        Returns information about a single task.
+      operationId: getTask
+      parameters:
+        - name: taskId
+          in: path
+          description: Unique identifier of the task.
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Task retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+                example:
+                  id: 8675309
+                  title: Buy World Cup tickets
+                  status: open
+                  dueDate: '2026-02-14T12:00:00'
+    put:
+      tags:
+        - Tasks
+      summary: Update a task
+      description: |
+        Updates the details of an existing task. Use **POST /tasks/{taskId}/complete** to complete a task. That updates its status, visually disables the task from the calendar, and moves the task to the list of completed tasks. If you mark a task as `complete` with this endpoint, only the status changes; the task does not move to the list of completed tasks, nor does the visual representation change on the calendar.  If a task's `dueDate` passes and it's not marked as `complete`, the system automatically changes its `status` to `missed`. 
+      operationId: putTask
+      parameters:
+        - name: taskId
+          in: path
+          description: Unique identifier of the task
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewTask'
+              example:
+                title: Buy World Cup tickets
+                status: open
+                dueDate: '2026-02-14T12:00:00'
+      responses:
+        '200':
+          description: Task updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+                example:
+                  id: 8675309
+                  title: Buy World Cup tickets
+                  status: open
+                  dueDate: '2026-02-14T12:00:00'
+    delete:
+      tags:
+        - Tasks
+      summary: Delete a task
+      description: |
+        Deletes a task and removes if from your calendar.
+      operationId: deleteTask
+      parameters:
+        - name: taskId
+          in: path
+          description: Unique identifier of the task
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Task deleted successfully
+  '/tasks/{taskId}/complete':
+    post:
+      tags:
+        - Tasks
+      summary: Complete a task
+      description: |
+        Marks a task as complete. After completing a task, its status to `complete` and becomes inactive on your personal calendar.
+      operationId: postCompletedTasks
+      parameters:
+        - name: taskId
+          in: path
+          description: Unique identifier of the task
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Task completed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusMessage'
+                example:
+                  message: Task marked as complete.
+  /tasks/completed:
+    get:
+      tags:
+        - Tasks
+      summary: Get a list of all completed tasks
+      description: |
+        Returns information about all completed tasks for a calendar. You must provide your calendar username as a query parameter.
+      operationId: getCompletedTask
+      parameters:
+        - name: username
+          in: query
+          description: Unique identifier of the task
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Tasks retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Task'
+              examples:
+                default:
+                  value:
+                    - id: 8675305
+                      title: Buy Christmas gifts
+                      status: complete
+                      dueDate: '2025-12-24T12:00:00'
+                    - id: 5035768
+                      title: Buy fireworks
+                      status: complete
+                      dueDate: '2025-12-31T23:59:59'
+tags:
+  - name: Tasks
+    description: 'Create, retrieve, update, and manage tasks on a user''s calendar.'
+components:
+  schemas:
+    Task:
+      type: object
+      description: Represents a single task on a user's calendar.
+      properties:
+        id:
+          type: integer
+          description: The unique identifier for a single task.
+        title:
+          type: string
+          description: 'The name of the task, which appears in the calendar event.'
+        dueDate:
+          type: string
+          description: |
+            The final date and time that the task needs to be completed by. Tasks not completed by the due date have a `missed` status.
+            Use ISO 8601 date and time format (YYYY-MM-DDTHH:MM:SS). 
+          format: date-time
+        status:
+          type: string
+          enum:
+            - open
+            - active
+            - complete
+            - missed
+          description: 'The current status of the task. If `status` is not set to `open` or `active`, the task defaults to `open`.'
+      required:
+        - id
+        - title
+        - dueDate
+        - status
+    NewTask:
+      type: object
+      properties:
+        id:
+          readOnly: true
+      allOf:
+        - $ref: '#/components/schemas/Task'
+    StatusMessage:
+      type: object
+      properties:
+        message:
+          type: string
+          description: A short message indicating the result of the operation.
+      required:
+        - message
