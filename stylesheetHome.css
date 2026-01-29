@@ -60,6 +60,7 @@ hr {
 .header a:visited {
     text-decoration: none;
 	color: white;
+	transition: color .5s ease;
 }
 
 .header-logo,
@@ -67,11 +68,13 @@ hr {
 .header-logo a:visited {
     float: left;
     color: var(--easyOrange);
+	transition: color .5s ease;
     font-size: 1.5em;
 }
 
 .header-logo a:hover {
     color: var(--vibrantOrange);
+	transition: color .5s ease;
 }
 
 .header-nav {
@@ -92,6 +95,7 @@ hr {
 
 .header-nav a:hover {
     color: var(--easyOrange);
+	transition: color .5s ease;
 }
 
 
@@ -223,6 +227,7 @@ hr {
 .portfolio-item-2 {
 	border-radius: 20px;
 	box-shadow: 0 5px 15px 0px var(--white);
+	transition: box-shadow .5s ease;
 	background-color: ;
 	opacity: ;
 	display: flex;
@@ -236,6 +241,7 @@ hr {
 .portfolio-item:hover,
 .portfolio-item-2:hover {
 	box-shadow: 0 5px 25px 5px var(--white);
+	transition: box-shadow .5s ease;
 }
 
 .portfolio-item a,
