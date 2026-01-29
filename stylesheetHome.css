@@ -230,7 +230,7 @@ hr {
 	align-items: center;
 	color: var(--white);
 	padding: 2em;
-	margin-bottom: 5em;
+	margin-bottom: 8em;
 }
 
 .portfolio-item:hover,
@@ -292,13 +292,14 @@ hr {
 	justify-content: flex-start;
 	align-content: center;
 	gap: 10px 20px;
-	margin: .5em;
+	margin: .75em;
 }
 
 .portfolio-tag {
 	padding: 5px 10px;
 	background-color: var(--vibrantOrange);
 	font-weight: ;
+	font-size: 12px;
 	border-radius: 10px;
 	cursor: default;
 }
