@@ -169,41 +169,32 @@ hr {
     border-radius: 15px 50px 30px 5px;
 }
 
-.home-body-bottom {
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    padding: 3px 0 0 0;
-    overflow: hidden;
-    background-color: #0c0c0c;
-    height: 150px;
-}
-.home-body-bottom-film {
-    background-image: url('images/reel2.png');
-    background-repeat: repeat-x;
-    height: 15px;
-    width: 100vw;
+
+
+
+/*	IMAGE CAROUSEL	*/
+
+.track-viewport {
+	width: 100vw;
+	overflow: hidden;
 }
 
-.slideshowDiv {
-    animation-name: slide;
-    animation-timing-function: linear;
-    animation-duration: 20s;
-    height: auto;
-    position: absolute;
-    opacity: 0;
-    margin: 2em;
-    overflow: hidden;
+.track {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 100px;
+}
+
+.imageShape {
     border-radius: 15px 40px 20px 5px;
+	max-height: 150px;
+	height: auto;
+	width: auto;
 }
 
-@keyframes slide {
-    0% {transform: translateX(0vw); opacity: 0;}
-    1% {opacity: 1;}
-    93% {transform: translateX(75vw); opacity: 1;}
-    95%{opacity: 0;}
-    100%{opacity: 0;}
-}
+
+
+
 
 
 

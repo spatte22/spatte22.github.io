@@ -21,52 +21,42 @@ window.onload=swapMe;
 // below is for sliding slideshow
 
 
-const images = [];
 
-images[0] = "images/bouldering1.1.jpg";
-images[1] = "images/chess1.1.jpg\" class=\"imageShape\"";
-images[2] = "images/teddy1.1.jpg\" class=\"imageShape\"";
-images[3] = "images/nyc1.1.jpg\" class=\"imageShape\"";
-images[4] = "images/randompiano1.1.jpg\" class=\"imageShape\"";
-images[5] = "images/tobyteddy.jpg\" class=\"imageShape\"";
-images[6] = "images/climbing1.1.jpg\" class=\"imageShape\"";
-images[7] = "images/disposable3.1.jpg\" class=\"imageShape\"";
-images[8] = "images/disposable4.1.jpg\" class=\"imageShape\"";
-images[9] = "images/germany1.1.jpg\" class=\"imageShape\"";
-images[10] = "images/havasu1.1.jpg\" class=\"imageShape\"";
-images[11] = "images/trolley1.1.jpg\" class=\"imageShape\"";
-images[12] = "images/kingarthur3.1.jpg\" class=\"imageShape\"";
-images[13] = "images/disposable1.1.jpg\" class=\"imageShape\"";
-images[14] = "images/nutcracker1.1.jpg\" class=\"imageShape\"";
-images[15] = "images/nutcracker3.1.jpg\" class=\"imageShape\"";
-images[16] = "images/temple1.1.jpg\" class=\"imageShape\"";
-images[17] = "images/pipe1.1.jpg\" class=\"imageShape\"";
-images[18] = "images/disposable2.1.jpg\" class=\"imageShape\"";
-images[19] = "images/rappel1.1.jpg\" class=\"imageShape\"";
-images[20] = "images/table1.1.jpg\" class=\"imageShape\"";
-images[21] = "images/pipe2.1.jpg\" class=\"imageShape\""; 
-images[22] = "images/climbing2.1.jpg\" class=\"imageShape\""; 
-images[23] = "images/longboard1.1.jpg\" class=\"imageShape\""; 
+window.addEventListener('load', function () {
+  // Step 1: Get viewport width
+  let viewportWidth = window.innerWidth;
 
+  // Step 2: Get the track 
+  let track = document.getElementById('track');
 
-let x = 0;
-function myCycle() {
-    setTimeout(function() {
-        var bodyBottomDiv = document.getElementById("home-body-bottom");
-        var newDiv = document.createElement("div");
-        newDiv.classList.add("slideshowDiv");
-        bodyBottomDiv.appendChild(newDiv);
-        newDiv.innerHTML = '<img src=\"' + images[x] + '\"/>';
-        x++;
-        if (x < images.length) {
-            myCycle();
-        }else {
-            x = 0;
-            myCycle();
-        }
-    }, 7000)
-};
-myCycle();
+  // Step 3: Get first image width
+  let images = document.getElementsByClassName('imageShape');
+  let firstImage = images[0];
+  let firstImageWidth = firstImage.offsetWidth;
+
+  // Step 4: Animation loop
+  let trackDistance = viewportWidth + 1 ; // This sets a counter at 0 outside of the animate function, so that the starting point 
+                                          // always remains 0, and the distance is moved -2px (and the value updated)
+						                  // specifically within the animate function.
+  function animate() {
+	// 1. Check if first image needs recycling
+	if (trackDistance < -(viewportWidth + firstImageWidth)) {
+		track.appendChild(firstImage);
+		trackDistance = trackDistance + firstImageWidth + 100; // 100 represents the gap added between images in the CSS
+		firstImage = images[0];
+		firstImageWidth = firstImage.offsetWidth;
+		
+	}  
+	  
+    // 2. Move the track
+	trackDistance -= 2;
+	track.style.transform = "translateX(" + trackDistance + "px)";
+
+    // 3. Call itself again
+    requestAnimationFrame(animate);
+  };
+  animate();
+});
 
 
 
