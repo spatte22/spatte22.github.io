@@ -3,12 +3,16 @@ info:
   title: Task API
   version: "1.0"
   description: |
-    This API lets you manage personal tasks on your calendar to stay organized.
+    This API lets you manage tasks on the calendar. You can do so for personal tasks on your own calendar, or shared tasks on a team calendar. Tasks are useful for tracking deadlines, organizing work and responsibilities, or monitoring overdue work.
     
-    The following is a basic flow for a task:
+    For example, imagine you wanted to attend a World Cup match with a group of friends. You could create an event on a shared calendar for the day of the match. Then, you could delegate work to each friend, like buying tickets, booking a hotel, or organizing transportation. Then, you could add a task assigned to each friend, with reminders before the event day. 
+    
+    The following is a basic lifecycle for a task:
     - Call **POST /tasks** to create a new task on your calendar. The task is added on the day specified in `dueDate`. 
     - Optionally call **PUT /tasks/{taskId}** to update the status to `active`. You can get the ID from the **POST /tasks** or **GET /tasks** responses. 
     - Call **POST /tasks/{taskId}/complete** once the task is done.
+    
+    You can optionally add OAuth authentication. This authenticates the calendar owner, ensuring that only they can edit the calendar or edit/complete tasks. OAuth also allows the calendar owner to share it with others and allow editing permissions. To add OAuth, work with a calendar administrator to enable authentication. When enabled, you can use an OAuth bearer token in the --header of your requests.
   contact:
     name: Sean P.
     email: sean.patterson1989@gmail.com
@@ -28,13 +32,23 @@ paths:
       tags:
         - Tasks
       summary: Get a list of all tasks
-      description: >
+      description: |
         Returns information about all active, open, and missed tasks for a calendar. You must provide your calendar username as a query parameter. To get information on all completed tasks, use **GET /tasks/completed**. 
+        
+        By default, the returned tasks are ordered ascending by `dueDate`. You can return a maximum of 1000 tasks at a time. Use `offset` to paginate through results. 
+        
+        Returns an empty array if no tasks exist for the username.
       parameters:
         - name: username
           in: query
           required: true
           description: The username with which you created the calendar.
+          schema:
+            type: string
+        - name: offset
+          in: query
+          required: false
+          description: The number of task records to skip, allowing you to paginate through tasks.
           schema:
             type: string
       responses:
@@ -55,14 +69,13 @@ paths:
                   title: "Make hotel reservation"
                   status: "open"
                   dueDate: "2026-02-15T23:59:59"
-          
     post:
       operationId: postTasks
       tags:
         - Tasks
       summary: Create a task
       description: >
-        Creates a new task on the user's calendar. The task appears in the task list immediately and can be updated, completed, or deleted. This endpoint accepts required fields for `title` and `status`, and optional fields such as `dueDate`. Use this endpoint to add reminders for upcoming events or deadlines. Responses include the complete task object with the server-assigned `id`. 
+        Creates a new task on the user's calendar. The task appears in the task list immediately and can be updated, completed, or deleted. This endpoint accepts required fields for `title` and `status`, and optional fields such as `assignee`. Use this endpoint to add reminders for upcoming events or deadlines. Responses include the complete task object with the server-assigned `id`. 
       requestBody:
         required: true
         content:
@@ -119,9 +132,13 @@ paths:
       tags:
         - Tasks    
       summary: Update a task
-      description: >
-        Updates the details of an existing task. Use **POST /tasks/{taskId}/complete** to complete a task. That updates its status, visually disables the task from the calendar, and moves the task to the list of completed tasks.
+      description: |
+        Updates the details of an existing task. For example, you could update a task to `active` to indicate that it's being worked on.
+        
+        Use **POST /tasks/{taskId}/complete** to complete a task. That updates its status, visually disables the task from the calendar, and moves the task to the list of completed tasks.
+        
         If you mark a task as `complete` with this endpoint, only the status changes; the task does not move to the list of completed tasks, nor does the visual representation change on the calendar. 
+        
         If a task's `dueDate` passes and it's not marked as `complete`, the system automatically changes its `status` to `missed`. 
       parameters:
         - name: taskId
@@ -159,7 +176,7 @@ paths:
         - Tasks    
       summary: Delete a task
       description: >
-        Deletes a task and removes if from your calendar.
+        Deletes a task and removes it from the calendar.
       parameters:
         - name: taskId
           in: path
@@ -170,6 +187,8 @@ paths:
       responses:
         '200':
           description: Task deleted successfully
+        '404':
+          description: Task does not exist
 
   /tasks/{taskId}/complete:
     post:
@@ -178,7 +197,7 @@ paths:
         - Tasks    
       summary: Complete a task
       description: >
-        Marks a task as complete. After completing a task, its status to `complete` and becomes inactive on your personal calendar.
+        Marks a task as complete and moves the task to `/tasks/completed`. After completing a task, its status to `complete` and becomes inactive on the calendar. 
       parameters:
         - name: taskId
           in: path
@@ -203,12 +222,18 @@ paths:
         - Tasks    
       summary: Get a list of all completed tasks
       description: >
-        Returns information about all completed tasks for a calendar. You must provide your calendar username as a query parameter.
+        Returns information about all completed tasks for a calendar. You must provide your calendar username as a query parameter. You can return a maximum of 1000 tasks at a time. Use `offset` to paginate through results. 
       parameters:
         - name: username
           in: query
           required: true
           description: Unique identifier of the task          
+          schema:
+            type: string
+        - name: offset
+          in: query
+          required: false
+          description: The number of task records to skip, allowing you to paginate through tasks.
           schema:
             type: string
       responses:
@@ -238,6 +263,7 @@ components:
       required:
         - id
         - title
+        - taskType
         - dueDate
         - status
       properties:
@@ -246,7 +272,11 @@ components:
           description: The unique identifier for a single task.
         title:
           type: string
-          description: The name of the task, which appears in the calendar event.
+          description: The name of the task, which appears in the calendar event. Maximum 100 characters.
+        taskType:
+          type: string
+          enum: [task, event, call, reminder]
+          description: The type or category of task, which lets you add intuitive context to the calendar item.
         dueDate:
           type: string
           format: date-time
@@ -256,15 +286,23 @@ components:
         status:
           type: string
           enum: [open, active, complete, missed]
-          description: The current status of the task. If `status` is not set to `open` or `active`, the task defaults to `open`. 
+          description: |
+            - `open`: Task has been created but not yet started. If `status` is not set to `open` or `active`, the task defaults to `open`.
+            - `active`: Task is in progress.
+            - `complete`: Task has been finished.
+            - `missed`: Task was not completed by the due date.
+        assignee:
+          type: string
+          description: The name of the person to whom the task is assigned. 
           
     NewTask:
       allOf:
         - $ref: '#/components/schemas/Task'
       required:
         - title
-        - status
+        - taskType
         - dueDate
+        - status
       properties:
         id:
           readOnly: true

@@ -18,9 +18,7 @@ window.onload=swapMe;
 
 
 
-// below is for sliding slideshow
-
-
+// Slideshow
 
 window.addEventListener('load', function () {
   // Step 1: Get viewport width
@@ -35,21 +33,31 @@ window.addEventListener('load', function () {
   let firstImageWidth = firstImage.offsetWidth;
 
   // Step 4: Animation loop
-  let trackDistance = viewportWidth + 1 ; // This sets a counter at 0 outside of the animate function, so that the starting point 
-                                          // always remains 0, and the distance is moved -2px (and the value updated)
-						                  // specifically within the animate function.
+  
+	let isAnimating = true;
+	
+	track.addEventListener('mouseover', () => {
+		isAnimating = false;
+	});
+	track.addEventListener('mouseout', () => {
+		isAnimating = true;
+	});	
+
+  let trackDistance = viewportWidth + 1; // This starts the track just outside the right-side edge.
+  
   function animate() {
-	// 1. Check if first image needs recycling
+	// 1. Check if first image needs recycling + recycle if yes
 	if (trackDistance < -(viewportWidth + firstImageWidth)) {
-		track.appendChild(firstImage);
+		track.appendChild(firstImage); 					// Moves the image to the "back of the line" after it is fully out of view.
 		trackDistance = trackDistance + firstImageWidth + 100; // 100 represents the gap added between images in the CSS
-		firstImage = images[0];
+		firstImage = images[0]; 						// Since the firstImage is recycled to the end of the list, this refreshes 
+														// the node collection with the subsequent image at index 0.
 		firstImageWidth = firstImage.offsetWidth;
-		
 	}  
-	  
-    // 2. Move the track
-	trackDistance -= 2;
+    // 2. Move the track	
+	if (isAnimating) {	// Remember, (isAnimating) without equal sign checks if 'truthy'
+		trackDistance -= 2;
+	}
 	track.style.transform = "translateX(" + trackDistance + "px)";
 
     // 3. Call itself again

@@ -177,6 +177,7 @@ hr {
 .track-viewport {
 	width: 100vw;
 	overflow: hidden;
+	padding: 20px;
 }
 
 .track {
@@ -190,6 +191,13 @@ hr {
 	max-height: 150px;
 	height: auto;
 	width: auto;
+	box-shadow: 0 0 0 0;
+	transition: box-shadow .5s ease;
+}
+
+.imageShape:hover {
+    box-shadow: 0 5px 15px 2px var(--white);
+	transition: box-shadow .5s ease;
 }
 
 
