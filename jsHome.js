@@ -28,7 +28,7 @@ window.addEventListener('load', function () {
   let track = document.getElementById('track');
 
   // Step 3: Get first image width
-  let images = document.getElementsByClassName('imageShape');
+  let images = document.getElementsByClassName('image-shape');
   let firstImage = images[0];
   let firstImageWidth = firstImage.offsetWidth;
 
@@ -44,8 +44,14 @@ window.addEventListener('load', function () {
 	});	
 
   let trackDistance = viewportWidth + 1; // This starts the track just outside the right-side edge.
+ 
   
   function animate() {
+	  
+	for (let i = 0; i < images.length; i++) {
+		images[i].style.opacity = '1';
+	}
+	
 	// 1. Check if first image needs recycling + recycle if yes
 	if (trackDistance < -(viewportWidth + firstImageWidth)) {
 		track.appendChild(firstImage); 					// Moves the image to the "back of the line" after it is fully out of view.

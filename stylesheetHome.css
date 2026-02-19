@@ -186,7 +186,7 @@ hr {
 	gap: 100px;
 }
 
-.imageShape {
+.image-shape {
     border-radius: 15px 40px 20px 5px;
 	max-height: 150px;
 	height: auto;
@@ -195,7 +195,7 @@ hr {
 	transition: box-shadow .5s ease;
 }
 
-.imageShape:hover {
+.image-shape:hover {
     box-shadow: 0 5px 15px 2px var(--white);
 	transition: box-shadow .5s ease;
 }
