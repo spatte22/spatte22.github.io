@@ -43,19 +43,25 @@ paths:
       parameters:
         - name: username
           in: query
-          description: The username with which you created the calendar.
+          description: 'The username with which you created the calendar, which is also the owner of the calendar. By default, the system uses the email address for the username, unless the user adds a custom name.'
           required: true
           schema:
             type: string
         - name: offset
           in: query
-          description: 'The number of task records to skip, allowing you to paginate through tasks.'
+          description: |
+            The number of task records to skip, allowing you to paginate through tasks (maximum 1000).
+            If omitted, pagination starts at the beginning.
           required: false
           schema:
             type: integer
+            minimum: 0
       responses:
         '200':
-          description: Tasks retrieved successfully
+          description: |
+            Tasks retrieved successfully. Returns an array of task objects.
+            - If no tasks exist, the array is empty.
+            - Tasks are sorted by `dueDate` ascending.
           content:
             application/json:
               schema:
@@ -102,7 +108,7 @@ paths:
                 dueDate: '2026-02-14T12:00:00'
       responses:
         '201':
-          description: Task created successfully
+          description: Task created successfully.
           content:
             application/json:
               schema:
@@ -126,18 +132,19 @@ paths:
         - Tasks
       summary: Get a task
       description: |
-        Returns information about a single task.
+        Returns information about a single task. 
       operationId: getTask
       parameters:
         - name: taskId
           in: path
-          description: Unique identifier of the task.
+          description: Unique identifier of the task. You can find a task's ID using **GET /tasks**.
           required: true
           schema:
             type: integer
       responses:
         '200':
-          description: Task retrieved successfully
+          description: |
+            Task retrieved successfully. Returns an array of task objects. If no tasks exist, the array is empty.
           content:
             application/json:
               schema:
@@ -173,7 +180,7 @@ paths:
       parameters:
         - name: taskId
           in: path
-          description: Unique identifier of the task
+          description: Unique identifier of the task. You can find a task's ID using **GET /tasks**.
           required: true
           schema:
             type: integer
@@ -189,7 +196,7 @@ paths:
                 dueDate: '2026-02-14T12:00:00'
       responses:
         '200':
-          description: Task updated successfully
+          description: Task updated successfully.
           content:
             application/json:
               schema:
@@ -212,18 +219,20 @@ paths:
         - Tasks
       summary: Delete a task
       description: |
-        Deletes a task and removes it from the calendar.
+        Deletes a task and removes it from the calendar. Deleting a task removes it from the system forever. You can typically use this to remove a task that was accidentally created or is no longer needed.
+
+        Best practice is to only delete a task when you do not want to access it again in the future. Use **POST /tasks/{taskId}/complete** to mark a task as completed. Completed tasks are archived in the system, and are accessible via **GET /tasks/completed**.
       operationId: deleteTask
       parameters:
         - name: taskId
           in: path
-          description: Unique identifier of the task
+          description: Unique identifier of the task. You can find a task's ID using **GET /tasks**.
           required: true
           schema:
             type: integer
       responses:
         '204':
-          description: Task deleted successfully
+          description: Task deleted successfully.
         '404':
           $ref: '#/components/responses/NotFound'
         '500':
@@ -236,12 +245,12 @@ paths:
         - Tasks
       summary: Complete a task
       description: |
-        Marks a task as complete and moves the task to `/tasks/completed`. After completing a task, its status to `complete` and becomes inactive on the calendar.
+        Marks a task as complete and moves it to `/tasks/completed`. After completing a task, its status changes to `complete` and becomes inactive on the calendar. Inactive tasks help users quickly see which tasks they have yet to complete and which ones can be ignored.
       operationId: postCompletedTasks
       parameters:
         - name: taskId
           in: path
-          description: Unique identifier of the task
+          description: Unique identifier of the task. You can find a task's ID using **GET /tasks**.
           required: true
           schema:
             type: integer
@@ -267,19 +276,25 @@ paths:
       parameters:
         - name: username
           in: query
-          description: Unique identifier of the task
+          description: Unique identifier of the task. You can find a task's ID using **GET /tasks**.
           required: true
           schema:
             type: string
         - name: offset
           in: query
-          description: 'The number of task records to skip, allowing you to paginate through tasks.'
+          description: |
+            The number of task records to skip, allowing you to paginate through tasks (maximum 1000).
+            If omitted, pagination starts at the beginning.
           required: false
           schema:
             type: integer
+            minimum: 0
       responses:
         '200':
-          description: Tasks retrieved successfully
+          description: |
+            Tasks retrieved successfully. Returns an array of completed task objects.
+            - If no tasks exist, the array is empty.
+            - Tasks are sorted by `dueDate` ascending.
           content:
             application/json:
               schema:
@@ -420,9 +435,10 @@ components:
             - complete
             - missed
           description: |
+            Helps the system and the user keep track of how a task is progressing. 
             - `open`: Task has been created but not yet started. If `status` is not set to `open` or `active`, the task defaults to `open`.
             - `active`: Task is in progress.
-            - `complete`: Task has been finished.
+            - `complete`: Task has been finished. The task becomes inactive on the calendar, visually indicating that it's done.
             - `missed`: Task was not completed by the due date.
         assignee:
           type: string
@@ -444,9 +460,9 @@ components:
       properties:
         message:
           type: string
-          description: Human-readable explanation of the error.
+          description: 'Human-readable explanation of the error. For example, "Query parameter `username` is required".'
         code:
           type: string
-          description: Application-specific error identifier.
+          description: 'Application-specific error identifier. For example, "BAD_REQUEST".'
       required:
         - message
