@@ -31,7 +31,11 @@ paths:
 
         By default, the returned tasks are ordered ascending by `dueDate`. You can return a maximum of 1000 tasks at a time. Use `offset` to paginate through results. 
 
-        Returns an empty array if no tasks exist for the username. 
+        Returns an empty array if no tasks exist for the username.
+
+        **Possible 400 errors**:
+          - The `username` query parameter is missing.
+          - The `offset` parameter is not a valid number.
       operationId: getTasks
       parameters:
         - name: username
@@ -45,7 +49,7 @@ paths:
           description: 'The number of task records to skip, allowing you to paginate through tasks.'
           required: false
           schema:
-            type: string
+            type: integer
       responses:
         '200':
           description: Tasks retrieved successfully
@@ -67,35 +71,15 @@ paths:
                       status: open
                       dueDate: '2026-02-15T23:59:59'
         '400':
-          description: Username query parameter missing or invalid
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StatusMessage'
-              examples:
-                default:
-                  value:
-                    message: Query parameter `username` is required.
+          $ref: '#/components/responses/BadRequest'
         '401':
-          description: Missing or invalid OAuth token
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StatusMessage'
-              examples:
-                default:
-                  value:
-                    message: Unauthorized. Valid access token required if enabled by an administrator.
+          $ref: '#/components/responses/Unauthorized'
         '404':
-          description: User not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StatusMessage'
-              examples:
-                default:
-                  value:
-                    message: No tasks found for user `Bilbo Baggins`.
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
     post:
       tags:
         - Tasks
@@ -126,49 +110,13 @@ paths:
                   status: open
                   dueDate: '2026-02-14T12:00:00'
         '400':
-          description: Required fields missing or invalid
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StatusMessage'
-              examples:
-                default:
-                  value:
-                    message: Wrong format of `dueDate`
-        '401':
-          description: Missing or invalid OAuth token
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StatusMessage'
-              examples:
-                default:
-                  value:
-                    message: Unauthorized. Valid access token required if enabled by an administrator.
-        '403':
-          description: User not allowed to create or edit tasks check token scope
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StatusMessage'
-              examples:
-                default:
-                  value:
-                    message: Unauthorized. Calendar owner may need to share the calendar with this user.
+          $ref: '#/components/responses/BadRequest'
         '409':
-          description: Duplicate task detected
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StatusMessage'
-              examples:
-                default:
-                  value:
-                    message: Task already exists with the same `title` and `dueDate`.
+          $ref: '#/components/responses/Conflict'
         '500':
-          description: Internal server error
+          $ref: '#/components/responses/InternalServerError'
         '503':
-          description: Service temporarily unavailable
+          $ref: '#/components/responses/ServiceUnavailable'
   '/tasks/{taskId}':
     get:
       tags:
@@ -196,6 +144,16 @@ paths:
                   title: Buy World Cup tickets
                   status: open
                   dueDate: '2026-02-14T12:00:00'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
     put:
       tags:
         - Tasks
@@ -238,6 +196,14 @@ paths:
                   title: Buy World Cup tickets
                   status: open
                   dueDate: '2026-02-14T12:00:00'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
     delete:
       tags:
         - Tasks
@@ -253,10 +219,14 @@ paths:
           schema:
             type: integer
       responses:
-        '200':
+        '204':
           description: Task deleted successfully
         '404':
-          description: Task does not exist
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
   '/tasks/{taskId}/complete':
     post:
       tags:
@@ -273,14 +243,16 @@ paths:
           schema:
             type: integer
       responses:
-        '200':
-          description: Task completed successfully
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/StatusMessage'
-                example:
-                  message: Task marked as complete.
+        '204':
+          description: Task marked as complete.
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
   /tasks/completed:
     get:
       tags:
@@ -301,7 +273,7 @@ paths:
           description: 'The number of task records to skip, allowing you to paginate through tasks.'
           required: false
           schema:
-            type: string
+            type: integer
       responses:
         '200':
           description: Tasks retrieved successfully
@@ -322,60 +294,96 @@ paths:
                       title: Buy fireworks
                       status: complete
                       dueDate: '2025-12-31T23:59:59'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
 tags:
   - name: Tasks
     description: 'Create, retrieve, update, and manage tasks on a user''s calendar.'
 components:
   responses:
-    '401':
-      description: Missing or invalid OAuth token
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/StatusMessage'
-          examples:
-            default:
-              value:
-                message: Unauthorized. Valid access token required if enabled by an administrator.
-    '404':
-      description: User not found
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/StatusMessage'
-          examples:
-            default:
-              value:
-                message: No tasks found for user `Bilbo Baggins`.
-    Success:
-      description: Tasks retrieved successfully
-      content:
-        application/json:
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Task'
-          examples:
-            default:
-              value:
-                - id: 8675309
-                  title: Buy World Cup tickets
-                  status: open
-                  dueDate: '2026-02-14T12:00:00'
-                - id: 9035768
-                  title: Make hotel reservation
-                  status: open
-                  dueDate: '2026-02-15T23:59:59'
     BadRequest:
-      description: "Invalid request syntax or data\t- check required fields, JSON format, or data types"
+      description: "Invalid request syntax or data\t- check required fields, JSON format, or data types."
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/StatusMessage'
+            $ref: '#/components/schemas/Error'
           examples:
             default:
               value:
                 message: Query parameter `username` is required.
+                code: BAD_REQUEST
+    Unauthorized:
+      description: Authentication credentials are missing or invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            default:
+              value:
+                message: Valid access token required if enabled by an administrator.
+                code: UNAUTHORIZED
+    Forbidden:
+      description: The client does not have permission to perform this action.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            default:
+              value:
+                message: You do not have permission to modify this calendar.
+                code: FORBIDDEN
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            default:
+              value:
+                message: No tasks found for user `Bilbo Baggins`.
+                code: NOT_FOUND
+    Conflict:
+      description: The request conflicts with the current state of the resource.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            default:
+              value:
+                message: A task with the same title and `dueDate` already exists.
+                code: CONFLICT
+    InternalServerError:
+      description: An unexpected error occurred on the server.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            default:
+              value:
+                message: An unexpected error occurred.
+                code: INTERNAL_SERVER_ERROR
+    ServiceUnavailable:
+      description: The service is temporarily unavailable.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            default:
+              value:
+                message: The service is currently unavailable. Please try again later.
+                code: SERVICE_UNAVAILABLE
   schemas:
     Task:
       type: object
@@ -421,14 +429,6 @@ components:
         - title
         - dueDate
         - status
-    StatusMessage:
-      type: object
-      properties:
-        message:
-          type: string
-          description: A short message indicating the result of the operation.
-      required:
-        - message
     NewTask:
       type: object
       properties:
@@ -436,3 +436,14 @@ components:
           readOnly: true
       allOf:
         - $ref: '#/components/schemas/Task'
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Human-readable explanation of the error.
+        code:
+          type: string
+          description: Application-specific error identifier.
+      required:
+        - message
