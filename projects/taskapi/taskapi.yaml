@@ -7,12 +7,15 @@ info:
 
     For example, imagine you wanted to attend a World Cup match with a group of friends. You could create an event on a shared calendar for the day of the match. Then, you could delegate work to each friend, like buying tickets, booking a hotel, or organizing transportation. Then, you could add a task assigned to each friend, with reminders before the event day. 
 
-    The following is a basic lifecycle for a task:
-    - Call **POST /tasks** to create a new task on your calendar. The task is added on the day specified in `dueDate`. 
-    - Optionally call **PUT /tasks/{taskId}** to update the status to `active`. You can get the ID from the **POST /tasks** or **GET /tasks** responses. 
-    - Call **POST /tasks/{taskId}/complete** once the task is done.
+    **Typical workflow**:
+    1. **Create a task** using POST /tasks. Provide `title`, `status`, and optionally `dueDate` and `assignee`.
+    2. **Update a task** using PUT /tasks/{taskId} to modify status or details.
+    3. **Complete a task** using POST /tasks/{taskId}/complete. This moves it to `/tasks/completed` and marks it as inactive.
+    4. **Retrieve tasks** using GET /tasks or GET /tasks/completed.
 
-        You can optionally add OAuth authentication. This authenticates the calendar owner, ensuring that only they can edit the calendar or edit/complete tasks. OAuth also allows the calendar owner to share it with others and allow editing permissions. To add OAuth, work with a calendar administrator to enable authentication. When enabled, you can use an OAuth bearer token in the --header of your requests.
+    > Note: Tasks past their due date automatically change status to `missed`.
+
+    You can optionally add OAuth authentication. This authenticates the calendar owner, ensuring that only they can edit the calendar or edit/complete tasks. OAuth also allows the calendar owner to share it with others and allow editing permissions. To add OAuth, work with a calendar administrator to enable authentication. When enabled, you can use an OAuth bearer token in the --header of your requests.
   contact:
     name: Sean P.
     email: sean.patterson1989@gmail.com
