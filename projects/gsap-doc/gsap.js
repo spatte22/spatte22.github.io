@@ -1,7 +1,7 @@
 /* animate the GSAP logo */
 
 window.addEventListener('load', function() {
-	gsap.from(".gsap-logo", {x: -1000, duration: 5, ease: "elastic.out(1, 0.5)"});
+	gsap.from("#gsap-logo", {x: -1000, duration: 5, ease: "elastic.out(1, 0.5)"});
 	/*gsap.from(".header-items", {x: -1000, duration: 3, ease: "elastic.out(1, 0.75)"});*/
 	var tl = gsap.timeline({defaults:{opacity: 0, ease: "elastic.out(1, 0.75)", duration: 1}})
 	tl.from("#one", {y: -50})
